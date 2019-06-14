@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStatas : MonoBehaviour
+
+public class CharacterStats : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField]
     private float health;
     [SerializeField]
@@ -13,6 +15,34 @@ public class CharacterStatas : MonoBehaviour
     [SerializeField]
     private float attackSpeed;
 
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+    }
+    public float CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+    }
+    public float AttackSpeed
+    {
+        get
+        {
+            return attackSpeed;
+        }
+    }
+    public float Damage
+    {
+        get
+        {
+            return damage;
+        }
+    }
     private float currentHealth;
 
     private void Start()
