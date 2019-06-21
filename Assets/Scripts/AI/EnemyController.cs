@@ -1,30 +1,40 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(CharacterStats))]
 public class EnemyController : MonoBehaviour
 {
-    NavMeshAgent agent;
+
     [SerializeField]
-    Transform movePoint;
+    private Transform movePoint;
     [SerializeField]
-    LayerMask detectMask;
+    private LayerMask detectMask;
     [SerializeField]
-    Transform shotSpawnPosition;
+    private LayerMask attackMask;
     [SerializeField]
-    Shot shotInstance;
+    private Transform shotSpawnPosition;
+    [SerializeField]
+    private Shot shotInstance;
 
 
     [SerializeField]
-    float detectRadious;
+    private float detectRadious;
     [SerializeField]
-    float attackRadious;
+    private float attackRadious;
     [SerializeField]
-    float shotForce;
+    private float shotForce;
 
+
+    const float shotAccuaracy = 3;
+
+    private NavMeshAgent agent;
     private CharacterStats stats;
-    private EnemyController target;
+    private CharacterStats target;
     private float lastAttack;
+    private float currentAmmo;
+    private bool isReloading;
+
 
     bool ischasingEnemy;
     private void Start()
@@ -41,6 +51,7 @@ public class EnemyController : MonoBehaviour
         }
         agent.speed = stats.Speed;
         agent.stoppingDistance = attackRadious;
+        currentAmmo = stats.MaxAmmo;
 
     }
 
@@ -55,7 +66,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public void SetTarget(EnemyController target)
+    public void SetTarget(CharacterStats target)
     {
         this.target = target;
         agent.stoppingDistance = attackRadious;
@@ -69,6 +80,11 @@ public class EnemyController : MonoBehaviour
         SearchTargets();
         if (ischasingEnemy)
             ChaseTargets();
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            stats.TakeDamage(10f);
+        }
     }
 
     private void SearchTargets()
@@ -91,7 +107,7 @@ public class EnemyController : MonoBehaviour
                 }
                 if (closestDistance != int.MaxValue)
                 {
-                    EnemyController enemy = enemies[index].GetComponentInParent<EnemyController>();
+                    CharacterStats enemy = enemies[index].GetComponentInParent<CharacterStats>();
                     SetTarget(enemy);
 
                 }
@@ -129,18 +145,33 @@ public class EnemyController : MonoBehaviour
     {
         if (lastAttack <= 0)
         {
-            /* CharacterStats targetStats = target.GetComponent<CharacterStats>();
-            targetStats.TakeDamage(stats.Damage);  
-            */
-
-            // Replace with Pool Later
-            lastAttack = 1 / stats.AttackSpeed;
-            Shot instance = Instantiate(shotInstance, shotSpawnPosition.position, transform.rotation);
-            instance.SetShot(stats.Damage, detectMask);
-            Rigidbody rb = instance.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * shotForce, ForceMode.Impulse);
+            if (currentAmmo > 0)
+            {
+                // Replace with Pool Later
+                currentAmmo--;
+                lastAttack = 1 / stats.AttackSpeed;
+                Shot instance = Instantiate(shotInstance, shotSpawnPosition.position, transform.rotation);
+                instance.SetShot(stats.Damage, attackMask);
+                Vector3 offset = Random.insideUnitSphere * ((100 - stats.Accuracy) / 100) / shotAccuaracy;
+                Rigidbody rb = instance.GetComponent<Rigidbody>();
+                rb.AddForce((transform.forward + offset) * shotForce, ForceMode.Impulse);
+            }
+            else
+            {
+                if (!isReloading)
+                    StartCoroutine(Reload());
+            }
         }
     }
+
+    private IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(stats.ReloadTime);
+        currentAmmo = stats.MaxAmmo;
+        isReloading = false;
+    }
+
 
     private void OnDrawGizmosSelected()
     {

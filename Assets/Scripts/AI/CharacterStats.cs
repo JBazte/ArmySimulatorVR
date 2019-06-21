@@ -7,13 +7,21 @@ public class CharacterStats : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField]
-    private float health;
+    private float health = 100;
     [SerializeField]
-    private float damage;
+    private float damage = 10;
     [SerializeField]
-    private float speed;
+    private float speed = 5;
     [SerializeField]
-    private float attackSpeed;
+    private float attackSpeed = 3;
+    [SerializeField]
+    [Range(0, 100)]
+    private float accuracy = 80;
+    [SerializeField]
+    private float maxAmmo = 30;
+    [SerializeField]
+    private float reloadTime = 3;
+
 
     public float Speed
     {
@@ -43,6 +51,27 @@ public class CharacterStats : MonoBehaviour
             return damage;
         }
     }
+    public float MaxAmmo
+    {
+        get
+        {
+            return maxAmmo;
+        }
+    }
+    public float Accuracy
+    {
+        get
+        {
+            return accuracy;
+        }
+    }
+    public float ReloadTime
+    {
+        get
+        {
+            return reloadTime;
+        }
+    }
     private float currentHealth;
 
     private void Start()
@@ -57,6 +86,24 @@ public class CharacterStats : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public bool HealDamage(float amount)
+    {
+        if (currentHealth + amount > health)
+        {
+            amount = health - currentHealth;
+            currentHealth += amount;
+            return true;
+        }
+        else
+        {
+            currentHealth += amount;
+            return false;
+        }
+
+
+
     }
 
     private void Die()

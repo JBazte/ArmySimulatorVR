@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
 
+    [SerializeField]
+    float lifeSpam;
     private LayerMask collideMask;
     private float damage;
 
@@ -20,6 +22,11 @@ public class Shot : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, lifeSpam);
     }
 
     public void SetShot(float damage, LayerMask mask)
