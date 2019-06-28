@@ -8,23 +8,21 @@ public class MedicController : MonoBehaviour
     [SerializeField]
     Transform home;
     [SerializeField]
-    private EnemyController target;
+    private CharacterStats target;
     [SerializeField]
-    float interactRadious;
+    protected float interactRadious;
     [SerializeField]
     private float healing;
-    [SerializeField]
-    private float timePerHeal;
     [SerializeField]
     private float healDelay;
     [SerializeField]
     private LayerMask healingMask;
 
 
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
+    private float lastHeal;
 
-
-    private void Start()
+    protected void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         if (target != null)
@@ -33,27 +31,27 @@ public class MedicController : MonoBehaviour
         }
         agent.stoppingDistance = interactRadious;
     }
-    public void SetTarget(EnemyController target)
+    public void SetTarget(CharacterStats target)
     {
 
         if (healingMask == (healingMask | (1 << target.gameObject.layer)))
             agent.SetDestination(target.transform.position);
     }
 
-    private void Update()
+    protected void Update()
     {
-        timePerHeal -= Time.deltaTime;
+        lastHeal -= Time.deltaTime;
         Heal();
     }
 
     private void Heal()
     {
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance <= interactRadious)
+        if (distance <= interactRadious + 0.1f)
         {
-            if (timePerHeal < 0)
+            if (lastHeal < 0)
             {
-                timePerHeal = 1 / healDelay;
+                lastHeal = 1 / healDelay;
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
                 {
@@ -67,9 +65,10 @@ public class MedicController : MonoBehaviour
         }
     }
 
-    private void ReturnHome()
+    protected void ReturnHome()
     {
         agent.SetDestination(home.transform.position);
+        agent.isStopped = false;
     }
 
     private void OnDrawGizmosSelected()

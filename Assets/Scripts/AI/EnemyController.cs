@@ -132,13 +132,29 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance <= attackRadious)
         {
-            agent.isStopped = true;
-            Shoot();
+            RaycastHit hit;
+            if (Physics.Raycast(shotSpawnPosition.position, transform.forward, out hit, 100f))
+            {
+                if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
+                {
+                    agent.isStopped = true;
+                    Shoot();
+                }
+                else
+                {
+                    agent.isStopped = false;
+
+                }
+            }
+
         }
         else
         {
             agent.isStopped = false;
+
         }
+
+
 
     }
     private void Shoot()

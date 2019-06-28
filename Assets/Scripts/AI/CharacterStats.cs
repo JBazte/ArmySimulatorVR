@@ -23,6 +23,9 @@ public class CharacterStats : MonoBehaviour
     private float reloadTime = 3;
 
 
+
+
+
     public float Speed
     {
         get
@@ -35,6 +38,14 @@ public class CharacterStats : MonoBehaviour
         get
         {
             return currentHealth;
+        }
+    }
+
+    public float MaxHealth
+    {
+        get
+        {
+            return health;
         }
     }
     public float AttackSpeed
@@ -74,9 +85,17 @@ public class CharacterStats : MonoBehaviour
     }
     private float currentHealth;
 
-    private void Start()
+    private void Awake()
     {
         currentHealth = health;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TakeDamage(10f);
+        }
     }
 
     public void TakeDamage(float amount)
