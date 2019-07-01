@@ -85,6 +85,7 @@ public class EnemyController : MonoBehaviour
         {
             stats.TakeDamage(10f);
         }
+
     }
 
     private void SearchTargets()
@@ -129,11 +130,12 @@ public class EnemyController : MonoBehaviour
     public void ChaseTargets()
     {
         LookAtTarget();
+
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance <= attackRadious)
         {
             RaycastHit hit;
-            if (Physics.Raycast(shotSpawnPosition.position, transform.forward, out hit, 100f))
+            if (Physics.Raycast(shotSpawnPosition.position, shotSpawnPosition.forward, out hit, 100f))
             {
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
                 {
@@ -143,7 +145,6 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     agent.isStopped = false;
-
                 }
             }
 
@@ -151,11 +152,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             agent.isStopped = false;
-
         }
-
-
-
     }
     private void Shoot()
     {

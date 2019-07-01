@@ -222,7 +222,7 @@ MonoBehaviour:
   shotInstance: {fileID: 8020285274578604413, guid: f87e7551920409348b16968ca8b394a2,
     type: 3}
   detectRadious: 13
-  attackRadious: 12
+  attackRadious: 8
   shotForce: 30
 --- !u!1 &4521389610365896240
 GameObject:
