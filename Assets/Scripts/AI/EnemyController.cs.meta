@@ -3,7 +3,11 @@ guid: 0c7c3888d00f7154eb457875b64e65ee
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - movePoint: {instanceID: 0}
+  - shotSpawnPosition: {instanceID: 0}
+  - shotInstance: {fileID: 8020285274578604413, guid: 986ce682c91dec746b5425c02feee44f,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
