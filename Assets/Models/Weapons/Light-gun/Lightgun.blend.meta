@@ -1,77 +1,72 @@
 fileFormatVersion: 2
-guid: 6c2a290aead471744888636c79a39cf0
+guid: e57b631c7805a394285039464fa1d154
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: mesh_1115432163
-    100002: mesh_1286593356
-    100004: mesh_1330485529
-    100006: mesh_1487853911
-    100008: mesh_1708819615
-    100010: mesh_216373091
-    100012: mesh_270998664
-    100014: mesh_47982412
-    100016: mesh_594497910
-    100018: //RootNode
-    100020: Camera
-    100022: Lamp
-    100024: mesh_1708819615.002
-    400000: mesh_1115432163
-    400002: mesh_1286593356
-    400004: mesh_1330485529
-    400006: mesh_1487853911
-    400008: mesh_1708819615
-    400010: mesh_216373091
-    400012: mesh_270998664
-    400014: mesh_47982412
-    400016: mesh_594497910
-    400018: //RootNode
-    400020: Camera
-    400022: Lamp
-    400024: mesh_1708819615.002
-    2000000: Camera
-    2100000: material_15___7955
-    2100002: material_16___7955
-    2100004: material_16___7955.005
-    2100006: material_15___7955.005
-    2100008: material_16___7955.006
-    2100010: material_15___7955.003
-    2100012: material_16___7955.001
-    2100014: material_16___7955.007
-    2100016: material_16___7955.004
-    2100018: material_16___7955.008
-    2100020: material_15___7955.004
+    100000: //RootNode
+    100002: mesh_1115432163
+    100004: mesh_1286593356
+    100006: mesh_1330485529
+    100008: mesh_1487853911
+    100010: mesh_1708819615
+    100012: mesh_1708819615_002
+    100014: mesh_216373091
+    100016: mesh_270998664
+    100018: mesh_47982412
+    100020: mesh_594497910
+    400000: //RootNode
+    400002: mesh_1115432163
+    400004: mesh_1286593356
+    400006: mesh_1330485529
+    400008: mesh_1487853911
+    400010: mesh_1708819615
+    400012: mesh_1708819615_002
+    400014: mesh_216373091
+    400016: mesh_270998664
+    400018: mesh_47982412
+    400020: mesh_594497910
+    2100000: material_16___7955_005
+    2100002: material_15___7955_005
+    2100004: material_16___7955
+    2100006: material_16___7955_006
+    2100008: material_15___7955_003
+    2100010: material_16___7955_001
+    2100012: material_16___7955_007
+    2100014: material_16___7955_004
+    2100016: material_16___7955_008
+    2100018: material_15___7955_004
     2300000: mesh_1115432163
     2300002: mesh_1286593356
     2300004: mesh_1330485529
     2300006: mesh_1487853911
     2300008: mesh_1708819615
-    2300010: mesh_216373091
-    2300012: mesh_270998664
-    2300014: mesh_47982412
-    2300016: mesh_594497910
-    2300018: mesh_1708819615.002
+    2300010: mesh_1708819615_002
+    2300012: mesh_216373091
+    2300014: mesh_270998664
+    2300016: mesh_47982412
+    2300018: mesh_594497910
     3300000: mesh_1115432163
     3300002: mesh_1286593356
     3300004: mesh_1330485529
     3300006: mesh_1487853911
     3300008: mesh_1708819615
-    3300010: mesh_216373091
-    3300012: mesh_270998664
-    3300014: mesh_47982412
-    3300016: mesh_594497910
-    3300018: mesh_1708819615.002
-    4300000: mesh_1487853911
-    4300002: mesh_1708819615
-    4300004: mesh_216373091
-    4300006: mesh_1286593356
-    4300008: mesh_594497910
-    4300010: mesh_1115432163
-    4300012: mesh_1330485529
-    4300014: mesh_270998664
-    4300016: mesh_47982412
-    4300018: mesh_1708819615.002
-    10800000: Lamp
+    3300010: mesh_1708819615_002
+    3300012: mesh_216373091
+    3300014: mesh_270998664
+    3300016: mesh_47982412
+    3300018: mesh_594497910
+    4300000: mesh_1708819615_002
+    4300002: mesh_47982412
+    4300004: mesh_270998664
+    4300006: mesh_1330485529
+    4300008: mesh_1115432163
+    4300010: mesh_594497910
+    4300012: mesh_1286593356
+    4300014: mesh_216373091
+    4300016: mesh_1708819615
+    4300018: mesh_1487853911
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -125,7 +120,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -152,7 +147,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
