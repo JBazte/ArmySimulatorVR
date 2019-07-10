@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
+
 
 public class Weapon : MonoBehaviour
 {
@@ -74,5 +76,10 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+        if (SteamVR_Input.GetStateDown("Shoot", SteamVR_Input_Sources.RightHand))
+        {
+            Shoot();
+        }
+
     }
 }
