@@ -22,17 +22,23 @@ public class Weapon : MonoBehaviour
     private float totalReloadTime = 3f;
     [SerializeField]
     private float attackSpeed = 1f;
-
-    private float currentAmmo;
-    private float lastAttack;
-    private bool isReloading;
-
+    [SerializeField]
+    private float startingRecoilForce = 5f;
+    [SerializeField]
+    private float coolOffTime = 1f;
     [SerializeField]
     LayerMask attackMask;
 
+
+    private float currentAmmo;
+    private float lastAttack;
+    private bool isReloading = false;
+    private Rigidbody rb;
+    private float recoilTime;
     private void Start()
     {
         currentAmmo = maxAmmo;
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -44,6 +50,7 @@ public class Weapon : MonoBehaviour
         {
             if (currentAmmo > 0)
             {
+                ApplyRecoil();
                 lastAttack = 1 / attackSpeed;
                 Shot instance = Instantiate(shotInstance);
                 instance.transform.position = bulletSpawnPosition.position;
@@ -55,7 +62,7 @@ public class Weapon : MonoBehaviour
             {
                 if (!isReloading)
                 {
-                    Reload();
+                    StartCoroutine(Reload());
                 }
             }
         }
@@ -69,6 +76,12 @@ public class Weapon : MonoBehaviour
         isReloading = false;
     }
 
+    private void ApplyRecoil()
+    {
+        float recoilForce;
+        rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
+    }
+
     private void HandAttachedUpdate(Hand hand)
     {
 
@@ -76,10 +89,11 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
-        if (SteamVR_Input.GetStateDown("Shoot", SteamVR_Input_Sources.RightHand))
-        {
-            Shoot();
-        }
+        /* if (SteamVR_Input.GetStateDown("Shoot", SteamVR_Input_Sources.RightHand))
+         {
+             Shoot();
+         }
+         */
 
     }
 }

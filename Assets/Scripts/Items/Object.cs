@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-[RequireComponent(typeof(Throwable))]
+[RequireComponent(typeof(Interactable))]
 public class Object : MonoBehaviour
 {
-    Interactable interactable;
 
-    private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.TurnOnKinematic)
-    & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement) & (Hand.AttachmentFlags.TurnOffGravity);
+    [SerializeField]
+    Transform grabposition;
+    protected Interactable interactable;
+
+
+    [EnumFlags]
+    [Tooltip("The flags used to attach this object to the hand.")]
+    public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.DetachOthers | Hand.AttachmentFlags.VelocityMovement;
 
     void Start()
     {
         interactable = GetComponentInChildren<Interactable>();
+        if (grabposition != null)
+        {
+            attachmentFlags = Hand.AttachmentFlags.SnapOnAttach | attachmentFlags;
+        }
     }
     //-------------------------------------------------
     // Called when a Hand starts hovering over this object
@@ -47,7 +56,7 @@ public class Object : MonoBehaviour
             hand.HoverLock(interactable);
 
             // Attach this object to the hand
-            hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+            hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
         }
         else if (isGrabEnding)
         {
@@ -89,7 +98,7 @@ public class Object : MonoBehaviour
 
     }
 
-    private bool lastHovering = false;
+
     private void Update()
     {
 
