@@ -22,6 +22,7 @@ ModelImporter:
     100032: R_Hand
     100034: R_Leg
     100036: //RootNode
+    100038: Cube_001
     400000: Body
     400002: Bone
     400004: Cube_000
@@ -41,6 +42,7 @@ ModelImporter:
     400032: R_Hand
     400034: R_Leg
     400036: //RootNode
+    400038: Cube_001
     2100000: Material_212
     2100002: Material_208
     2100004: Material_211
@@ -84,9 +86,11 @@ ModelImporter:
     4300002: Cube_000
     4300004: M4_008
     4300006: M4_009
+    4300008: Cube_001
     7400000: Default Take
     9500000: //RootNode
     13700000: Cube_999
+    13700002: Cube_001
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
