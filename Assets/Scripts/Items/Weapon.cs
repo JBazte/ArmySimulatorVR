@@ -22,12 +22,16 @@ public class Weapon : MonoBehaviour
     private float totalReloadTime = 3f;
     [SerializeField]
     private float attackSpeed = 1f;
+
+    [Header("Recoil")]
     [SerializeField]
     private float startingRecoilForce = 5f;
     [SerializeField]
     private float coolOffTime = 1f;
     [SerializeField]
-    LayerMask attackMask;
+    private LayerMask attackMask;
+    [SerializeField]
+    private float recoilForceDivider = 10f;
 
 
     private float currentAmmo;
@@ -35,6 +39,10 @@ public class Weapon : MonoBehaviour
     private bool isReloading = false;
     private Rigidbody rb;
     private float recoilTime;
+    private float shotCount;
+
+    private float maxForce = 10f;
+
     private void Start()
     {
         currentAmmo = maxAmmo;
@@ -43,6 +51,9 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         lastAttack -= Time.deltaTime;
+        if (recoilTime > 0)
+            recoilTime -= (Time.deltaTime * (1 / coolOffTime)) * (recoilTime + 0.1f);
+
     }
     public void Shoot()
     {
@@ -50,13 +61,15 @@ public class Weapon : MonoBehaviour
         {
             if (currentAmmo > 0)
             {
-                ApplyRecoil();
+                float recoilForce = ApplyRecoil();
                 lastAttack = 1 / attackSpeed;
                 Shot instance = Instantiate(shotInstance);
                 instance.transform.position = bulletSpawnPosition.position;
-                instance.GetComponent<Rigidbody>().AddForce(bulletSpawnPosition.forward * bulletForce, ForceMode.Impulse);
+                Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / 10;
+                instance.GetComponent<Rigidbody>().AddForce((offset + bulletSpawnPosition.forward) * bulletForce, ForceMode.Impulse);
                 instance.SetShot(damage, attackMask);
                 currentAmmo--;
+                recoilTime++;
             }
             else
             {
@@ -76,10 +89,29 @@ public class Weapon : MonoBehaviour
         isReloading = false;
     }
 
-    private void ApplyRecoil()
+    private float ApplyRecoil()
     {
-        float recoilForce;
+        float recoilForce = startingRecoilForce;
+        float r = CuadraticFunction(recoilForce);
+        if (r < 0)
+        {
+            r = 0;
+        }
+        if (recoilForce > maxForce)
+        {
+            recoilForce = maxForce;
+        }
+        recoilForce += startingRecoilForce;
+        //recoilForce 
+        Debug.Log(recoilForce);
         rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
+        return recoilForce;
+    }
+
+    private float CuadraticFunction(float x)
+    {
+        return x * x * (1 / recoilForceDivider);
+
     }
 
     private void HandAttachedUpdate(Hand hand)

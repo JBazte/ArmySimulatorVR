@@ -3379,15 +3379,17 @@ MonoBehaviour:
   shotInstance: {fileID: 8020285274578604413, guid: f87e7551920409348b16968ca8b394a2,
     type: 3}
   bulletSpawnPosition: {fileID: 2058943693}
-  bulletForce: 50
-  damage: 5
-  maxAmmo: 30
+  bulletForce: 30
+  damage: 1
+  maxAmmo: 999
   totalReloadTime: 3
-  attackSpeed: 5
-  recoilForce: 3
+  attackSpeed: 9
+  startingRecoilForce: 5
+  coolOffTime: 1
   attackMask:
     serializedVersion: 2
     m_Bits: 2560
+  recoilForceDivider: 10
 --- !u!1001 &682025804
 PrefabInstance:
   m_ObjectHideFlags: 0
