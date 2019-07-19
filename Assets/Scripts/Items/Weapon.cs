@@ -22,6 +22,10 @@ public class Weapon : MonoBehaviour
     private float totalReloadTime = 3f;
     [SerializeField]
     private float attackSpeed = 1f;
+    [SerializeField]
+    private MagazineTypes ammoType = MagazineTypes.Rifle;
+    [SerializeField]
+    private Transform magazinePostition;
 
     [Header("Recoil")]
     [SerializeField]
@@ -31,8 +35,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private LayerMask attackMask;
     [SerializeField]
-    private float recoilForceDivider = 10f;
-
+    private float recoilForceMultiplier = 10f;
 
     private float currentAmmo;
     private float lastAttack;
@@ -40,8 +43,10 @@ public class Weapon : MonoBehaviour
     private Rigidbody rb;
     private float recoilTime;
     private float shotCount;
+    private bool hasMagazine;
 
-    private float maxForce = 10f;
+
+    private const float maxForce = 10f;
 
     private void Start()
     {
@@ -52,7 +57,7 @@ public class Weapon : MonoBehaviour
     {
         lastAttack -= Time.deltaTime;
         if (recoilTime > 0)
-            recoilTime -= (Time.deltaTime * (1 / coolOffTime)) * (recoilTime + 0.1f);
+            recoilTime -= (Time.deltaTime * (recoilTime / coolOffTime));
 
     }
     public void Shoot()
@@ -92,16 +97,19 @@ public class Weapon : MonoBehaviour
     private float ApplyRecoil()
     {
         float recoilForce = startingRecoilForce;
-        float r = CuadraticFunction(recoilForce);
+        float r = CuadraticFunction(recoilTime) / (attackMask / 4);
         if (r < 0)
         {
             r = 0;
         }
+
         if (recoilForce > maxForce)
         {
             recoilForce = maxForce;
         }
-        recoilForce += startingRecoilForce;
+        recoilForce += r;
+
+
         //recoilForce 
         Debug.Log(recoilForce);
         rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
@@ -110,8 +118,20 @@ public class Weapon : MonoBehaviour
 
     private float CuadraticFunction(float x)
     {
-        return x * x * (1 / recoilForceDivider);
+        return x * x * (1 * recoilForceMultiplier);
 
+    }
+
+    public void AttachMagazine(Magazine magazine)
+    {
+        if (magazine.GetMagazineType == ammoType)
+        {
+            currentAmmo = magazine.GetCurrentAmmo;
+            hasMagazine = true;
+            magazine.transform.SetParent(transform);
+            magazine.transform.position = magazinePostition.position;
+            magazine.OnAttachedToWeapon();
+        }
     }
 
     private void HandAttachedUpdate(Hand hand)
