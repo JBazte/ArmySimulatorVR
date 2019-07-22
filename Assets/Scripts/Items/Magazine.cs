@@ -15,7 +15,8 @@ public class Magazine : MonoBehaviour
     private Collider col;
     private Rigidbody rb;
     private Weapon attachedWeapon;
-
+    private Interactable interactable;
+    Hand attachedHand;
     public float GetCurrentAmmo
     {
         get
@@ -37,7 +38,7 @@ public class Magazine : MonoBehaviour
         currentAmmo = maxAmmo;
         col = GetComponentInChildren<Collider>();
         rb = GetComponentInChildren<Rigidbody>();
-
+        interactable = GetComponentInChildren<Interactable>();
         Weapon weapon = GetComponentInParent<Weapon>();
         if (weapon != null)
         {
@@ -50,13 +51,19 @@ public class Magazine : MonoBehaviour
     private void OnAttachedToHand(Hand hand)
     {
         OnDettachedFromWeapon();
+        attachedHand = hand;
     }
 
     public void OnAttachedToWeapon(Weapon weapon)
     {
+        //Hand hand = interactable.attachedToHand;
+        if (attachedHand != null)
+            attachedHand.DetachObject(this.gameObject);
+
         col.isTrigger = true;
         rb.isKinematic = true;
         attachedWeapon = weapon;
+
     }
 
     public void OnDettachedFromWeapon()
@@ -66,10 +73,11 @@ public class Magazine : MonoBehaviour
         if (attachedWeapon != null)
         {
             currentAmmo = attachedWeapon.GetCurrentAmmo;
+            transform.parent = null;
             attachedWeapon.DisAttachMagazine();
             Physics.IgnoreCollision(GetComponentInChildren<Collider>(), attachedWeapon.GetComponentInChildren<Collider>(), true);
         }
-        transform.parent = null;
+
         attachedWeapon = null;
     }
     public void RemoveAmmo(float amount)

@@ -18,8 +18,12 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float startMagazineLinearDrive = .5f;
     [SerializeField]
+    private Transform magazinePostition;
+    [SerializeField]
     private LayerMask magazineLayer;
     [Header("Stats")]
+    [SerializeField]
+    private bool isAutomaic = true;
     [SerializeField]
     private float damage = 1f;
     [SerializeField]
@@ -30,8 +34,6 @@ public class Weapon : MonoBehaviour
     private float attackSpeed = 1f;
     [SerializeField]
     private MagazineTypes ammoType = MagazineTypes.Rifle;
-    [SerializeField]
-    private Transform magazinePostition;
 
     [Header("Recoil")]
     [SerializeField]
@@ -51,7 +53,7 @@ public class Weapon : MonoBehaviour
     private float shotCount;
     private bool hasMagazine;
     private MyLinearDrive linearDrive;
-
+    Magazine lastMag;
     public float GetCurrentAmmo
     {
         get
@@ -61,10 +63,10 @@ public class Weapon : MonoBehaviour
     }
 
     private const float maxForce = 10f;
-
+    private const float RandomRecoil = 15f;
     private void Start()
     {
-        currentAmmo = maxAmmo;
+        //currentAmmo = maxAmmo;
         rb = GetComponent<Rigidbody>();
         linearDrive = GetComponentInChildren<MyLinearDrive>();
     }
@@ -86,7 +88,7 @@ public class Weapon : MonoBehaviour
                 lastAttack = 1 / attackSpeed;
                 Shot instance = Instantiate(shotInstance);
                 instance.transform.position = bulletSpawnPosition.position;
-                Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / 10;
+                Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / RandomRecoil;
                 instance.GetComponent<Rigidbody>().AddForce((offset + bulletSpawnPosition.forward) * bulletForce, ForceMode.Impulse);
                 instance.SetShot(damage, attackMask);
                 currentAmmo--;
@@ -96,7 +98,7 @@ public class Weapon : MonoBehaviour
             {
                 if (!isReloading)
                 {
-                    StartCoroutine(Reload());
+                    //StartCoroutine(Reload());
                 }
             }
         }
@@ -138,30 +140,50 @@ public class Weapon : MonoBehaviour
     {
         if (magazine.GetMagazineType == ammoType)
         {
+            magazine.OnAttachedToWeapon(this);
             currentAmmo = magazine.GetCurrentAmmo;
             hasMagazine = true;
             magazine.transform.SetParent(transform);
-            magazine.transform.position = magazinePostition.position;
-            magazine.OnAttachedToWeapon(this);
+            magazine.transform.localPosition = magazinePostition.localPosition;
+            magazine.transform.localRotation = magazinePostition.localRotation;
+
         }
     }
 
     public void CheckAmunition()
     {
-        Collider[] mags = Physics.OverlapSphere(magazinePostition.position, checkMagazineRadious, magazineLayer);
-
-        foreach (var mag in mags)
+        if (!hasMagazine)
         {
-            if (Vector3.Distance(transform.position, mag.transform.position) > startMagazineLinearDrive)
+            Collider[] mags = Physics.OverlapSphere(magazinePostition.position, checkMagazineRadious, magazineLayer);
+
+            foreach (var mag in mags)
             {
-                StartLinearDrive();
+                float distance = Vector3.Distance(magazinePostition.position, mag.transform.position);
+                Magazine magazine = mag.GetComponentInParent<Magazine>();
+                if (lastMag == magazine)
+                {
+                    if (distance > startMagazineLinearDrive)
+                    {
+                        lastMag = null;
+                    }
+                }
+                if (distance < startMagazineLinearDrive)
+                {
+                    if (lastMag != magazine)
+                    {
+                        StartLinearDrive(magazine);
+                    }
+
+                }
             }
         }
     }
 
-    public void StartLinearDrive()
+    public void StartLinearDrive(Magazine magazine)
     {
-
+        Debug.Log("attached");
+        lastMag = magazine;
+        AttachMagazine(magazine);
     }
     public void DisAttachMagazine()
     {
@@ -171,16 +193,25 @@ public class Weapon : MonoBehaviour
 
     private void HandAttachedUpdate(Hand hand)
     {
-
         if (Input.GetKey(KeyCode.K))
         {
             Shoot();
         }
-        /* if (SteamVR_Input.GetStateDown("Shoot", SteamVR_Input_Sources.RightHand))
-         {
-             Shoot();
-         }
-         */
+        if (isAutomaic)
+        {
+            if (SteamVR_Input.GetState("Shoot", hand.handType))
+            {
+                Shoot();
+            }
+        }
+        else
+        {
+            if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+            {
+                Shoot();
+            }
+        }
+
 
     }
     private void OnDrawGizmosSelected()
