@@ -13,6 +13,12 @@ public class Weapon : MonoBehaviour
     private Transform bulletSpawnPosition;
     [SerializeField]
     private float bulletForce = 10f;
+    [SerializeField]
+    private float checkMagazineRadious = 3f;
+    [SerializeField]
+    private float startMagazineLinearDrive = .5f;
+    [SerializeField]
+    private LayerMask magazineLayer;
     [Header("Stats")]
     [SerializeField]
     private float damage = 1f;
@@ -44,7 +50,15 @@ public class Weapon : MonoBehaviour
     private float recoilTime;
     private float shotCount;
     private bool hasMagazine;
+    private MyLinearDrive linearDrive;
 
+    public float GetCurrentAmmo
+    {
+        get
+        {
+            return currentAmmo;
+        }
+    }
 
     private const float maxForce = 10f;
 
@@ -52,12 +66,14 @@ public class Weapon : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         rb = GetComponent<Rigidbody>();
+        linearDrive = GetComponentInChildren<MyLinearDrive>();
     }
     private void Update()
     {
         lastAttack -= Time.deltaTime;
         if (recoilTime > 0)
             recoilTime -= (Time.deltaTime * (recoilTime / coolOffTime));
+        CheckAmunition();
 
     }
     public void Shoot()
@@ -96,29 +112,25 @@ public class Weapon : MonoBehaviour
 
     private float ApplyRecoil()
     {
-        float recoilForce = startingRecoilForce;
-        float r = CuadraticFunction(recoilTime) / (attackMask / 4);
-        if (r < 0)
-        {
-            r = 0;
-        }
 
+        float recoilForce = CuadraticFunction(recoilTime) / (attackMask / 4);
+        if (recoilForce < 0)
+        {
+            recoilForce = 0;
+        }
         if (recoilForce > maxForce)
         {
             recoilForce = maxForce;
         }
-        recoilForce += r;
-
-
         //recoilForce 
-        Debug.Log(recoilForce);
+        //Debug.Log(recoilForce);
         rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
         return recoilForce;
     }
 
     private float CuadraticFunction(float x)
     {
-        return x * x * (1 * recoilForceMultiplier);
+        return x * x * (1 * recoilForceMultiplier) + startingRecoilForce;
 
     }
 
@@ -130,8 +142,31 @@ public class Weapon : MonoBehaviour
             hasMagazine = true;
             magazine.transform.SetParent(transform);
             magazine.transform.position = magazinePostition.position;
-            magazine.OnAttachedToWeapon();
+            magazine.OnAttachedToWeapon(this);
         }
+    }
+
+    public void CheckAmunition()
+    {
+        Collider[] mags = Physics.OverlapSphere(magazinePostition.position, checkMagazineRadious, magazineLayer);
+
+        foreach (var mag in mags)
+        {
+            if (Vector3.Distance(transform.position, mag.transform.position) > startMagazineLinearDrive)
+            {
+                StartLinearDrive();
+            }
+        }
+    }
+
+    public void StartLinearDrive()
+    {
+
+    }
+    public void DisAttachMagazine()
+    {
+        currentAmmo = 0;
+        hasMagazine = false;
     }
 
     private void HandAttachedUpdate(Hand hand)
@@ -147,5 +182,12 @@ public class Weapon : MonoBehaviour
          }
          */
 
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(magazinePostition.position, checkMagazineRadious);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(magazinePostition.position, startMagazineLinearDrive);
     }
 }

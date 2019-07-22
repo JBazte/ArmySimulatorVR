@@ -15,7 +15,8 @@ public class Object : MonoBehaviour
     [EnumFlags]
     [Tooltip("The flags used to attach this object to the hand.")]
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.DetachOthers | Hand.AttachmentFlags.VelocityMovement;
-
+    [SerializeField]
+    protected bool restoreParent = true;
     void Start()
     {
         interactable = GetComponentInChildren<Interactable>();
@@ -61,7 +62,7 @@ public class Object : MonoBehaviour
         else if (isGrabEnding)
         {
             // Detach this object from the hand
-            hand.DetachObject(gameObject);
+            hand.DetachObject(gameObject, restoreParent);
 
             // Call this to undo HoverLock
             hand.HoverUnlock(interactable);
