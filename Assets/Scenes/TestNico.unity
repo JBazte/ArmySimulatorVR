@@ -3840,6 +3840,8 @@ MonoBehaviour:
   bulletForce: 60
   checkMagazineRadious: 2
   startMagazineLinearDrive: 0.5
+  startMagazineLinearDrivePosition: {fileID: 1282916611}
+  endMagazineLinearDrivePosition: {fileID: 1715209939}
   magazinePostition: {fileID: 355005085}
   magazineLayer:
     serializedVersion: 2
@@ -5754,6 +5756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   maxAmmo: 30
+  attachedHand: {fileID: 0}
 --- !u!114 &1094977304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6937,6 +6940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   maxAmmo: 30
+  attachedHand: {fileID: 0}
 --- !u!114 &1322624210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7399,6 +7403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   maxAmmo: 30
+  attachedHand: {fileID: 0}
 --- !u!1001 &1519820060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9156,6 +9161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   maxAmmo: 30
+  attachedHand: {fileID: 0}
 --- !u!114 &1805940368
 MonoBehaviour:
   m_ObjectHideFlags: 0

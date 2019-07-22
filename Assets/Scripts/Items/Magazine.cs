@@ -16,7 +16,7 @@ public class Magazine : MonoBehaviour
     private Rigidbody rb;
     private Weapon attachedWeapon;
     private Interactable interactable;
-    Hand attachedHand;
+    public Hand attachedHand;
     public float GetCurrentAmmo
     {
         get

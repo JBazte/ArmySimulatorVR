@@ -29,7 +29,7 @@ public class MyLinearDrive : MonoBehaviour
     protected int sampleCount = 0;
 
     protected Interactable interactable;
-
+    public Quaternion startingRotation;
 
     protected virtual void Awake()
     {
@@ -41,7 +41,7 @@ public class MyLinearDrive : MonoBehaviour
     {
         if (linearMapping == null)
         {
-            linearMapping = GetComponent<LinearMapping>();
+            linearMapping = GetComponentInParent<LinearMapping>();
         }
 
         if (linearMapping == null)
@@ -65,6 +65,7 @@ public class MyLinearDrive : MonoBehaviour
         sampleCount = 0;
         mappingChangeRate = 0.0f;
         hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+
     }
 
     protected virtual void HandAttachedUpdate(Hand hand)
@@ -109,6 +110,7 @@ public class MyLinearDrive : MonoBehaviour
         if (repositionGameObject)
         {
             transform.position = Vector3.Lerp(startPosition.position, endPosition.position, linearMapping.value);
+            transform.rotation = startingRotation;
         }
     }
 

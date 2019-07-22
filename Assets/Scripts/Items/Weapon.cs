@@ -18,6 +18,10 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float startMagazineLinearDrive = .5f;
     [SerializeField]
+    private Transform startMagazineLinearDrivePosition;
+    [SerializeField]
+    private Transform endMagazineLinearDrivePosition;
+    [SerializeField]
     private Transform magazinePostition;
     [SerializeField]
     private LayerMask magazineLayer;
@@ -53,6 +57,7 @@ public class Weapon : MonoBehaviour
     private float shotCount;
     private bool hasMagazine;
     private MyLinearDrive linearDrive;
+    private bool isLinearDriving;
     Magazine lastMag;
     public float GetCurrentAmmo
     {
@@ -152,7 +157,7 @@ public class Weapon : MonoBehaviour
 
     public void CheckAmunition()
     {
-        if (!hasMagazine)
+        if (!hasMagazine && !isLinearDriving)
         {
             Collider[] mags = Physics.OverlapSphere(magazinePostition.position, checkMagazineRadious, magazineLayer);
 
@@ -171,7 +176,16 @@ public class Weapon : MonoBehaviour
                 {
                     if (lastMag != magazine)
                     {
-                        StartLinearDrive(magazine);
+                        if (magazine.attachedHand == null)
+                        {
+                            lastMag = magazine;
+                            AttachMagazine(magazine);
+                        }
+                        else
+                        {
+                            StartLinearDrive(magazine);
+
+                        }
                     }
 
                 }
@@ -181,9 +195,14 @@ public class Weapon : MonoBehaviour
 
     public void StartLinearDrive(Magazine magazine)
     {
-        Debug.Log("attached");
-        lastMag = magazine;
-        AttachMagazine(magazine);
+        isLinearDriving = true;
+        magazine.transform.SetParent(transform);
+        MyLinearDrive ld = magazine.gameObject.AddComponent<MyLinearDrive>();
+        Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
+        ld.startPosition = startMagazineLinearDrivePosition;
+        ld.endPosition = endMagazineLinearDrivePosition;
+        ld.startingRotation = magazinePostition.localRotation;
+
     }
     public void DisAttachMagazine()
     {
