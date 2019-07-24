@@ -7,13 +7,12 @@
 Shader "Valve/VR/Silhouette"
 {
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------
-	 Properties
-    {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
-    }
+	Properties
+	{
+		g_vOutlineColor( "Outline Color", Color ) = ( .5, .5, .5, 1 )
+		g_flOutlineWidth( "Outline width", Range ( .001, 0.03 ) ) = .005
+		g_flCornerAdjust( "Corner Adjustment", Range( 0, 2 ) ) = .5
+	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------
 	CGINCLUDE
@@ -130,7 +129,8 @@ Shader "Valve/VR/Silhouette"
 		}
 
 	ENDCG
-SubShader
+
+	SubShader
 	{
 		Tags { "RenderType"="Outline" "Queue" = "Geometry-1"  }
 
