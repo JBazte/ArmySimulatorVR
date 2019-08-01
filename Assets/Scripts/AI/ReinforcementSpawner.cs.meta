@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7064608a1936c644099cd69694427ae8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - engineerPrefab: {fileID: 100036, guid: bcf510fa0f3a8534fa758720e7026817, type: 3}
+  - medicPrefab: {fileID: 100028, guid: 50db05d4602b2dd4a81409c5f5de406f, type: 3}
+  - infantPrefab: {fileID: 100000, guid: 43ff0b11fdb2b4b479b16f978db4d94a, type: 3}
+  - sniperPrefab: {fileID: 100034, guid: e648fa91053dffd4cadbfb1a5f3247cf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
