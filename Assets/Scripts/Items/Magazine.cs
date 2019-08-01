@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+[RequireComponent(typeof(MyLinearDrive))]
 public class Magazine : MonoBehaviour
 {
 
@@ -16,6 +17,7 @@ public class Magazine : MonoBehaviour
     private Rigidbody rb;
     private Weapon attachedWeapon;
     private Interactable interactable;
+
     public Hand attachedHand;
     public float GetCurrentAmmo
     {
@@ -44,6 +46,12 @@ public class Magazine : MonoBehaviour
         {
             weapon.AttachMagazine(this);
         }
+
+    }
+
+    private void OnValidate()
+    {
+        gameObject.layer = 12;
     }
     //-------------------------------------------------
     // Called every Update() while this GameObject is attached to the hand
@@ -56,7 +64,7 @@ public class Magazine : MonoBehaviour
 
     public void OnAttachedToWeapon(Weapon weapon)
     {
-        //Hand hand = interactable.attachedToHand;
+
         if (attachedHand != null)
             attachedHand.DetachObject(this.gameObject);
 
@@ -75,6 +83,7 @@ public class Magazine : MonoBehaviour
             currentAmmo = attachedWeapon.GetCurrentAmmo;
             transform.parent = null;
             attachedWeapon.DisAttachMagazine();
+            attachedWeapon.StartLinearDrive(this);
             Physics.IgnoreCollision(GetComponentInChildren<Collider>(), attachedWeapon.GetComponentInChildren<Collider>(), true);
         }
 

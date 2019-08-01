@@ -15,8 +15,8 @@ public class MyLinearDrive : MonoBehaviour
     public Transform startPosition;
     public Transform endPosition;
     public LinearMapping linearMapping;
-    public bool repositionGameObject = true;
-    public bool maintainMomemntum = true;
+    public bool repositionGameObject = false;
+    public bool maintainMomemntum = false;
     public float momemtumDampenRate = 5.0f;
 
     protected Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.DetachFromOtherHand;
@@ -30,15 +30,19 @@ public class MyLinearDrive : MonoBehaviour
 
     protected Interactable interactable;
     public Quaternion startingRotation;
+    private Weapon attachedWeapon;
+    private Magazine magazine;
 
     protected virtual void Awake()
     {
         mappingChangeSamples = new float[numMappingChangeSamples];
         interactable = GetComponent<Interactable>();
+        magazine = GetComponent<Magazine>();
     }
 
     protected virtual void Start()
     {
+        /*
         if (linearMapping == null)
         {
             linearMapping = GetComponentInParent<LinearMapping>();
@@ -48,8 +52,9 @@ public class MyLinearDrive : MonoBehaviour
         {
             linearMapping = gameObject.AddComponent<LinearMapping>();
         }
+         */
 
-        initialMappingOffset = linearMapping.value;
+        //initialMappingOffset = linearMapping.value;
 
         if (repositionGameObject)
         {
@@ -58,29 +63,30 @@ public class MyLinearDrive : MonoBehaviour
     }
 
 
-    public void OnActivated(Hand hand)
+    public void OnActivated(LinearMapping lm, Weapon attachedWeapon)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        initialMappingOffset = linearMapping.value - CalculateLinearMapping(hand.transform);
+        linearMapping = lm;
+        transform.SetParent(attachedWeapon.transform);
+        this.attachedWeapon = attachedWeapon;
+        initialMappingOffset = linearMapping.value - CalculateLinearMapping(magazine.attachedHand.transform);
         sampleCount = 0;
         mappingChangeRate = 0.0f;
-        hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
+        repositionGameObject = true;
+        GetComponentInChildren<Collider>().isTrigger = true;
 
     }
 
-    protected virtual void HandAttachedUpdate(Hand hand)
-    {
-        UpdateLinearMapping(hand.transform);
 
-        if (hand.IsGrabEnding(this.gameObject))
-        {
-            hand.DetachObject(gameObject);
-        }
-    }
 
     protected virtual void OnDetachedFromHand(Hand hand)
     {
         CalculateMappingChangeRate();
+        if (repositionGameObject)
+        {
+            magazine.OnDettachedFromWeapon();
+            repositionGameObject = false;
+            attachedWeapon.EndLinearDrive();
+        }
     }
 
 
@@ -101,14 +107,14 @@ public class MyLinearDrive : MonoBehaviour
 
     protected void UpdateLinearMapping(Transform updateTransform)
     {
-        prevMapping = linearMapping.value;
-        linearMapping.value = Mathf.Clamp01(initialMappingOffset + CalculateLinearMapping(updateTransform));
-
-        mappingChangeSamples[sampleCount % mappingChangeSamples.Length] = (1.0f / Time.deltaTime) * (linearMapping.value - prevMapping);
-        sampleCount++;
 
         if (repositionGameObject)
         {
+            prevMapping = linearMapping.value;
+            linearMapping.value = Mathf.Clamp01(initialMappingOffset + CalculateLinearMapping(updateTransform));
+
+            mappingChangeSamples[sampleCount % mappingChangeSamples.Length] = (1.0f / Time.deltaTime) * (linearMapping.value - prevMapping);
+            sampleCount++;
             transform.position = Vector3.Lerp(startPosition.position, endPosition.position, linearMapping.value);
             transform.rotation = startingRotation;
         }
@@ -128,17 +134,40 @@ public class MyLinearDrive : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (maintainMomemntum && mappingChangeRate != 0.0f)
+        if (repositionGameObject)
         {
-            //Dampen the mapping change rate and apply it to the mapping
-            mappingChangeRate = Mathf.Lerp(mappingChangeRate, 0.0f, momemtumDampenRate * Time.deltaTime);
-            linearMapping.value = Mathf.Clamp01(linearMapping.value + (mappingChangeRate * Time.deltaTime));
-
-            if (repositionGameObject)
+            if (maintainMomemntum && mappingChangeRate != 0.0f)
             {
+                //Dampen the mapping change rate and apply it to the mapping
+                mappingChangeRate = Mathf.Lerp(mappingChangeRate, 0.0f, momemtumDampenRate * Time.deltaTime);
+                linearMapping.value = Mathf.Clamp01(linearMapping.value + (mappingChangeRate * Time.deltaTime));
+                // Debug.Log(linearMapping.value + "2");
+
+
                 transform.position = Vector3.Lerp(startPosition.position, endPosition.position, linearMapping.value);
             }
         }
+
+        if (repositionGameObject)
+        {
+            //Debug.Log(linearMapping.value + "1");
+            UpdateLinearMapping(interactable.attachedToHand.transform);
+            if (linearMapping.value == 0)
+            {
+                repositionGameObject = false;
+                GetComponentInChildren<Collider>().isTrigger = false;
+                attachedWeapon.EndLinearDrive();
+                linearMapping.RestoreOriginalValue();
+            }
+            if (linearMapping.value == 1)
+            {
+                repositionGameObject = false;
+                attachedWeapon.EndLinearDrive();
+                attachedWeapon.AttachMagazine(magazine);
+                linearMapping.RestoreInvertedOriginalValue();
+            }
+        }
+
     }
 }
 

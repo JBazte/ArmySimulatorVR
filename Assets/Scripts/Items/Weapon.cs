@@ -25,6 +25,8 @@ public class Weapon : MonoBehaviour
     private Transform magazinePostition;
     [SerializeField]
     private LayerMask magazineLayer;
+
+
     [Header("Stats")]
     [SerializeField]
     private bool isAutomaic = true;
@@ -56,7 +58,7 @@ public class Weapon : MonoBehaviour
     private float recoilTime;
     private float shotCount;
     private bool hasMagazine;
-    private MyLinearDrive linearDrive;
+
     private bool isLinearDriving;
     Magazine lastMag;
     public float GetCurrentAmmo
@@ -71,9 +73,11 @@ public class Weapon : MonoBehaviour
     private const float RandomRecoil = 15f;
     private void Start()
     {
-        //currentAmmo = maxAmmo;
         rb = GetComponent<Rigidbody>();
-        linearDrive = GetComponentInChildren<MyLinearDrive>();
+        if (!hasMagazine)
+        {
+            currentAmmo = maxAmmo;
+        }
     }
     private void Update()
     {
@@ -145,6 +149,7 @@ public class Weapon : MonoBehaviour
     {
         if (magazine.GetMagazineType == ammoType)
         {
+            Debug.Log("attached");
             magazine.OnAttachedToWeapon(this);
             currentAmmo = magazine.GetCurrentAmmo;
             hasMagazine = true;
@@ -163,32 +168,36 @@ public class Weapon : MonoBehaviour
 
             foreach (var mag in mags)
             {
-                float distance = Vector3.Distance(magazinePostition.position, mag.transform.position);
+                float distance = Vector3.Distance(startMagazineLinearDrivePosition.position, mag.transform.position);
                 Magazine magazine = mag.GetComponentInParent<Magazine>();
-                if (lastMag == magazine)
+                if (!isLinearDriving)
                 {
-                    if (distance > startMagazineLinearDrive)
+                    if (lastMag == magazine)
                     {
-                        lastMag = null;
+                        if (distance > startMagazineLinearDrive)
+                        {
+                            lastMag = null;
+                        }
                     }
                 }
                 if (distance < startMagazineLinearDrive)
                 {
+
                     if (lastMag != magazine)
                     {
-                        if (magazine.attachedHand == null)
+                        lastMag = magazine;
+                        if (magazine.GetComponent<Interactable>().attachedToHand == null)
                         {
-                            lastMag = magazine;
                             AttachMagazine(magazine);
                         }
                         else
                         {
                             StartLinearDrive(magazine);
-
                         }
                     }
 
                 }
+
             }
         }
     }
@@ -196,18 +205,25 @@ public class Weapon : MonoBehaviour
     public void StartLinearDrive(Magazine magazine)
     {
         isLinearDriving = true;
-        magazine.transform.SetParent(transform);
-        MyLinearDrive ld = magazine.gameObject.AddComponent<MyLinearDrive>();
-        Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
+        MyLinearDrive ld = magazine.GetComponent<MyLinearDrive>();
+        //Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
         ld.startPosition = startMagazineLinearDrivePosition;
         ld.endPosition = endMagazineLinearDrivePosition;
-        ld.startingRotation = magazinePostition.localRotation;
+        ld.startingRotation = magazinePostition.rotation;
+        ld.OnActivated(GetComponentInChildren<LinearMapping>(), this);
 
     }
+
+    public void EndLinearDrive()
+    {
+        isLinearDriving = false;
+    }
+
     public void DisAttachMagazine()
     {
         currentAmmo = 0;
         hasMagazine = false;
+        Debug.Log("disattached");
     }
 
     private void HandAttachedUpdate(Hand hand)
@@ -238,6 +254,6 @@ public class Weapon : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(magazinePostition.position, checkMagazineRadious);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(magazinePostition.position, startMagazineLinearDrive);
+        Gizmos.DrawWireSphere(startMagazineLinearDrivePosition.position, startMagazineLinearDrive);
     }
 }
