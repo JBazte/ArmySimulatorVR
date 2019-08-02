@@ -70,7 +70,8 @@ public class Weapon : MonoBehaviour
     }
 
     private const float maxForce = 10f;
-    private const float RandomRecoil = 15f;
+    private const float randomRecoil = 15f;
+    private const float attachAngle = 30f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -97,7 +98,7 @@ public class Weapon : MonoBehaviour
                 lastAttack = 1 / attackSpeed;
                 Shot instance = Instantiate(shotInstance);
                 instance.transform.position = bulletSpawnPosition.position;
-                Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / RandomRecoil;
+                Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / randomRecoil;
                 instance.GetComponent<Rigidbody>().AddForce((offset + bulletSpawnPosition.forward) * bulletForce, ForceMode.Impulse);
                 instance.SetShot(damage, attackMask);
                 currentAmmo--;
@@ -168,7 +169,7 @@ public class Weapon : MonoBehaviour
 
             foreach (var mag in mags)
             {
-                float distance = Vector3.Distance(startMagazineLinearDrivePosition.position, mag.transform.position);
+                float distance = Vector3.Distance(magazinePostition.position, mag.transform.position);
                 Magazine magazine = mag.GetComponentInParent<Magazine>();
                 if (!isLinearDriving)
                 {
@@ -185,19 +186,26 @@ public class Weapon : MonoBehaviour
 
                     if (lastMag != magazine)
                     {
-                        lastMag = magazine;
-                        if (magazine.GetComponent<Interactable>().attachedToHand == null)
+
+                        float angle = Quaternion.Angle(magazinePostition.rotation, magazine.transform.rotation);
+
+                        if (angle <= attachAngle)
                         {
-                            AttachMagazine(magazine);
+                            lastMag = magazine;
+                            if (magazine.GetComponent<Interactable>().attachedToHand == null)
+                            {
+                                AttachMagazine(magazine);
+                            }
+
+                            else
+                            {
+                                StartLinearDrive(magazine);
+                            }
                         }
-                        else
-                        {
-                            StartLinearDrive(magazine);
-                        }
+
                     }
 
                 }
-
             }
         }
     }
@@ -254,6 +262,6 @@ public class Weapon : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(magazinePostition.position, checkMagazineRadious);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(startMagazineLinearDrivePosition.position, startMagazineLinearDrive);
+        Gizmos.DrawWireSphere(magazinePostition.position, startMagazineLinearDrive);
     }
 }

@@ -1,1 +1,0 @@
-To avoid deleting empty folders
