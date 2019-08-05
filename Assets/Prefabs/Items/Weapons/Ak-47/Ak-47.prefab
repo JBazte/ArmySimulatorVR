@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b0f36a9b109cf4399aaad6c5cb64a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabposition: {fileID: 5500162024395632046}
+  grabposition: {fileID: 0}
   attachmentFlags: 30
   restoreParent: 1
   releaseVelocityStyle: 1

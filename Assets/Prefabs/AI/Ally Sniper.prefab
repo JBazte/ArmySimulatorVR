@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4521389609776072292, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_Name
-      value: Ally (7)
+      value: Ally Sniper
       objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
@@ -111,6 +111,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}

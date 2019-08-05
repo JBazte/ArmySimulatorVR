@@ -6,30 +6,38 @@ using Valve.VR;
 public class AllyController : EnemyController
 {
     [SerializeField]
-    private Weapon weaponPrefab;
+    GrabableObject objectPrefab;
     [SerializeField]
     SteamVR_Input_Sources handType = SteamVR_Input_Sources.RightHand;
 
 
+    private GrabableObject w;
+    private Hand hand;
     public void Incarnate()
     {
-        Weapon w = Instantiate(weaponPrefab);
-        Hand hand = null;
+        w = Instantiate(objectPrefab);
 
-        if (handType == SteamVR_Input_Sources.RightHand)
-        {
-            hand = PlayerController.instance.GetComponent<Player>().rightHand;
-        }
-        else if (handType == SteamVR_Input_Sources.LeftHand)
-        {
-            hand = PlayerController.instance.GetComponent<Player>().leftHand;
-        }
-
+        Player player = Player.instance;
+        Hand hand = player.GetHand(handType);
         if (hand == null)
         {
-            // hand = PlayerController.instance.GetComponent<Player>().GetHand;
+            hand = player.GetHand(SteamVR_Input_Sources.Any);
         }
+        this.hand = hand;
+        w.AttachToHand(hand);
 
-        this.enabled = false;
+        player.transform.position = transform.position;
+
+        gameObject.SetActive(false);
+    }
+
+    public void DisIncarnate()
+    {
+        gameObject.SetActive(true);
+        if (w != null)
+        {
+            hand.DetachObject(w.gameObject, false);
+            Destroy(w.gameObject);
+        }
     }
 }

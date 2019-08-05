@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 4521389609776072315}
   - component: {fileID: 4521389609776072312}
   - component: {fileID: 4521389609776072313}
-  - component: {fileID: 4521389609776072314}
+  - component: {fileID: 8270039033554843499}
   m_Layer: 10
   m_Name: Ally
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MonoBehaviour:
   accuracy: 60
   maxAmmo: 30
   reloadTime: 3
---- !u!114 &4521389609776072314
+--- !u!114 &8270039033554843499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4521389609776072292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7c3888d00f7154eb457875b64e65ee, type: 3}
+  m_Script: {fileID: 11500000, guid: df8d68025f72088409494fc2f7f80b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movePoint: {fileID: 0}
@@ -224,6 +224,9 @@ MonoBehaviour:
   detectRadious: 13
   attackRadious: 8
   shotForce: 30
+  objectPrefab: {fileID: 8357617921144659852, guid: a4aa1fa9c77637440b667b3ab0d709fd,
+    type: 3}
+  handType: 2
 --- !u!1 &4521389610365896240
 GameObject:
   m_ObjectHideFlags: 0

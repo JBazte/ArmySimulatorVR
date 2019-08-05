@@ -859,7 +859,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   isAutomaic: 1
-  damage: 1
+  damage: 10
   maxAmmo: 999
   totalReloadTime: 3
   attackSpeed: 15

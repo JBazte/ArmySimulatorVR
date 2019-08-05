@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4521389609776072292, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_Name
-      value: Ally (1)
+      value: Ally SMG
       objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
@@ -106,5 +106,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8cb2dbf5a34f68046954f16e070f0ce0, type: 2}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
