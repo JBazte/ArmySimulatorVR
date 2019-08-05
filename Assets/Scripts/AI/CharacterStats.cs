@@ -125,8 +125,9 @@ public class CharacterStats : MonoBehaviour
 
     }
 
-    private void Die()
+    protected virtual void Die()
     {
+
         Destroy(gameObject);
     }
 

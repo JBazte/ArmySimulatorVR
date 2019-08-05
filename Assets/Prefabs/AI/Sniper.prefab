@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4832671024971217399, guid: ae02ae8fd7688ba4a8e04b995774bbea,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (1)
+      value: Sniper
       objectReference: {fileID: 0}
     - target: {fileID: 4832671024971217397, guid: ae02ae8fd7688ba4a8e04b995774bbea,
         type: 3}
@@ -83,6 +83,26 @@ PrefabInstance:
     - target: {fileID: 819260202, guid: ae02ae8fd7688ba4a8e04b995774bbea, type: 3}
       propertyPath: accuracy
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: accuracy
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: reloadTime
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae02ae8fd7688ba4a8e04b995774bbea, type: 3}
