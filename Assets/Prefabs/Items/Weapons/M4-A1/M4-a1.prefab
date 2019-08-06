@@ -849,7 +849,7 @@ MonoBehaviour:
   shotInstance: {fileID: 8020285274578604413, guid: f87e7551920409348b16968ca8b394a2,
     type: 3}
   bulletSpawnPosition: {fileID: 8357617921033098357}
-  bulletForce: 30
+  bulletForce: 70
   checkMagazineRadious: 1
   startMagazineLinearDrive: 0.3
   startMagazineLinearDrivePosition: {fileID: 8357617920441380477}

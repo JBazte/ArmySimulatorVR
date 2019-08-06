@@ -56,7 +56,7 @@ public class ThrowableObject : GrabableObject
 
         //hand.HoverLock(null);
 
-        rigidBody.interpolation = RigidbodyInterpolation.None;
+        // rigidBody.interpolation = RigidbodyInterpolation.None;
 
         velocityEstimator.BeginEstimatingVelocity();
 

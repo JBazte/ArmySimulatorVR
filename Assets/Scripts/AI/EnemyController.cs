@@ -135,7 +135,7 @@ public class EnemyController : MonoBehaviour
         if (distance <= attackRadious)
         {
             RaycastHit hit;
-            if (Physics.Raycast(shotSpawnPosition.position, shotSpawnPosition.forward, out hit, 100f))
+            if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 100f))
             {
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
                 {

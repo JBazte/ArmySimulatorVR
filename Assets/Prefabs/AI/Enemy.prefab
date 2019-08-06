@@ -321,7 +321,7 @@ MonoBehaviour:
     m_Bits: 9216
   attackMask:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 11264
   shotSpawnPosition: {fileID: 736575421}
   shotInstance: {fileID: 8020285274578604413, guid: 986ce682c91dec746b5425c02feee44f,
     type: 3}
