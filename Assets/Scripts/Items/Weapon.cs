@@ -25,6 +25,8 @@ public class Weapon : MonoBehaviour
     private Transform magazinePostition;
     [SerializeField]
     private LayerMask magazineLayer;
+    [SerializeField]
+    private bool isLinearDrive = true;
 
 
     [Header("Stats")]
@@ -57,10 +59,10 @@ public class Weapon : MonoBehaviour
     private Rigidbody rb;
     private float recoilTime;
     private float shotCount;
-    private bool hasMagazine;
+    protected bool hasMagazine;
 
     private bool isLinearDriving;
-    Magazine lastMag;
+    protected Magazine lastMag;
     public float GetCurrentAmmo
     {
         get
@@ -71,7 +73,7 @@ public class Weapon : MonoBehaviour
 
     private const float maxForce = 10f;
     private const float randomRecoil = 15f;
-    private const float attachAngle = 30f;
+    private const float attachAngle = 360f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -88,7 +90,7 @@ public class Weapon : MonoBehaviour
         CheckAmunition();
 
     }
-    public void Shoot()
+    public virtual void Shoot()
     {
         if (lastAttack < 0)
         {
@@ -192,14 +194,16 @@ public class Weapon : MonoBehaviour
                         if (angle <= attachAngle)
                         {
                             lastMag = magazine;
-                            if (magazine.GetComponent<Interactable>().attachedToHand == null)
+                            if (magazine.GetComponent<Interactable>().attachedToHand == null || !isLinearDrive)
                             {
                                 AttachMagazine(magazine);
+                                return;
                             }
 
                             else
                             {
                                 StartLinearDrive(magazine);
+                                return;
                             }
                         }
 
@@ -236,13 +240,15 @@ public class Weapon : MonoBehaviour
 
     private void HandAttachedUpdate(Hand hand)
     {
-        if (Input.GetKey(KeyCode.K))
-        {
-            Shoot();
-        }
+
+
         if (isAutomaic)
         {
             if (SteamVR_Input.GetState("Shoot", hand.handType))
+            {
+                Shoot();
+            }
+            if (Input.GetKey(KeyCode.K))
             {
                 Shoot();
             }
@@ -250,6 +256,10 @@ public class Weapon : MonoBehaviour
         else
         {
             if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+            {
+                Shoot();
+            }
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 Shoot();
             }

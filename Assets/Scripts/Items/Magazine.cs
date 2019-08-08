@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-[RequireComponent(typeof(MyLinearDrive))]
+
 public class Magazine : MonoBehaviour
 {
 
@@ -18,6 +18,7 @@ public class Magazine : MonoBehaviour
     private Weapon attachedWeapon;
     private Interactable interactable;
 
+    [HideInInspector]
     public Hand attachedHand;
     public float GetCurrentAmmo
     {
@@ -106,5 +107,6 @@ public enum MagazineTypes
 {
     Pistol,
     LightGun,
-    Rifle
+    Rifle,
+    Sniper
 }

@@ -124,7 +124,9 @@ public class EnemyController : MonoBehaviour
 
     public void LookAtTarget()
     {
+        Quaternion rotation = transform.rotation;
         transform.LookAt(target.transform);
+        transform.rotation = new Quaternion(rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void ChaseTargets()
