@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
-public class Object : MonoBehaviour
+public class GrabableObject : MonoBehaviour
 {
 
     [SerializeField]
@@ -71,6 +71,11 @@ public class Object : MonoBehaviour
         }
     }
 
+    public void AttachToHand(Hand hand)
+    {
+        GrabTypes startingGrabType = hand.GetGrabStarting();
+        hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
+    }
 
     //-------------------------------------------------
     // Called when this GameObject becomes attached to the hand

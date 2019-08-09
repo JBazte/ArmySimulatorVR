@@ -124,7 +124,9 @@ public class EnemyController : MonoBehaviour
 
     public void LookAtTarget()
     {
+        Quaternion rotation = transform.rotation;
         transform.LookAt(target.transform);
+        transform.rotation = new Quaternion(rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void ChaseTargets()
@@ -135,7 +137,7 @@ public class EnemyController : MonoBehaviour
         if (distance <= attackRadious)
         {
             RaycastHit hit;
-            if (Physics.Raycast(shotSpawnPosition.position, shotSpawnPosition.forward, out hit, 100f))
+            if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 100f))
             {
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
                 {
