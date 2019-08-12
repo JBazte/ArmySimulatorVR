@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnZone : MonoBehaviour
+public abstract class SpawnZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    EnemyFactory factory;
 
-    // Update is called once per frame
-    void Update()
+
+    public abstract Vector3 position { get; }
+
+    public virtual EnemyController SpawnEnemy()
     {
-        
+
     }
 }
