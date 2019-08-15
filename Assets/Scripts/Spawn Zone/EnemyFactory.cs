@@ -83,11 +83,7 @@ public class EnemyFactory : ScriptableObject
 
     public Enemy GetRandom()
     {
-
         return Get(Random.Range(0, prefabs.Length));
-
-
-
     }
 
     void CreatePools()
@@ -100,5 +96,7 @@ public class EnemyFactory : ScriptableObject
         }
         poolScene = SceneManager.CreateScene(name);
     }
+
+}
 
 

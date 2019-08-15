@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(CharacterStats))]
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
 
     [SerializeField]

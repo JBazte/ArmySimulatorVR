@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnZone : MonoBehaviour
+public abstract class SpawnZone : PersistableObject
 {
     [SerializeField]
-    EnemyFactory factory;
+    EnemyFactory[] factories;
 
 
-    public abstract Vector3 position { get; }
+    public abstract Vector3 SpawnPoint { get; }
 
-    public virtual EnemyController SpawnEnemy()
+    public virtual Enemy SpawnEnemy()
     {
+        int factoryIndex = Random.Range(0, factories.Length);
+        Enemy enemy = factories[factoryIndex].GetRandom();
+        enemy.transform.position = SpawnPoint;
 
+        return enemy;
     }
+
 }
