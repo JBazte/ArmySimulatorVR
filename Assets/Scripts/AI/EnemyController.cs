@@ -73,7 +73,6 @@ public class EnemyController : Enemy
         agent.SetDestination(target.transform.position);
         ischasingEnemy = true;
     }
-
     private void Update()
     {
         lastAttack -= Time.deltaTime;
@@ -139,14 +138,16 @@ public class EnemyController : Enemy
             RaycastHit hit;
             if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 100f))
             {
+                Shoot();
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
                 {
                     agent.isStopped = true;
-                    Shoot();
+
                 }
                 else
                 {
                     agent.isStopped = false;
+
                 }
             }
 

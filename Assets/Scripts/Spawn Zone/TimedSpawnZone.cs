@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TimedSpawnZone : MonoBehaviour
+{
+    [SerializeField]
+    private float spawnRate = 1f;
+
+    [SerializeField]
+    private SpawnZone zone;
+
+    private float lastSpawn;
+
+    private void Update()
+    {
+        lastSpawn += Time.deltaTime * spawnRate;
+
+        while (lastSpawn >= 1)
+        {
+            lastSpawn -= 1f;
+            zone.SpawnEnemy();
+        }
+    }
+    private void Start()
+    {
+        if (zone == null)
+        {
+            zone = GetComponentInChildren<SpawnZone>();
+        }
+    }
+}

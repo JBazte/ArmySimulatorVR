@@ -23,7 +23,7 @@ public class EnemyFactory : ScriptableObject
 
         if (recycle)
         {
-            if (poolScene == null)
+            if (pools == null)
             {
                 CreatePools();
             }

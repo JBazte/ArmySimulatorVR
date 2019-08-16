@@ -44,4 +44,6 @@ public class Enemy : MonoBehaviour
     private EnemyFactory originFactory;
 
 
+
+
 }
