@@ -29,4 +29,10 @@ public class TimedSpawnZone : MonoBehaviour
             zone = GetComponentInChildren<SpawnZone>();
         }
     }
+
+    private float ExpotentionalFunction(float x, float a, float b)
+    {
+        return a * x * x + b;
+    }
+
 }

@@ -39,7 +39,7 @@ public class EnemyController : Enemy
     bool ischasingEnemy;
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+
         stats = GetComponent<CharacterStats>();
         if (movePoint != null)
         {
@@ -53,6 +53,10 @@ public class EnemyController : Enemy
         agent.stoppingDistance = attackRadious;
         currentAmmo = stats.MaxAmmo;
 
+    }
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
     }
 
     public void SetPoint(Transform position)

@@ -34,9 +34,29 @@ public class CompositeSpawnPosition : SpawnZone
     }
     public override Enemy SpawnEnemy()
     {
+        Enemy e;
         if (overrideConf)
         {
+            e = base.SpawnEnemy();
+        }
+        else
+        {
+            int index;
+            if (sequencial)
+            {
+                index = lastSpawn++;
+                if (lastSpawn >= spawnZones.Length)
+                {
+                    lastSpawn = 0;
+                }
+            }
+            else
+            {
+                index = Random.Range(0, spawnZones.Length);
+            }
+            e = spawnZones[index].SpawnEnemy();
 
         }
+        return e;
     }
 }
