@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6020fbea939589f469b933ed1cba1d2c, type: 3}
-  m_Name: TestFactory
+  m_Name: GropuedEnemiesFactory
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 866248180896269826, guid: d1686b8d6b519594d925a57215515af1, type: 3}
-  recycle: 1
+  - {fileID: 7821324485555681462, guid: 87d81bcef401c254fa7cdcb7f337f823, type: 3}
+  recycle: 0
