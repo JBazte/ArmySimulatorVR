@@ -22,6 +22,17 @@ public abstract class SpawnZone : PersistableObject
             {
                 ((EnemyController)enemy).SetPoint(movePosition);
             }
+            else
+            {
+                EnemyController[] childEnemys = enemy.GetComponentsInChildren<EnemyController>();
+                if (childEnemys != null)
+                {
+                    foreach (var e in childEnemys)
+                    {
+                        e.SetPoint(movePosition);
+                    }
+                }
+            }
         }
         return enemy;
     }
