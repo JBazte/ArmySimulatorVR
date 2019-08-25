@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : PersistableObject
 {
     public int EnemyID
     {
@@ -40,9 +40,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private int enemyID;
+    private int enemyID = int.MinValue;
     private EnemyFactory originFactory;
-
+    public void Recycle()
+    {
+        originFactory.Reclaim(this);
+    }
 
 
 

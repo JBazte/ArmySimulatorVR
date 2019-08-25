@@ -20,7 +20,7 @@ public abstract class SpawnZone : PersistableObject
         {
             if (enemy is EnemyController)
             {
-                ((EnemyController)enemy).SetPoint(movePosition);
+                ((EnemyController)enemy).SetPoint(movePosition.position);
             }
             else
             {
@@ -29,7 +29,7 @@ public abstract class SpawnZone : PersistableObject
                 {
                     foreach (var e in childEnemys)
                     {
-                        e.SetPoint(movePosition);
+                        e.SetPoint(movePosition.position);
                     }
                 }
             }

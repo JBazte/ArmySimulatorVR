@@ -7,7 +7,7 @@ public class EnemyController : Enemy
 {
 
     [SerializeField]
-    private Transform movePoint;
+    private Vector3 movePoint;
     [SerializeField]
     private LayerMask detectMask;
     [SerializeField]
@@ -32,7 +32,7 @@ public class EnemyController : Enemy
     private CharacterStats stats;
     private CharacterStats target;
     private float lastAttack;
-    private float currentAmmo;
+    private int currentAmmo;
     private bool isReloading;
 
 
@@ -40,7 +40,7 @@ public class EnemyController : Enemy
     private void Start()
     {
 
-        stats = GetComponent<CharacterStats>();
+
         if (movePoint != null)
         {
             SetPoint(movePoint);
@@ -57,17 +57,23 @@ public class EnemyController : Enemy
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        stats = GetComponent<CharacterStats>();
     }
 
     public void SetPoint(Transform position)
     {
+
+        SetPoint(transform.position);
+
+    }
+    public void SetPoint(Vector3 position)
+    {
         this.movePoint = position;
-        agent.SetDestination(position.position);
+        agent.SetDestination(position);
         target = null;
         ischasingEnemy = false;
         agent.stoppingDistance = 0;
         agent.isStopped = false;
-
     }
 
     public void SetTarget(CharacterStats target)
@@ -119,8 +125,8 @@ public class EnemyController : Enemy
         }
         else
         {
-            if (movePoint != null)
-                SetPoint(movePoint);
+
+            SetPoint(movePoint);
             ischasingEnemy = false;
         }
     }
@@ -201,5 +207,23 @@ public class EnemyController : Enemy
         Gizmos.DrawWireSphere(transform.position, attackRadious);
     }
 
+    public override void Save(GameDataWriter writer)
+    {
+        base.Save(writer);
+        writer.Write(stats.CurrentHealth);
+        writer.Write(currentAmmo);
+        writer.Write(lastAttack);
+        writer.Write(movePoint);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        base.Load(reader);
+        stats.HealDamage(reader.ReadFloat() - stats.CurrentHealth);
+        currentAmmo = reader.ReadInt();
+        lastAttack = reader.ReadFloat();
+        Vector3 position = reader.ReadVector3();
+        SetPoint(position);
+    }
 
 }

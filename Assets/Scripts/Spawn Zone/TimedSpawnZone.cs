@@ -14,6 +14,10 @@ public class TimedSpawnZone : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            zone.SpawnEnemy();
+        }
         lastSpawn += Time.deltaTime * spawnRate;
 
         while (lastSpawn >= 1)

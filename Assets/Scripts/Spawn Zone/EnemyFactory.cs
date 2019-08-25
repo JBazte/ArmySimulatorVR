@@ -17,6 +17,22 @@ public class EnemyFactory : ScriptableObject
 
     Scene poolScene;
 
+    public int FactoryID
+    {
+        get
+        {
+            return factoryID;
+        }
+        set
+        {
+            if (value != int.MinValue && factoryID == int.MinValue)
+            {
+                factoryID = value;
+            }
+        }
+    }
+    [System.NonSerialized]
+    private int factoryID = int.MinValue;
     public Enemy Get(int enemyId = 0)
     {
         Enemy instance;
@@ -50,6 +66,8 @@ public class EnemyFactory : ScriptableObject
             instance = Instantiate(prefabs[enemyId]);
             instance.EnemyID = enemyId;
         }
+        GameController.instance.AddEnemy(instance);
+
         return instance;
 
     }
@@ -75,6 +93,7 @@ public class EnemyFactory : ScriptableObject
         }
         else
         {
+            GameController.instance.RemoveEnemy(enemy);
             Destroy(enemy.gameObject);
         }
 

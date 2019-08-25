@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : PersistableObject
 {
     [Header("Stats")]
     [SerializeField]
@@ -18,7 +18,7 @@ public class CharacterStats : MonoBehaviour
     [Range(0, 100)]
     private float accuracy = 80;
     [SerializeField]
-    private float maxAmmo = 30;
+    private int maxAmmo = 30;
     [SerializeField]
     private float reloadTime = 3;
 
@@ -62,7 +62,7 @@ public class CharacterStats : MonoBehaviour
             return damage;
         }
     }
-    public float MaxAmmo
+    public int MaxAmmo
     {
         get
         {
@@ -124,11 +124,23 @@ public class CharacterStats : MonoBehaviour
 
 
     }
+    public void Reset()
+    {
+        currentHealth = MaxHealth;
+    }
 
     protected virtual void Die()
     {
-
-        Destroy(gameObject);
+        Enemy e = GetComponentInChildren<Enemy>();
+        if (e != null)
+        {
+            Reset();
+            e.Recycle();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
