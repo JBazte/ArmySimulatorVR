@@ -71,6 +71,7 @@ public class GameController : PersistableObject
         writer.Write(Random.state);
         scoreController.Save(writer);
         writer.Write(buildIndex);
+        LevelController.current.Save(writer);
         writer.Write(enemies.Count);
         foreach (var enemy in enemies)
         {
@@ -86,7 +87,7 @@ public class GameController : PersistableObject
         scoreController.Load(reader);
 
         yield return LoadLevel(reader.ReadInt());
-
+        LevelController.current.Load(reader);
         int enemiesLenght = reader.ReadInt();
         for (int i = 0; i < enemiesLenght; i++)
         {
