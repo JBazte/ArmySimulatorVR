@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020fbea939589f469b933ed1cba1d2c, type: 3}
+  m_Name: GropuedEnemiesFactory
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 7821324485555681462, guid: 87d81bcef401c254fa7cdcb7f337f823, type: 3}
+  - {fileID: 1344419313038752261, guid: 90178e8567687754284157bd369ce8a8, type: 3}
+  - {fileID: 7850876926100581384, guid: c749e36e77b8c4142a21b08e3ecc5269, type: 3}
+  recycle: 0

@@ -152,7 +152,7 @@ public class Weapon : MonoBehaviour
     {
         if (magazine.GetMagazineType == ammoType)
         {
-            Debug.Log("attached");
+            // Debug.Log("attached");
             magazine.OnAttachedToWeapon(this);
             currentAmmo = magazine.GetCurrentAmmo;
             hasMagazine = true;

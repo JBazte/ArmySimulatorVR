@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class ScoreController : MonoBehaviour
+public class ScoreController : PersistableObject
 {
     #region Singelton
 
@@ -32,6 +32,16 @@ public class ScoreController : MonoBehaviour
                 OnScoreChange.Invoke();
             }
         }
+    }
+
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(score);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        score = reader.ReadFloat();
     }
 
 }
