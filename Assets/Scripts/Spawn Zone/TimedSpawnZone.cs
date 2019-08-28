@@ -37,7 +37,7 @@ public class TimedSpawnZone : MonoBehaviour
 
     public void SetUnitSpawn(float count)
     {
-        unitSpawn = count;
+        unitSpawn += count;
         haswaves = true;
     }
     private void Start()

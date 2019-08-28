@@ -20,7 +20,7 @@ public class WaveController : PersistableObject
     private int enemyQuantity;
     private int currentWave = 0;
     private float waveTimeLeft;
-
+    const int changeFunction = 35;
 
     public System.Action OnWaveStart;
 
@@ -49,8 +49,11 @@ public class WaveController : PersistableObject
         {
             OnWaveStart.Invoke();
         }
-        enemyQuantity = Mathf.RoundToInt(LogarithmFunction(currentWave, enemiesMultipier, minimunEnemyPerWave));
-
+        enemyQuantity = Mathf.RoundToInt(ExpotentionalFunction(currentWave, 1 / enemiesMultipier, minimunEnemyPerWave));
+        if (enemyQuantity > changeFunction)
+        {
+            enemyQuantity = Mathf.RoundToInt(LogarithmFunction(currentWave, enemiesMultipier, minimunEnemyPerWave));
+        }
         enemiesSpawnZone.SetUnitSpawn(enemyQuantity);
     }
 
@@ -61,7 +64,7 @@ public class WaveController : PersistableObject
 
     private float ExpotentionalFunction(float x, float a, float b)
     {
-        return a * x * x + b;
+        return a * (x * x) + b;
     }
 
     public override void Save(GameDataWriter writer)
