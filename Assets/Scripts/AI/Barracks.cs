@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Barracks : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Transform standPoint;
+    public Transform GetStandPoint()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return standPoint;
     }
 }
