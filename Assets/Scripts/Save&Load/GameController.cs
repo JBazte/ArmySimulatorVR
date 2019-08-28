@@ -42,7 +42,6 @@ public class GameController : PersistableObject
 
         if (Input.GetKeyDown(saveKey))
         {
-            Debug.Log("a");
             storage.Save(this, saveVersion);
         }
         if (Input.GetKeyDown(loadKey))

@@ -12,6 +12,14 @@ public class LevelController : PersistableObject
     public WaveController waveController;
 
 
+    public void Awake()
+    {
+        current = this;
+        if (waveController == null)
+        {
+            waveController = GetComponentInChildren<WaveController>();
+        }
+    }
     public override void Save(GameDataWriter writer)
     {
         waveController.Save(writer);
@@ -19,14 +27,6 @@ public class LevelController : PersistableObject
         foreach (var o in objectToSave)
         {
             o.Save(writer);
-        }
-    }
-    public void Awake()
-    {
-        current = this;
-        if (waveController == null)
-        {
-            waveController = GetComponentInChildren<WaveController>();
         }
     }
     public override void Load(GameDataReader reader)

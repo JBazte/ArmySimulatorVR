@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimedSpawnZone : MonoBehaviour
+public class TimedSpawnZone : PersistableObject
 {
     [SerializeField]
     private float spawnRate = 1f;
@@ -15,7 +15,7 @@ public class TimedSpawnZone : MonoBehaviour
 
     bool haswaves;
 
-    private float unitSpawn;
+    private int unitSpawn = int.MinValue;
     private void Update()
     {
         lastSpawn += Time.deltaTime * spawnRate;
@@ -35,9 +35,16 @@ public class TimedSpawnZone : MonoBehaviour
         }
     }
 
-    public void SetUnitSpawn(float count)
+    public void SetUnitSpawn(int count)
     {
-        unitSpawn += count;
+        if (unitSpawn == int.MinValue)
+        {
+            unitSpawn = count;
+        }
+        else
+        {
+            unitSpawn += count;
+        }
         haswaves = true;
     }
     private void Start()
@@ -45,6 +52,22 @@ public class TimedSpawnZone : MonoBehaviour
         if (zone == null)
         {
             zone = GetComponentInChildren<SpawnZone>();
+        }
+    }
+
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(unitSpawn);
+        Debug.Log(unitSpawn);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        unitSpawn = reader.ReadInt();
+        Debug.Log(unitSpawn);
+        if (unitSpawn != int.MinValue)
+        {
+            haswaves = true;
         }
     }
 

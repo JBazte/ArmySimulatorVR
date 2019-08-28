@@ -4841,7 +4841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73938e63bf073f4daff5ef387eda345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSave: []
+  objectToSave:
+  - {fileID: 42206770}
   waveController: {fileID: 0}
 --- !u!4 &782865756
 Transform:
