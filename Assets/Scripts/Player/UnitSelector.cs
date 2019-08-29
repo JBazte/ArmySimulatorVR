@@ -11,6 +11,7 @@ public class UnitSelector : MonoBehaviour
 
     public LayerMask barrackMask;
     private Vector3 startPosition;
+    private Quaternion startRotation;
     private bool isIncarnated;
     AllyController selected;
     private void Select()
@@ -83,7 +84,8 @@ public class UnitSelector : MonoBehaviour
             {
                 if (!isIncarnated)
                 {
-                    Select();
+                    if (hand.currentAttachedObjectInfo == null)
+                        Select();
                 }
             }
             if (selected != null)
@@ -99,9 +101,11 @@ public class UnitSelector : MonoBehaviour
                     {
                         isIncarnated = false;
                         selected.DisIncarnate();
-                        selected = null;
+
                         selected.ChangeColor(Color.blue);
-                        transform.position = startPosition;
+                        Player.instance.transform.position = startPosition;
+                        Player.instance.transform.rotation = startRotation;
+                        selected = null;
                     }
                 }
             }

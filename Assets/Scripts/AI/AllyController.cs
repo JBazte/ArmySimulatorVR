@@ -27,7 +27,8 @@ public class AllyController : EnemyController
         w.AttachToHand(hand);
 
         player.transform.position = transform.position;
-
+        player.transform.rotation = transform.rotation;
+        player.GetComponentInChildren<MagazineSpawner>().ChangeType((w.GetComponent<Weapon>()).MagazineType);
         gameObject.SetActive(false);
     }
 

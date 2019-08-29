@@ -43,6 +43,11 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private MagazineTypes ammoType = MagazineTypes.Rifle;
 
+    public MagazineTypes MagazineType{
+        get{
+            return ammoType;
+        }
+    }
     [Header("Recoil")]
     [SerializeField]
     private float startingRecoilForce = 5f;

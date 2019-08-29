@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 public class ItemSpawner : MonoBehaviour
 {
     [SerializeField]
-    GrabableObject item;
+    protected GrabableObject item;
     [SerializeField]
     Transform transformPositon;
 
