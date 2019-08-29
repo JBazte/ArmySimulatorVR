@@ -10,6 +10,8 @@ public class UnitSelector : MonoBehaviour
     LayerMask layerMask;
 
     public LayerMask barrackMask;
+    private Vector3 startPosition;
+    private bool isIncarnated;
     AllyController selected;
     private void Select()
     {
@@ -21,7 +23,7 @@ public class UnitSelector : MonoBehaviour
         Ray ray;
         if (hand != null)
         {
-            ray = new Ray(hand.transform.position, hand.transform.forward);
+            ray = new Ray(transform.position, transform.forward);
         }
         else
         {
@@ -33,6 +35,7 @@ public class UnitSelector : MonoBehaviour
         if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, 50f, layerMask))
         {
             selected = hit.collider.GetComponentInParent<AllyController>();
+            selected.ChangeColor(Color.green);
             if (selected != null)
                 Debug.Log(selected);
         }
@@ -43,7 +46,7 @@ public class UnitSelector : MonoBehaviour
         Ray ray;
         if (hand != null)
         {
-            ray = new Ray(hand.transform.position, hand.transform.forward);
+            ray = new Ray(transform.position, transform.forward);
         }
         else
         {
@@ -59,24 +62,48 @@ public class UnitSelector : MonoBehaviour
             {
                 Transform point = b.GetStandPoint();
                 selected.SetPoint(point.position);
+                Debug.Log(b);
             }
         }
-
+        selected.ChangeColor(Color.blue);
         selected = null;
     }
 
     private void Start()
     {
         hand = GetComponentInParent<Hand>();
+        startPosition = transform.position;
     }
 
     void Update()
     {
         if (hand != null)
         {
-            if (SteamVR_Input.GetState("Shoot", hand.handType))
+            if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
             {
-                Select();
+                if (!isIncarnated)
+                {
+                    Select();
+                }
+            }
+            if (selected != null)
+            {
+                if (SteamVR_Input.GetStateDown("Teleport", hand.handType))
+                {
+                    if (!isIncarnated)
+                    {
+                        selected.Incarnate();
+                        isIncarnated = true;
+                    }
+                    else
+                    {
+                        isIncarnated = false;
+                        selected.DisIncarnate();
+                        selected = null;
+                        selected.ChangeColor(Color.blue);
+                        transform.position = startPosition;
+                    }
+                }
             }
         }
         else
@@ -86,5 +113,7 @@ public class UnitSelector : MonoBehaviour
                 Select();
             }
         }
+
+
     }
 }

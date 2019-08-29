@@ -73,7 +73,7 @@ public class Weapon : MonoBehaviour
 
     private const float maxForce = 10f;
     private const float randomRecoil = 15f;
-    private const float attachAngle = 360f;
+    private const float attachAngle = 30f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();

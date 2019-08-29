@@ -10,13 +10,13 @@ public class AllyController : EnemyController
     [SerializeField]
     SteamVR_Input_Sources handType = SteamVR_Input_Sources.RightHand;
 
-
+   
     private GrabableObject w;
     private Hand hand;
     public void Incarnate()
     {
         w = Instantiate(objectPrefab);
-
+        w.transform.position = transform.position;
         Player player = Player.instance;
         Hand hand = player.GetHand(handType);
         if (hand == null)
@@ -39,5 +39,17 @@ public class AllyController : EnemyController
             hand.DetachObject(w.gameObject, false);
             Destroy(w.gameObject);
         }
+    }
+
+    public void ChangeColor(Color color){
+        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
+        foreach (var m in ms)
+        {
+            m.material.color = color; 
+        }
+    }
+
+    public void ResetColors(){
+
     }
 }
