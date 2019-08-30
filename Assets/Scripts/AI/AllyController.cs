@@ -10,7 +10,7 @@ public class AllyController : EnemyController
     [SerializeField]
     SteamVR_Input_Sources handType = SteamVR_Input_Sources.RightHand;
 
-   
+    List<Color> defaultColors;
     private GrabableObject w;
     private Hand hand;
     public void Incarnate()
@@ -41,16 +41,30 @@ public class AllyController : EnemyController
             Destroy(w.gameObject);
         }
     }
-
-    public void ChangeColor(Color color){
+    private void Start()
+    {
         MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
         foreach (var m in ms)
         {
-            m.material.color = color; 
+            defaultColors.Add(m.material.color);
+        }
+    }
+    public void ChangeColor(Color color)
+    {
+        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
+        foreach (var m in ms)
+        {
+            m.material.color = color;
         }
     }
 
-    public void ResetColors(){
+    public void ResetColors()
+    {
+        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
 
+        for (int i = 0; i < defaultColors.Count; i++)
+        {
+            ms[i].material.color = defaultColors[i];
+        }
     }
 }

@@ -115,9 +115,11 @@ public class EnemyController : Enemy
         }
         if (lastLookAround <= 0)
         {
-            animatorController.SetTrigger("isLooking");
+            if (!ischasingEnemy)
+                animatorController.SetTrigger("isLooking");
             lastLookAround = 3f;
         }
+
 
 
     }
