@@ -37,6 +37,11 @@ public class EnemyController : Enemy
 
 
     bool ischasingEnemy;
+    bool isMoving;
+    [SerializeField]
+    private Animator animatorController;
+    private float lastLookAround;
+
     private void Start()
     {
 
@@ -52,14 +57,17 @@ public class EnemyController : Enemy
         agent.speed = stats.Speed;
         agent.stoppingDistance = attackRadious;
         currentAmmo = stats.MaxAmmo;
+        lastLookAround = 3f;
+
 
     }
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         stats = GetComponent<CharacterStats>();
-    }
+        animatorController = GetComponentInChildren<Animator>();
 
+    }
     public void SetPoint(Transform position)
     {
 
@@ -85,6 +93,7 @@ public class EnemyController : Enemy
     }
     private void Update()
     {
+        lastLookAround -= Time.deltaTime;
         lastAttack -= Time.deltaTime;
         SearchTargets();
         if (ischasingEnemy)
@@ -94,6 +103,22 @@ public class EnemyController : Enemy
         {
             stats.TakeDamage(10f);
         }
+
+        if (agent.velocity != Vector3.zero)
+        {
+            animatorController.SetBool("isRunning", true);
+        }
+        else
+        {
+            animatorController.SetBool("isRunning", false);
+
+        }
+        if (lastLookAround <= 0)
+        {
+            animatorController.SetTrigger("isLooking");
+            lastLookAround = 3f;
+        }
+
 
     }
 
@@ -224,6 +249,11 @@ public class EnemyController : Enemy
         lastAttack = reader.ReadFloat();
         Vector3 position = reader.ReadVector3();
         SetPoint(position);
+        if (currentAmmo == 0)
+        {
+            StartCoroutine(Reload());
+        }
+
     }
 
 }
