@@ -13,10 +13,10 @@ public class AllyController : EnemyController
     List<Color> defaultColors;
     private GrabableObject w;
     private Hand hand;
+    SkinnedMeshRenderer mr;
     public void Incarnate()
     {
-        w = Instantiate(objectPrefab);
-        w.transform.position = transform.position;
+       
         Player player = Player.instance;
         Hand hand = player.GetHand(handType);
         if (hand == null)
@@ -24,11 +24,14 @@ public class AllyController : EnemyController
             hand = player.GetHand(SteamVR_Input_Sources.Any);
         }
         this.hand = hand;
+         w = Instantiate(objectPrefab);
+        w.transform.position = hand.transform.position;
+
         w.AttachToHand(hand);
 
         player.transform.position = transform.position;
         player.transform.rotation = transform.rotation;
-        player.GetComponentInChildren<MagazineSpawner>().ChangeType((w.GetComponent<Weapon>()).MagazineType);
+        player.GetComponentInChildren<MagazineSpawner>().ChangeType((w.GetComponentInChildren<Weapon>()).MagazineType);
         gameObject.SetActive(false);
     }
 
@@ -48,6 +51,7 @@ public class AllyController : EnemyController
         {
             defaultColors.Add(m.material.color);
         }
+        mr = GetComponentInChildren<SkinnedMeshRenderer>();
     }
     public void ChangeColor(Color color)
     {
@@ -56,6 +60,14 @@ public class AllyController : EnemyController
         {
             m.material.color = color;
         }
+    }
+    public void ChangeSpecificColor(Color color)
+    {
+        mr.materials[8].color = color;
+    }
+
+    public void ResetSpecificColor(){
+        mr.materials[8].color = Color.yellow;
     }
 
     public void ResetColors()

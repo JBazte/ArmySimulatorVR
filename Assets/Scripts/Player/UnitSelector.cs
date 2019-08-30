@@ -36,7 +36,7 @@ public class UnitSelector : MonoBehaviour
         if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, 50f, layerMask))
         {
             selected = hit.collider.GetComponentInParent<AllyController>();
-            selected.ChangeColor(Color.green);
+            selected.ChangeSpecificColor(Color.green);
             if (selected != null)
                 Debug.Log(selected);
         }
@@ -66,7 +66,7 @@ public class UnitSelector : MonoBehaviour
                 Debug.Log(b);
             }
         }
-        selected.ChangeColor(Color.blue);
+        selected.ResetSpecificColor();
         selected = null;
     }
 
@@ -102,7 +102,7 @@ public class UnitSelector : MonoBehaviour
                         isIncarnated = false;
                         selected.DisIncarnate();
 
-                        selected.ChangeColor(Color.blue);
+                        selected.ResetSpecificColor();
                         Player.instance.transform.position = startPosition;
                         Player.instance.transform.rotation = startRotation;
                         selected = null;
