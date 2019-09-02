@@ -3,6 +3,7 @@ using Valve.VR.InteractionSystem;
 using Valve.VR;
 public class UnitSelector : MonoBehaviour
 {
+
     private Hand hand;
     [SerializeField]
     float sphereSelectionRadious = 2.5f;
@@ -14,33 +15,7 @@ public class UnitSelector : MonoBehaviour
     private Quaternion startRotation;
     private bool isIncarnated;
     AllyController selected;
-    private void Select()
-    {
-        if (selected != null)
-        {
-            Move();
-            return;
-        }
-        Ray ray;
-        if (hand != null)
-        {
-            ray = new Ray(transform.position, transform.forward);
-        }
-        else
-        {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        }
-        RaycastHit hit;
-
-        if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, 50f, layerMask))
-        {
-            selected = hit.collider.GetComponentInParent<AllyController>();
-            selected.ChangeSpecificColor(Color.green);
-            if (selected != null)
-                Debug.Log(selected);
-        }
-    }
 
     public void Move()
     {
@@ -94,18 +69,12 @@ public class UnitSelector : MonoBehaviour
                 {
                     if (!isIncarnated)
                     {
-                        selected.Incarnate();
-                        isIncarnated = true;
+                        Incarnate(selected);
                     }
                     else
                     {
-                        isIncarnated = false;
-                        selected.DisIncarnate();
-
-                        selected.ResetSpecificColor();
-                        Player.instance.transform.position = startPosition;
-                        Player.instance.transform.rotation = startRotation;
-                        selected = null;
+                        DisCarnate();
+                        UnSelect();
                     }
                 }
             }
@@ -118,6 +87,40 @@ public class UnitSelector : MonoBehaviour
             }
         }
 
+
+    }
+
+    void Incarnate(AllyController ally)
+    {
+        selected.Incarnate();
+        isIncarnated = true;
+    }
+
+    void DisCarnate()
+    {
+        selected.DisIncarnate();
+        isIncarnated = false;
+    }
+
+    public void Select(AllyController ally)
+    {
+        if (selected != null)
+        {
+
+        }
+        selected = ally;
+        selected.ChangeSpecificColor(Color.green);
+        if (selected != null)
+            Debug.Log(selected);
+    }
+
+    void UnSelect()
+    {
+        selected.ResetSpecificColor();
+        Player.instance.transform.position = startPosition;
+        Player.instance.transform.rotation = startRotation;
+        selected = null;
+        selected = null;
 
     }
 }

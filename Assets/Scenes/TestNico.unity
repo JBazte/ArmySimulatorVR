@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,31 +262,6 @@ Transform:
   m_Father: {fileID: 1990883249}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &40527381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 114188, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1822258007}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &40527382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40527381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4ed0a8dece1d346a353686d6aaaedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  damage: 10
-  speed: 5
-  attackSpeed: 3
-  accuracy: 80
-  maxAmmo: 30
-  reloadTime: 3
 --- !u!1 &42206767
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &67539717
 AudioListener:
   m_ObjectHideFlags: 0
@@ -586,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 4826714252929842645, guid: a969b87ca2e87df41903f5d7ce5daa19,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4826714252929999285, guid: a969b87ca2e87df41903f5d7ce5daa19,
         type: 3}
@@ -5844,7 +5819,7 @@ PrefabInstance:
     - target: {fileID: 8029921448160060607, guid: 6ee5d341f61fc004dabcc912b044154d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8029921448160060593, guid: 6ee5d341f61fc004dabcc912b044154d,
         type: 3}
@@ -6229,7 +6204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1017469304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9183,6 +9158,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1622859260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1683401690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1822258007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1683401691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683401690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9742ef7349a933b47a36c199d3b39745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 10
+  speed: 5
+  attackSpeed: 3
+  accuracy: 80
+  maxAmmo: 30
+  reloadTime: 3
 --- !u!1001 &1693802474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11807,7 +11807,7 @@ PrefabInstance:
     - target: {fileID: 8020285274578604422, guid: f87e7551920409348b16968ca8b394a2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8020285274578604418, guid: f87e7551920409348b16968ca8b394a2,
         type: 3}

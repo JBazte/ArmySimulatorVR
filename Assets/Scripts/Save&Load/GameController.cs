@@ -11,6 +11,8 @@ public class GameController : PersistableObject
     PersistantStorage storage;
     [SerializeField]
     ScoreController scoreController;
+    [SerializeField]
+    public UnitSelector unitSelector;
     const int saveVersion = 0;
 
     [SerializeField]
@@ -34,6 +36,10 @@ public class GameController : PersistableObject
         if (scoreController == null)
         {
             scoreController = FindObjectOfType<ScoreController>();
+        }
+        if (unitSelector == null)
+        {
+            unitSelector = FindObjectOfType<UnitSelector>();
         }
     }
 
