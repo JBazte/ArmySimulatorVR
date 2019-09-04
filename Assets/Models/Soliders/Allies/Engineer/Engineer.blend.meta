@@ -23,6 +23,36 @@ ModelImporter:
     100034: R_Leg
     100036: //RootNode
     100038: Cube_001
+    100040: arm1.L
+    100042: arm1.R.001
+    100044: arm2.L
+    100046: arm2.R.001
+    100048: Armature
+    100050: Bone_end
+    100052: Cube.007
+    100054: foot.L
+    100056: foot.L_end
+    100058: foot.R.001
+    100060: foot.R.001_end
+    100062: hand.L
+    100064: hand.L_end
+    100066: hand.R.001
+    100068: head
+    100070: head_end
+    100072: IKTarget.L
+    100074: IKTarget.L_end
+    100076: IKTarget.R
+    100078: IKTarget.R_end
+    100080: leg1.L
+    100082: leg1.R.001
+    100084: leg2.L
+    100086: leg2.R.001
+    100088: lowerTorso
+    100090: poleTarget.L
+    100092: poleTarget.L_end
+    100094: poleTarget.R
+    100096: poleTarget.R_end
+    100098: upperTorso
     400000: Body
     400002: Bone
     400004: Cube_000
@@ -43,6 +73,36 @@ ModelImporter:
     400034: R_Leg
     400036: //RootNode
     400038: Cube_001
+    400040: arm1.L
+    400042: arm1.R.001
+    400044: arm2.L
+    400046: arm2.R.001
+    400048: Armature
+    400050: Bone_end
+    400052: Cube.007
+    400054: foot.L
+    400056: foot.L_end
+    400058: foot.R.001
+    400060: foot.R.001_end
+    400062: hand.L
+    400064: hand.L_end
+    400066: hand.R.001
+    400068: head
+    400070: head_end
+    400072: IKTarget.L
+    400074: IKTarget.L_end
+    400076: IKTarget.R
+    400078: IKTarget.R_end
+    400080: leg1.L
+    400082: leg1.R.001
+    400084: leg2.L
+    400086: leg2.R.001
+    400088: lowerTorso
+    400090: poleTarget.L
+    400092: poleTarget.L_end
+    400094: poleTarget.R
+    400096: poleTarget.R_end
+    400098: upperTorso
     2100000: Material_212
     2100002: Material_208
     2100004: Material_211
@@ -76,6 +136,22 @@ ModelImporter:
     2100060: Material_039
     2100062: Material_041
     2100064: phong1SG
+    2100066: Material.026
+    2100068: Material.036
+    2100070: Material.000
+    2100072: Material.002
+    2100074: Material.007
+    2100076: Material.008
+    2100078: Material.027
+    2100080: Material.025
+    2100082: Material.024
+    2100084: Material.028
+    2100086: DefaultMaterial
+    2100088: Material.038
+    2100090: Material.037
+    2100092: Material.040
+    2100094: Material.039
+    2100096: Material.041
     2300000: Cube_000
     2300002: M4_008
     2300004: M4_009
@@ -87,10 +163,15 @@ ModelImporter:
     4300004: M4_008
     4300006: M4_009
     4300008: Cube_001
+    4300010: Cube.007
     7400000: Default Take
+    7400002: Armature|IdleLooking
+    7400004: Armature|Running
+    7400006: Armature|Shooting
     9500000: //RootNode
     13700000: Cube_999
     13700002: Cube_001
+    13700004: Cube.007
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
