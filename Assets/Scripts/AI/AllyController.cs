@@ -66,6 +66,7 @@ public class AllyController : EnemyController
             defaultColors.Add(m.material.color);
         }
         mr = GetComponentInChildren<SkinnedMeshRenderer>();
+        base.Start();
     }
     public void ChangeColor(Color color)
     {
@@ -108,7 +109,7 @@ public class AllyController : EnemyController
     {
         if (selectable.Type == SelectableTypes.Barracks)
         {
-            SetPoint(selectable.transform.position);
+            SetPoint((selectable as Barracks).GetStandPoint.position);
         }
     }
     public override void OnInputAction()

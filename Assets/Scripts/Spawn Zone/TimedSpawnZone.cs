@@ -53,7 +53,7 @@ public class TimedSpawnZone : PersistableObject
         {
             zone = GetComponentInChildren<SpawnZone>();
         }
-        lastSpawn = 1f;
+        //lastSpawn = 1f;
     }
 
     public override void Save(GameDataWriter writer)

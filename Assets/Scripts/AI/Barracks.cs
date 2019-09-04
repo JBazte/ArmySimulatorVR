@@ -2,12 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barracks : MonoBehaviour
+public class Barracks : Selectable
 {
     [SerializeField]
     Transform standPoint;
-    public Transform GetStandPoint()
+
+    public Transform GetStandPoint
     {
-        return standPoint;
+        get
+        {
+            return standPoint;
+        }
+    }
+    public override SelectableTypes Type
+    {
+        get
+        {
+            return SelectableTypes.Barracks;
+        }
+    }
+
+    public override void Diselected()
+    {
+
+    }
+
+
+    public override void OnSelected()
+    {
+
     }
 }

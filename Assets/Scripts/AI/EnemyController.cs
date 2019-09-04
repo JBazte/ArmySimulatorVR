@@ -42,10 +42,8 @@ public class EnemyController : Enemy
     private Animator animatorController;
     private float lastLookAround;
 
-    private void Start()
+    protected void Start()
     {
-
-
         if (movePoint != null)
         {
             SetPoint(movePoint);
@@ -58,8 +56,6 @@ public class EnemyController : Enemy
         agent.stoppingDistance = attackRadious;
         currentAmmo = stats.MaxAmmo;
         lastLookAround = 3f;
-
-
     }
     private void Awake()
     {

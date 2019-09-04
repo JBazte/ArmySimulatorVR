@@ -5,12 +5,6 @@ public class UnitSelector : MonoBehaviour
 {
 
     private Hand hand;
-    [SerializeField]
-    float sphereSelectionRadious = 2.5f;
-    [SerializeField]
-    LayerMask layerMask;
-
-    public LayerMask barrackMask;
     private Vector3 startPosition;
     private Quaternion startRotation;
     private bool isIncarnated;
@@ -52,28 +46,37 @@ public class UnitSelector : MonoBehaviour
 
     public void Select(Selectable newSelected)
     {
-        if (BlockSelection)
+        if (newSelected != null)
         {
-            if (selected != null)
+
+            if (!BlockSelection)
             {
-                // Two Step Selection
-                selected.AfterSelected(newSelected);
-                selected.Diselected();
+                if (selected != null)
+                {
+                    // Two Step Selection
+                    selected.AfterSelected(newSelected);
+                    selected.Diselected();
+                }
+                newSelected.OnSelected();
+                this.selected = newSelected;
+                if (newSelected != null)
+                    Debug.Log(newSelected);
             }
-            selected.OnSelected();
-            this.selected = newSelected;
-            if (selected != null)
-                Debug.Log(selected);
+        }
+        else
+        {
+            UnSelect();
         }
     }
 
     void UnSelect()
     {
-        selected.Diselected();
-
-        Player.instance.transform.position = startPosition;
-        Player.instance.transform.rotation = startRotation;
+        if (selected != null)
+            selected.Diselected();
         selected = null;
+        //Player.instance.transform.position = startPosition;
+        //Player.instance.transform.rotation = startRotation;
+
 
 
     }

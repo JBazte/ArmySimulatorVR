@@ -10,6 +10,8 @@ public class HandSelector : MonoBehaviour
     [SerializeField]
     LayerMask layerMask;
     UnitSelector unitSelector;
+
+    Camera mainCamera;
     void Update()
     {
         if (hand != null)
@@ -22,6 +24,14 @@ public class HandSelector : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                CheckUnit();
+            }
+
+        }
     }
 
     void CheckUnit()
@@ -33,16 +43,13 @@ public class HandSelector : MonoBehaviour
         }
         else
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         }
 
 
         Selectable selected = Raycast<Selectable>(layerMask, ray);
-        if (selected != null)
-        {
-            unitSelector.Select(selected);
-        }
+        unitSelector.Select(selected);
     }
 
     public T Raycast<T>(LayerMask mask, Ray ray) where T : Selectable
@@ -60,5 +67,6 @@ public class HandSelector : MonoBehaviour
     {
         hand = GetComponentInParent<Hand>();
         unitSelector = GameController.instance.unitSelector;
+        mainCamera = Player.instance.GetComponentInChildren<Camera>();
     }
 }
