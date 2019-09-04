@@ -16,10 +16,9 @@ public class HandSelector : MonoBehaviour
         {
             if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
             {
-                if (!isIncarnated)
+                if (hand.currentAttachedObjectInfo == null)
                 {
-                    if (hand.currentAttachedObjectInfo == null)
-                        Select();
+                    CheckUnit();
                 }
             }
         }
@@ -39,14 +38,14 @@ public class HandSelector : MonoBehaviour
         }
 
 
-        AllyController selected = Raycast<AllyController>(layerMask, ray);
+        Selectable selected = Raycast<Selectable>(layerMask, ray);
         if (selected != null)
         {
             unitSelector.Select(selected);
         }
     }
 
-    public T Raycast<T>(LayerMask mask, Ray ray) where T : AllyController
+    public T Raycast<T>(LayerMask mask, Ray ray) where T : Selectable
     {
         T selected = null;
         RaycastHit hit;

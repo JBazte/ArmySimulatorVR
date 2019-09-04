@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Selectable : PersistableObject
+using Valve.VR;
+public abstract class Selectable : PersistableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract void OnSelected();
+
+    public abstract void Diselected();
+    //abstract void OnInteract();
+
+    public virtual void AfterSelected(Selectable selectable)
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void OnInputAction()
     {
 
     }
+    public abstract SelectableTypes Type { get; }
+    public SteamVR_Action_Boolean InputAction;
+
 }
+
+public enum SelectableTypes
+{
+    Ally,
+    Enemy,
+    Barracks
+}
+
+
+
+

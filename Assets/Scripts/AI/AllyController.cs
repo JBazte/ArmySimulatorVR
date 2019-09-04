@@ -14,9 +14,19 @@ public class AllyController : EnemyController
     private GrabableObject w;
     private Hand hand;
     SkinnedMeshRenderer mr;
+    bool isIncarnated;
+    public override SelectableTypes Type
+    {
+        get
+        {
+            return SelectableTypes.Ally;
+        }
+    }
+
+
     public void Incarnate()
     {
-       
+
         Player player = Player.instance;
         Hand hand = player.GetHand(handType);
         if (hand == null)
@@ -24,7 +34,7 @@ public class AllyController : EnemyController
             hand = player.GetHand(SteamVR_Input_Sources.Any);
         }
         this.hand = hand;
-         w = Instantiate(objectPrefab);
+        w = Instantiate(objectPrefab);
         w.transform.position = hand.transform.position;
 
         w.AttachToHand(hand);
@@ -33,6 +43,8 @@ public class AllyController : EnemyController
         player.transform.rotation = transform.rotation;
         player.GetComponentInChildren<MagazineSpawner>().ChangeType((w.GetComponentInChildren<Weapon>()).MagazineType);
         gameObject.SetActive(false);
+        isIncarnated = true;
+        GameController.instance.unitSelector.BlockSelection = true;
     }
 
     public void DisIncarnate()
@@ -43,6 +55,8 @@ public class AllyController : EnemyController
             hand.DetachObject(w.gameObject, false);
             Destroy(w.gameObject);
         }
+        isIncarnated = false;
+        GameController.instance.unitSelector.BlockSelection = false;
     }
     private void Start()
     {
@@ -66,7 +80,8 @@ public class AllyController : EnemyController
         mr.materials[8].color = color;
     }
 
-    public void ResetSpecificColor(){
+    public void ResetSpecificColor()
+    {
         mr.materials[8].color = Color.yellow;
     }
 
@@ -79,4 +94,29 @@ public class AllyController : EnemyController
             ms[i].material.color = defaultColors[i];
         }
     }
+
+    public override void OnSelected()
+    {
+        ChangeSpecificColor(Color.green);
+
+    }
+    public override void Diselected()
+    {
+        ResetSpecificColor();
+    }
+    public override void AfterSelected(Selectable selectable)
+    {
+        if (selectable.Type == SelectableTypes.Barracks)
+        {
+            SetPoint(selectable.transform.position);
+        }
+    }
+    public override void OnInputAction()
+    {
+        if (!isIncarnated)
+            Incarnate();
+        else { DisIncarnate(); }
+
+    }
+
 }

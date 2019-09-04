@@ -14,36 +14,10 @@ public class UnitSelector : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
     private bool isIncarnated;
-    AllyController selected;
+    Selectable selected;
 
 
-    public void Move()
-    {
-        Ray ray;
-        if (hand != null)
-        {
-            ray = new Ray(transform.position, transform.forward);
-        }
-        else
-        {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        }
-        RaycastHit hit;
-
-        if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, 50f, barrackMask))
-        {
-            Barracks b = hit.collider.GetComponentInParent<Barracks>();
-            if (b != null)
-            {
-                Transform point = b.GetStandPoint();
-                selected.SetPoint(point.position);
-                Debug.Log(b);
-            }
-        }
-        selected.ResetSpecificColor();
-        selected = null;
-    }
+    public bool BlockSelection { get; set; }
 
     private void Start()
     {
@@ -55,72 +29,52 @@ public class UnitSelector : MonoBehaviour
     {
         if (hand != null)
         {
-            if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+            // if (SteamVR_Input.GetStateDown(selected.InputAction., hand.handType))
+            if (selected.InputAction.GetStateDown(hand.handType))
             {
-                if (!isIncarnated)
-                {
-                    if (hand.currentAttachedObjectInfo == null)
-                        Select();
-                }
+                selected.OnInputAction();
             }
             if (selected != null)
             {
-                if (SteamVR_Input.GetStateDown("Teleport", hand.handType))
-                {
-                    if (!isIncarnated)
-                    {
-                        Incarnate(selected);
-                    }
-                    else
-                    {
-                        DisCarnate();
-                        UnSelect();
-                    }
-                }
+
             }
         }
         else
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Select();
+                // Select();
             }
         }
 
 
     }
 
-    void Incarnate(AllyController ally)
+    public void Select(Selectable newSelected)
     {
-        selected.Incarnate();
-        isIncarnated = true;
-    }
-
-    void DisCarnate()
-    {
-        selected.DisIncarnate();
-        isIncarnated = false;
-    }
-
-    public void Select(AllyController ally)
-    {
-        if (selected != null)
+        if (BlockSelection)
         {
-
+            if (selected != null)
+            {
+                // Two Step Selection
+                selected.AfterSelected(newSelected);
+                selected.Diselected();
+            }
+            selected.OnSelected();
+            this.selected = newSelected;
+            if (selected != null)
+                Debug.Log(selected);
         }
-        selected = ally;
-        selected.ChangeSpecificColor(Color.green);
-        if (selected != null)
-            Debug.Log(selected);
     }
 
     void UnSelect()
     {
-        selected.ResetSpecificColor();
+        selected.Diselected();
+
         Player.instance.transform.position = startPosition;
         Player.instance.transform.rotation = startRotation;
         selected = null;
-        selected = null;
+
 
     }
 }
