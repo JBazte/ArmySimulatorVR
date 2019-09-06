@@ -10,7 +10,7 @@ public class TimedSpawnZone : PersistableObject
     [SerializeField]
     private SpawnZone zone;
 
-    private float lastSpawn;
+    private float lastSpawn = -1;
 
 
     bool haswaves;
@@ -53,18 +53,22 @@ public class TimedSpawnZone : PersistableObject
         {
             zone = GetComponentInChildren<SpawnZone>();
         }
-        //lastSpawn = 1f;
+        if (lastSpawn < 0)
+        {
+            lastSpawn = 1f;
+        }
     }
 
     public override void Save(GameDataWriter writer)
     {
         writer.Write(unitSpawn);
-        Debug.Log(unitSpawn);
+        writer.Write(lastSpawn);
     }
 
     public override void Load(GameDataReader reader)
     {
         unitSpawn = reader.ReadInt();
+        lastSpawn = reader.ReadFloat();
         Debug.Log(unitSpawn);
         if (unitSpawn != int.MinValue)
         {

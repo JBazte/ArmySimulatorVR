@@ -41,6 +41,10 @@ public class GameDataWriter
     {
         writer.Write(JsonUtility.ToJson(value));
     }
+    public void Write(bool data)
+    {
+        writer.Write(data);
+    }
 
 
 

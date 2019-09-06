@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8d68025f72088409494fc2f7f80b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputAction:
+    actionPath: /actions/default/in/Teleport
+    needsReinit: 0
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2

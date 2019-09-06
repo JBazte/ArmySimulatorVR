@@ -10,34 +10,40 @@ public class UnitSelector : MonoBehaviour
     private bool isIncarnated;
     Selectable selected;
 
-
+    Player player;
     public bool BlockSelection { get; set; }
 
     private void Start()
     {
         hand = GetComponentInParent<Hand>();
-        startPosition = transform.position;
-    }
 
+        player = Player.instance;
+        startPosition = player.transform.position;
+        startRotation = player.transform.rotation;
+
+    }
     void Update()
     {
         if (hand != null)
         {
             // if (SteamVR_Input.GetStateDown(selected.InputAction., hand.handType))
-            if (selected.InputAction.GetStateDown(hand.handType))
-            {
-                selected.OnInputAction();
-            }
             if (selected != null)
             {
+                if (selected.InputAction.GetStateDown(hand.handType))
+                {
+                    selected.OnInputAction(this);
+                }
 
             }
         }
         else
         {
-            if (Input.GetMouseButtonDown(0))
+            if (selected != null)
             {
-                // Select();
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    selected.OnInputAction(this);
+                }
             }
         }
 
@@ -77,7 +83,12 @@ public class UnitSelector : MonoBehaviour
         //Player.instance.transform.position = startPosition;
         //Player.instance.transform.rotation = startRotation;
 
-
-
+    }
+    public void ResetPlayerPositon()
+    {
+        Player.instance.transform.position = startPosition;
+        Player.instance.transform.rotation = startRotation;
+        selected.Diselected();
+        selected = null;
     }
 }

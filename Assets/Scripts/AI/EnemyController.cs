@@ -237,6 +237,7 @@ public class EnemyController : Enemy
         writer.Write(currentAmmo);
         writer.Write(lastAttack);
         writer.Write(movePoint);
+        writer.Write(gameObject.activeSelf);
     }
 
     public override void Load(GameDataReader reader)
@@ -246,11 +247,13 @@ public class EnemyController : Enemy
         currentAmmo = reader.ReadInt();
         lastAttack = reader.ReadFloat();
         Vector3 position = reader.ReadVector3();
+        Debug.Log(position + gameObject.name);
         SetPoint(position);
         if (currentAmmo == 0)
         {
             StartCoroutine(Reload());
         }
+        gameObject.SetActive(reader.ReadBool());
 
     }
 

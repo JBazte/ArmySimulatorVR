@@ -41,10 +41,10 @@ public class AllyController : EnemyController
 
         player.transform.position = transform.position;
         player.transform.rotation = transform.rotation;
-        player.GetComponentInChildren<MagazineSpawner>().ChangeType((w.GetComponentInChildren<Weapon>()).MagazineType);
+        player.GetComponentInChildren<MagazineSpawner>(true).ChangeType((w.GetComponentInChildren<Weapon>()).MagazineType);
         gameObject.SetActive(false);
         isIncarnated = true;
-        GameController.instance.unitSelector.BlockSelection = true;
+
     }
 
     public void DisIncarnate()
@@ -56,7 +56,7 @@ public class AllyController : EnemyController
             Destroy(w.gameObject);
         }
         isIncarnated = false;
-        GameController.instance.unitSelector.BlockSelection = false;
+
     }
     private void Start()
     {
@@ -112,11 +112,20 @@ public class AllyController : EnemyController
             SetPoint((selectable as Barracks).GetStandPoint.position);
         }
     }
-    public override void OnInputAction()
+    public override void OnInputAction(UnitSelector selector)
     {
         if (!isIncarnated)
+        {
+            selector.BlockSelection = true;
             Incarnate();
-        else { DisIncarnate(); }
+        }
+        else
+        {
+            selector.BlockSelection = false;
+            DisIncarnate();
+            selector.ResetPlayerPositon();
+
+        }
 
     }
 

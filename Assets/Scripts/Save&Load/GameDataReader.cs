@@ -48,4 +48,8 @@ public class GameDataReader
     {
         return JsonUtility.FromJson<Random.State>(reader.ReadString());
     }
+    public bool ReadBool()
+    {
+        return reader.ReadBoolean();
+    }
 }

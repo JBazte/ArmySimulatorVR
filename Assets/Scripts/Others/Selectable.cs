@@ -14,7 +14,7 @@ public abstract class Selectable : PersistableObject
 
     }
 
-    public virtual void OnInputAction()
+    public virtual void OnInputAction(UnitSelector selector = null)
     {
 
     }
