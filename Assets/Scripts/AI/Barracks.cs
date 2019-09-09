@@ -7,6 +7,8 @@ public class Barracks : Selectable
     [SerializeField]
     Transform standPoint;
 
+    AllyController occupant;
+
     public Transform GetStandPoint
     {
         get
@@ -21,6 +23,25 @@ public class Barracks : Selectable
             return SelectableTypes.Barracks;
         }
     }
+
+    public void Occupy(AllyController newOccupant)
+    {
+        if (occupant != null)
+        {
+            occupant.ChangeBarracks(newOccupant);
+        }
+        else
+        {
+            newOccupant.SetPoint(GetStandPoint.position);
+        }
+        occupant = newOccupant;
+    }
+
+    public void DesOccupy()
+    {
+        occupant = null;
+    }
+
 
     public override void Diselected()
     {

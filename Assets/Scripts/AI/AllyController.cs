@@ -15,6 +15,7 @@ public class AllyController : EnemyController
     private Hand hand;
     SkinnedMeshRenderer mr;
     bool isIncarnated;
+    Barracks barrack;
     public override SelectableTypes Type
     {
         get
@@ -109,9 +110,27 @@ public class AllyController : EnemyController
     {
         if (selectable.Type == SelectableTypes.Barracks)
         {
-            SetPoint((selectable as Barracks).GetStandPoint.position);
+            Barracks newBarrack = selectable as Barracks;
+            if (barrack != null)
+                barrack.DesOccupy();
+
+            newBarrack.Occupy(this);
+
+            barrack = newBarrack;
+            //SetPoint(b.GetStandPoint.position);
+
         }
     }
+
+    public void ChangeBarracks(AllyController other)
+    {
+        barrack = other.barrack;
+        ChangeTarget(other);
+        if (other.barrack != null)
+            other.barrack.Occupy(this);
+
+    }
+
     public override void OnInputAction(UnitSelector selector)
     {
         if (!isIncarnated)

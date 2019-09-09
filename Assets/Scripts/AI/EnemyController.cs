@@ -64,12 +64,7 @@ public class EnemyController : Enemy
         animatorController = GetComponentInChildren<Animator>();
 
     }
-    public void SetPoint(Transform position)
-    {
 
-        SetPoint(transform.position);
-
-    }
     public void SetPoint(Vector3 position)
     {
         this.movePoint = position;
@@ -118,6 +113,13 @@ public class EnemyController : Enemy
 
 
 
+    }
+
+    public void ChangeTarget(EnemyController other)
+    {
+        Vector3 point = other.movePoint;
+        other.SetPoint(movePoint);
+        SetPoint(point);
     }
 
     private void SearchTargets()
