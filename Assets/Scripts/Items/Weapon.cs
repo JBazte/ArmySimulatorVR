@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour
     private LayerMask magazineLayer;
     [SerializeField]
     private bool isLinearDrive = true;
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
 
 
     [Header("Stats")]
@@ -43,8 +45,10 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private MagazineTypes ammoType = MagazineTypes.Rifle;
 
-    public MagazineTypes MagazineType{
-        get{
+    public MagazineTypes MagazineType
+    {
+        get
+        {
             return ammoType;
         }
     }
@@ -110,6 +114,8 @@ public class Weapon : MonoBehaviour
                 instance.SetShot(damage, attackMask);
                 currentAmmo--;
                 recoilTime++;
+                if (muzzleFlash != null)
+                    muzzleFlash.Play();
             }
             else
             {
