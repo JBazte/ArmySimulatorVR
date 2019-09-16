@@ -39,15 +39,18 @@ public class Magazine : MonoBehaviour
     void Start()
     {
         currentAmmo = maxAmmo;
-        col = GetComponentInChildren<Collider>();
-        rb = GetComponentInChildren<Rigidbody>();
-        interactable = GetComponentInChildren<Interactable>();
         Weapon weapon = GetComponentInParent<Weapon>();
         if (weapon != null)
         {
             weapon.AttachMagazine(this);
         }
 
+    }
+
+    void Awake(){
+         col = GetComponentInChildren<Collider>();
+        rb = GetComponentInChildren<Rigidbody>();
+        interactable = GetComponentInChildren<Interactable>();
     }
 
     //-------------------------------------------------

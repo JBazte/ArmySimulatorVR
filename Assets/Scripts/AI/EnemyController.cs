@@ -37,10 +37,13 @@ public class EnemyController : Enemy
 
 
     bool ischasingEnemy;
-    private void Start()
+    bool isMoving;
+    [SerializeField]
+    private Animator animatorController;
+    private float lastLookAround;
+
+    protected void Start()
     {
-
-
         if (movePoint != null)
         {
             SetPoint(movePoint);
@@ -52,20 +55,16 @@ public class EnemyController : Enemy
         agent.speed = stats.Speed;
         agent.stoppingDistance = attackRadious;
         currentAmmo = stats.MaxAmmo;
-
+        lastLookAround = 3f;
     }
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         stats = GetComponent<CharacterStats>();
-    }
-
-    public void SetPoint(Transform position)
-    {
-
-        SetPoint(transform.position);
+        animatorController = GetComponentInChildren<Animator>();
 
     }
+
     public void SetPoint(Vector3 position)
     {
         this.movePoint = position;
@@ -85,6 +84,7 @@ public class EnemyController : Enemy
     }
     private void Update()
     {
+        lastLookAround -= Time.deltaTime;
         lastAttack -= Time.deltaTime;
         SearchTargets();
         if (ischasingEnemy)
@@ -95,6 +95,31 @@ public class EnemyController : Enemy
             stats.TakeDamage(10f);
         }
 
+        if (agent.velocity != Vector3.zero)
+        {
+            animatorController.SetBool("isRunning", true);
+        }
+        else
+        {
+            animatorController.SetBool("isRunning", false);
+
+        }
+        if (lastLookAround <= 0)
+        {
+            if (!ischasingEnemy)
+                animatorController.SetTrigger("isLooking");
+            lastLookAround = 3f;
+        }
+
+
+
+    }
+
+    public void ChangeTarget(EnemyController other)
+    {
+        Vector3 point = other.movePoint;
+        other.SetPoint(movePoint);
+        SetPoint(point);
     }
 
     private void SearchTargets()
@@ -214,6 +239,7 @@ public class EnemyController : Enemy
         writer.Write(currentAmmo);
         writer.Write(lastAttack);
         writer.Write(movePoint);
+        writer.Write(gameObject.activeSelf);
     }
 
     public override void Load(GameDataReader reader)
@@ -223,7 +249,14 @@ public class EnemyController : Enemy
         currentAmmo = reader.ReadInt();
         lastAttack = reader.ReadFloat();
         Vector3 position = reader.ReadVector3();
+        Debug.Log(position + gameObject.name);
         SetPoint(position);
+        if (currentAmmo == 0)
+        {
+            StartCoroutine(Reload());
+        }
+        gameObject.SetActive(reader.ReadBool());
+
     }
 
 }

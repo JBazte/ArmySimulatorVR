@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : PersistableObject
+public class Enemy : Selectable
 {
     public int EnemyID
     {
@@ -40,6 +40,14 @@ public class Enemy : PersistableObject
 
     }
 
+    public override SelectableTypes Type
+    {
+        get
+        {
+            return SelectableTypes.Enemy;
+        }
+    }
+
     private int enemyID = int.MinValue;
     private EnemyFactory originFactory;
     public void Recycle()
@@ -47,6 +55,16 @@ public class Enemy : PersistableObject
         originFactory.Reclaim(this);
     }
 
+    public override void OnSelected()
+    {
+        // Show Info
+        // Show Options
+    }
 
+    public override void Diselected()
+    {
+        // UnShow Info
+
+    }
 
 }

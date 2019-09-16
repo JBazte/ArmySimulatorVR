@@ -19,7 +19,7 @@ public class ThrowableObject : GrabableObject
     protected float attachTime;
     protected Vector3 attachPosition;
 
-    private void Start()
+    private void Awake()
     {
         interactable = GetComponentInChildren<Interactable>();
         rigidBody = GetComponentInChildren<Rigidbody>();

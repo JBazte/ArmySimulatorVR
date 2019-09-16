@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour
     private LayerMask magazineLayer;
     [SerializeField]
     private bool isLinearDrive = true;
+    [SerializeField]
+    private ParticleSystem muzzleFlash;
 
 
     [Header("Stats")]
@@ -43,6 +45,13 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private MagazineTypes ammoType = MagazineTypes.Rifle;
 
+    public MagazineTypes MagazineType
+    {
+        get
+        {
+            return ammoType;
+        }
+    }
     [Header("Recoil")]
     [SerializeField]
     private float startingRecoilForce = 5f;
@@ -73,7 +82,7 @@ public class Weapon : MonoBehaviour
 
     private const float maxForce = 10f;
     private const float randomRecoil = 15f;
-    private const float attachAngle = 360f;
+    private const float attachAngle = 30f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -105,6 +114,8 @@ public class Weapon : MonoBehaviour
                 instance.SetShot(damage, attackMask);
                 currentAmmo--;
                 recoilTime++;
+                if (muzzleFlash != null)
+                    muzzleFlash.Play();
             }
             else
             {
