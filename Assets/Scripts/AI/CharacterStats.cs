@@ -23,7 +23,7 @@ public class CharacterStats : PersistableObject
     private float reloadTime = 3;
 
 
-
+    bool isDisolving;
 
 
     public float Speed
@@ -103,7 +103,8 @@ public class CharacterStats : PersistableObject
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Die();
+            if (!isDisolving)
+                StartCoroutine(StartDisolve());
         }
     }
 
@@ -127,6 +128,17 @@ public class CharacterStats : PersistableObject
     public void Reset()
     {
         currentHealth = MaxHealth;
+    }
+    private IEnumerator StartDisolve()
+    {
+        isDisolving = true;
+        float time = GetComponentInChildren<SpawnEffect>().StartDisolve();
+        if (time < 0) { time = 0; }
+        GetComponentInChildren<Collider>().enabled = false;
+        yield return new WaitForSeconds(time);
+        GetComponentInChildren<Collider>().enabled = false;
+        isDisolving = false;
+        Die();
     }
 
     protected virtual void Die()

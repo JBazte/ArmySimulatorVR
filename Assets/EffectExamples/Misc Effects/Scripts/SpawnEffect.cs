@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEffect : MonoBehaviour {
+public class SpawnEffect : MonoBehaviour
+{
 
     public float spawnEffectTime = 2;
     public float pause = 1;
@@ -10,37 +11,48 @@ public class SpawnEffect : MonoBehaviour {
 
     ParticleSystem ps;
     float timer = 0;
-    Renderer _renderer;
-
+    public Renderer _renderer;
+    public Material mat;
     int shaderProperty;
+    bool hasStarted;
 
-	void Start ()
+    void Start()
     {
         shaderProperty = Shader.PropertyToID("_cutoff");
-        _renderer = GetComponent<Renderer>();
-        ps = GetComponentInChildren <ParticleSystem>();
+        if (_renderer == null)
+            _renderer = GetComponent<Renderer>();
+        //ps = GetComponentInChildren<ParticleSystem>();
 
-        var main = ps.main;
-        main.duration = spawnEffectTime;
+        //  var main = ps.main;
+        //main.duration = spawnEffectTime;
 
-        ps.Play();
+        //ps.Play();
 
     }
-	
-	void Update ()
+
+    public float StartDisolve()
     {
-        if (timer < spawnEffectTime + pause)
+        // ps.Play();
+        hasStarted = true;
+        return spawnEffectTime;
+    }
+
+    public void ResetDisolve()
+    {
+        timer = 0;
+        hasStarted = false;
+    }
+
+    void Update()
+    {
+        if (hasStarted)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            ps.Play();
-            timer = 0;
+            if (timer < spawnEffectTime + pause)
+            {
+                timer += Time.deltaTime;
+            }
+            mat.SetFloat(shaderProperty, fadeIn.Evaluate(Mathf.InverseLerp(0, spawnEffectTime, timer)));
         }
 
-
-        _renderer.material.SetFloat(shaderProperty, fadeIn.Evaluate( Mathf.InverseLerp(0, spawnEffectTime, timer)));
-        
     }
 }
