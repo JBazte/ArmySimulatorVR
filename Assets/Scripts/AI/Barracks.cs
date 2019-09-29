@@ -2,17 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barracks : MonoBehaviour
+public class Barracks : Selectable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Transform standPoint;
+
+    AllyController occupant;
+
+    public Transform GetStandPoint
     {
-        
+        get
+        {
+            return standPoint;
+        }
+    }
+    public override SelectableTypes Type
+    {
+        get
+        {
+            return SelectableTypes.Barracks;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Occupy(AllyController newOccupant)
     {
-        
+        if (occupant != null)
+        {
+            occupant.ChangeBarracks(newOccupant);
+        }
+        else
+        {
+            newOccupant.SetPoint(GetStandPoint.position);
+        }
+        occupant = newOccupant;
+    }
+
+    public void DesOccupy()
+    {
+        occupant = null;
+    }
+
+
+    public override void Diselected()
+    {
+
+    }
+
+
+    public override void OnSelected()
+    {
+
     }
 }

@@ -102,5 +102,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 996b74b536bbf3d41929a801d5572f36, type: 2}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: reloadTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210158559839845553, guid: ae02ae8fd7688ba4a8e04b995774bbea,
+        type: 3}
+      propertyPath: accuracy
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae02ae8fd7688ba4a8e04b995774bbea, type: 3}

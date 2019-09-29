@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : PersistableObject
 {
     [Header("Stats")]
     [SerializeField]
@@ -18,12 +18,12 @@ public class CharacterStats : MonoBehaviour
     [Range(0, 100)]
     private float accuracy = 80;
     [SerializeField]
-    private float maxAmmo = 30;
+    private int maxAmmo = 30;
     [SerializeField]
     private float reloadTime = 3;
 
 
-
+    bool isDisolving;
 
 
     public float Speed
@@ -62,7 +62,7 @@ public class CharacterStats : MonoBehaviour
             return damage;
         }
     }
-    public float MaxAmmo
+    public int MaxAmmo
     {
         get
         {
@@ -103,7 +103,8 @@ public class CharacterStats : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Die();
+            if (!isDisolving)
+                StartCoroutine(StartDisolve());
         }
     }
 
@@ -124,10 +125,34 @@ public class CharacterStats : MonoBehaviour
 
 
     }
-
-    private void Die()
+    public void Reset()
     {
-        Destroy(gameObject);
+        currentHealth = MaxHealth;
+    }
+    private IEnumerator StartDisolve()
+    {
+        isDisolving = true;
+        float time = GetComponentInChildren<SpawnEffect>().StartDisolve();
+        if (time < 0) { time = 0; }
+        GetComponentInChildren<Collider>().enabled = false;
+        yield return new WaitForSeconds(time);
+        GetComponentInChildren<Collider>().enabled = false;
+        isDisolving = false;
+        Die();
+    }
+
+    protected virtual void Die()
+    {
+        Enemy e = GetComponentInChildren<Enemy>();
+        if (e != null)
+        {
+            Reset();
+            e.Recycle();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

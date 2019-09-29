@@ -3,11 +3,11 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(CharacterStats))]
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
 
     [SerializeField]
-    private Transform movePoint;
+    private Vector3 movePoint;
     [SerializeField]
     private LayerMask detectMask;
     [SerializeField]
@@ -32,15 +32,18 @@ public class EnemyController : MonoBehaviour
     private CharacterStats stats;
     private CharacterStats target;
     private float lastAttack;
-    private float currentAmmo;
+    private int currentAmmo;
     private bool isReloading;
 
 
     bool ischasingEnemy;
-    private void Start()
+    bool isMoving;
+    [SerializeField]
+    private Animator animatorController;
+    private float lastLookAround;
+
+    protected void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        stats = GetComponent<CharacterStats>();
         if (movePoint != null)
         {
             SetPoint(movePoint);
@@ -52,18 +55,24 @@ public class EnemyController : MonoBehaviour
         agent.speed = stats.Speed;
         agent.stoppingDistance = attackRadious;
         currentAmmo = stats.MaxAmmo;
+        lastLookAround = 3f;
+    }
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        stats = GetComponent<CharacterStats>();
+        animatorController = GetComponentInChildren<Animator>();
 
     }
 
-    public void SetPoint(Transform position)
+    public void SetPoint(Vector3 position)
     {
         this.movePoint = position;
-        agent.SetDestination(position.position);
+        agent.SetDestination(position);
         target = null;
         ischasingEnemy = false;
         agent.stoppingDistance = 0;
         agent.isStopped = false;
-
     }
 
     public void SetTarget(CharacterStats target)
@@ -73,9 +82,9 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(target.transform.position);
         ischasingEnemy = true;
     }
-
     private void Update()
     {
+        lastLookAround -= Time.deltaTime;
         lastAttack -= Time.deltaTime;
         SearchTargets();
         if (ischasingEnemy)
@@ -86,6 +95,31 @@ public class EnemyController : MonoBehaviour
             stats.TakeDamage(10f);
         }
 
+        if (agent.velocity != Vector3.zero)
+        {
+            animatorController.SetBool("isRunning", true);
+        }
+        else
+        {
+            animatorController.SetBool("isRunning", false);
+
+        }
+        if (lastLookAround <= 0)
+        {
+            if (!ischasingEnemy)
+                animatorController.SetTrigger("isLooking");
+            lastLookAround = 3f;
+        }
+
+
+
+    }
+
+    public void ChangeTarget(EnemyController other)
+    {
+        Vector3 point = other.movePoint;
+        other.SetPoint(movePoint);
+        SetPoint(point);
     }
 
     private void SearchTargets()
@@ -116,15 +150,17 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if (movePoint != null)
-                SetPoint(movePoint);
+
+            SetPoint(movePoint);
             ischasingEnemy = false;
         }
     }
 
     public void LookAtTarget()
     {
+        Quaternion rotation = transform.rotation;
         transform.LookAt(target.transform);
+        transform.rotation = new Quaternion(rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void ChaseTargets()
@@ -135,16 +171,18 @@ public class EnemyController : MonoBehaviour
         if (distance <= attackRadious)
         {
             RaycastHit hit;
-            if (Physics.Raycast(shotSpawnPosition.position, shotSpawnPosition.forward, out hit, 100f))
+            if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 100f))
             {
+                Shoot();
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
                 {
                     agent.isStopped = true;
-                    Shoot();
+
                 }
                 else
                 {
                     agent.isStopped = false;
+
                 }
             }
 
@@ -194,5 +232,31 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRadious);
     }
 
+    public override void Save(GameDataWriter writer)
+    {
+        base.Save(writer);
+        writer.Write(stats.CurrentHealth);
+        writer.Write(currentAmmo);
+        writer.Write(lastAttack);
+        writer.Write(movePoint);
+        writer.Write(gameObject.activeSelf);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        base.Load(reader);
+        stats.HealDamage(reader.ReadFloat() - stats.CurrentHealth);
+        currentAmmo = reader.ReadInt();
+        lastAttack = reader.ReadFloat();
+        Vector3 position = reader.ReadVector3();
+        Debug.Log(position + gameObject.name);
+        SetPoint(position);
+        if (currentAmmo == 0)
+        {
+            StartCoroutine(Reload());
+        }
+        gameObject.SetActive(reader.ReadBool());
+
+    }
 
 }
