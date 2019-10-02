@@ -59,6 +59,21 @@ public class AllyController : EnemyController
         isIncarnated = false;
 
     }
+    public override void SetPoint(Vector3 position)
+    {
+        if (!priorityMoving)
+        {
+            base.SetPoint(position);
+
+        }
+    }
+
+    public void SetPrioirityPoint(Vector3 position)
+    {
+        priorityMoving = false;
+        SetPoint(position);
+        priorityMoving = true;
+    }
     private void Start()
     {
         MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();

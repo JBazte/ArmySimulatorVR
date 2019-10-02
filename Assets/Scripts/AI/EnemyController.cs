@@ -34,7 +34,7 @@ public class EnemyController : Enemy
     private float lastAttack;
     private int currentAmmo;
     private bool isReloading;
-
+    public bool priorityMoving;
 
     bool ischasingEnemy;
     bool isMoving;
@@ -44,13 +44,14 @@ public class EnemyController : Enemy
 
     protected void Start()
     {
-        if (movePoint != null)
+        if (movePoint != Vector3.zero)
         {
             SetPoint(movePoint);
         }
         else
         {
             agent.isStopped = true;
+            movePoint = transform.position;
         }
         agent.speed = stats.Speed;
         agent.stoppingDistance = attackRadious;
@@ -65,7 +66,11 @@ public class EnemyController : Enemy
 
     }
 
-    public void SetPoint(Vector3 position)
+    public void ReturnHome()
+    {
+        SetPoint(movePoint);
+    }
+    public virtual void SetPoint(Vector3 position)
     {
         this.movePoint = position;
         agent.SetDestination(position);
@@ -86,10 +91,21 @@ public class EnemyController : Enemy
     {
         lastLookAround -= Time.deltaTime;
         lastAttack -= Time.deltaTime;
-        SearchTargets();
-        if (ischasingEnemy)
-            ChaseTargets();
+        if (!priorityMoving)
+        {
 
+            SearchTargets();
+            if (ischasingEnemy)
+                ChaseTargets();
+
+        }
+        else
+        {
+            if (agent.remainingDistance < .3f)
+            {
+                priorityMoving = false;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.T))
         {
             stats.TakeDamage(10f);
@@ -102,6 +118,7 @@ public class EnemyController : Enemy
         else
         {
             animatorController.SetBool("isRunning", false);
+
 
         }
         if (lastLookAround <= 0)
@@ -190,6 +207,7 @@ public class EnemyController : Enemy
         else
         {
             agent.isStopped = false;
+            animatorController.SetBool("isShooting", false);
         }
     }
     private void Shoot()
@@ -199,6 +217,7 @@ public class EnemyController : Enemy
             if (currentAmmo > 0)
             {
                 // Replace with Pool Later
+                animatorController.SetBool("isShooting", true);
                 currentAmmo--;
                 lastAttack = 1 / stats.AttackSpeed;
                 Shot instance = Instantiate(shotInstance, shotSpawnPosition.position, transform.rotation);

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy : Selectable
 {
+    Renderer[] meshRenderers;
+    [SerializeField]
+    Transform grx;
+    private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
     public int EnemyID
     {
         get
@@ -18,6 +22,42 @@ public class Enemy : Selectable
             }
         }
     }
+    public void ResetMaterials()
+    {
+        foreach (KeyValuePair<Renderer, Material[]> pair in originalMaterials)
+        {
+            pair.Key.materials = pair.Value;
+        }
+    }
+    public void ChangeToNewMaterial(Material newMaterial)
+    {
+        //meshRenderers = grx.GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in meshRenderers)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++)
+            {
+                mats[j] = newMaterial;
+            }
+            rend.materials = mats;
+        }
+    }
+
+    private void OnEnable()
+    {
+        //children is a reference to the renderers
+
+        //meshRenderers = GetComponentsInChildren<Renderer>();
+        meshRenderers = GetComponentsInChildren<Renderer>(true);
+        foreach (Renderer rend in meshRenderers)
+        {
+            //make array of all materials in renderer
+            Material[] materials = rend.materials;
+            //add to dictionary renderer and material
+            originalMaterials[rend] = materials;
+        }
+    }
+
 
     public EnemyFactory OriginFactory
     {
@@ -52,6 +92,12 @@ public class Enemy : Selectable
     private EnemyFactory originFactory;
     public void Recycle()
     {
+        if (originFactory == null)
+        {
+            Debug.LogWarning(gameObject.name + "Doesn't have a origin factory");
+            Destroy(gameObject);
+        }
+        ResetMaterials();
         originFactory.Reclaim(this);
     }
 

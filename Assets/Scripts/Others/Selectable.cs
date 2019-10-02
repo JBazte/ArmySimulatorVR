@@ -27,7 +27,9 @@ public enum SelectableTypes
 {
     Ally,
     Enemy,
-    Barracks
+    Barracks,
+    Medic,
+    Engenieer
 }
 
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6020fbea939589f469b933ed1cba1d2c, type: 3}
+  m_Name: NoSMGAllies
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 5100487227371019446, guid: e659c6d703bab624c849b58370fd45c8, type: 3}
+  - {fileID: 8786696501236337297, guid: e76b6ef3fdd72ef40b1a3677640a3750, type: 3}
+  recycle: 1

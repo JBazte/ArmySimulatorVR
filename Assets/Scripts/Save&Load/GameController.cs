@@ -27,7 +27,7 @@ public class GameController : PersistableObject
     {
         instance = this;
         enemies = new List<Enemy>();
-        storage = new PersistantStorage();
+        //storage = new PersistantStorage();
         buildIndex = SceneManager.GetActiveScene().buildIndex;
         if (storage == null)
         {

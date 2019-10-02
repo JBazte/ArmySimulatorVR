@@ -21,7 +21,7 @@ public class CharacterStats : PersistableObject
     private int maxAmmo = 30;
     [SerializeField]
     private float reloadTime = 3;
-
+    Enemy controller;
 
     bool isDisolving;
 
@@ -88,6 +88,7 @@ public class CharacterStats : PersistableObject
     private void Awake()
     {
         currentHealth = health;
+        controller = GetComponentInChildren<Enemy>();
     }
 
     private void Update()
@@ -103,8 +104,16 @@ public class CharacterStats : PersistableObject
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            if (!isDisolving)
-                StartCoroutine(StartDisolve());
+            if (GetComponentInChildren<DisolveEffect>() != null)
+            {
+                if (!isDisolving)
+                    StartCoroutine(StartDisolve());
+
+            }
+            else
+            {
+                Die();
+            }
         }
     }
 
@@ -132,7 +141,8 @@ public class CharacterStats : PersistableObject
     private IEnumerator StartDisolve()
     {
         isDisolving = true;
-        float time = GetComponentInChildren<SpawnEffect>().StartDisolve();
+        controller.ChangeToNewMaterial((Material)Resources.Load("Dissolve"));
+        float time = GetComponentInChildren<DisolveEffect>().StartDisolve();
         if (time < 0) { time = 0; }
         GetComponentInChildren<Collider>().enabled = false;
         yield return new WaitForSeconds(time);
@@ -143,11 +153,11 @@ public class CharacterStats : PersistableObject
 
     protected virtual void Die()
     {
-        Enemy e = GetComponentInChildren<Enemy>();
-        if (e != null)
+
+        if (controller != null)
         {
             Reset();
-            e.Recycle();
+            controller.Recycle();
         }
         else
         {
