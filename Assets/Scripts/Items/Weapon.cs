@@ -213,7 +213,10 @@ public class Weapon : MonoBehaviour
 
                             else
                             {
+                               
                                 StartLinearDrive(magazine);
+                          
+                               
                                 return;
                             }
                         }
@@ -227,13 +230,20 @@ public class Weapon : MonoBehaviour
 
     public void StartLinearDrive(Magazine magazine)
     {
-        isLinearDriving = true;
+        
         MyLinearDrive ld = magazine.GetComponent<MyLinearDrive>();
+        if(ld != null) {
+           
+        isLinearDriving = true;
         //Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
         ld.startPosition = startMagazineLinearDrivePosition;
         ld.endPosition = endMagazineLinearDrivePosition;
         ld.startingRotation = magazinePostition.rotation;
         ld.OnActivated(GetComponentInChildren<LinearMapping>(), this);
+        }else
+        {
+            DisAttachMagazine();
+        }
 
     }
 

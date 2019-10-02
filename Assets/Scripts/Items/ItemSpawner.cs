@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+
 [RequireComponent(typeof(Interactable))]
 public class ItemSpawner : MonoBehaviour
 {
@@ -51,10 +52,7 @@ public class ItemSpawner : MonoBehaviour
 
     private void HandHoverUpdate(Hand hand)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-        if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
+        if (Valve.VR.SteamVR_Input.GetStateDown("Shoot", hand.handType))
         {
             SpawnObject(hand);
         }

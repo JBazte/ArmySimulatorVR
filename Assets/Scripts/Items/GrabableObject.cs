@@ -75,6 +75,7 @@ public class GrabableObject : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
         hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
+        //hand.HoverLock(interactable);
     }
 
     //-------------------------------------------------
@@ -101,6 +102,7 @@ public class GrabableObject : MonoBehaviour
     //-------------------------------------------------
     private void HandAttachedUpdate(Hand hand)
     {
+       
 
     }
 
