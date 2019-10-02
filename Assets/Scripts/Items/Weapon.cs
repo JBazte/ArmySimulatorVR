@@ -62,7 +62,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float recoilForceMultiplier = 10f;
 
-    private float currentAmmo;
+    protected float currentAmmo;
     private float lastAttack;
     private bool isReloading = false;
     private Rigidbody rb;

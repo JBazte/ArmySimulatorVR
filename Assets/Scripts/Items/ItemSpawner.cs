@@ -24,10 +24,14 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnObject(Hand hand)
     {
+        if(item != null)
+        {
+
         GrabableObject gb = Instantiate(item, hand.transform.position, Quaternion.identity);
         if (attachToHand)
         {
             gb.AttachToHand(hand);
+        }
         }
     }
     public void SpawnObject()

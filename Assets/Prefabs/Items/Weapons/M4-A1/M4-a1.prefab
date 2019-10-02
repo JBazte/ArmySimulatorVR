@@ -862,7 +862,7 @@ MonoBehaviour:
   isLinearDrive: 1
   muzzleFlash: {fileID: 7468255273931040809}
   isAutomaic: 1
-  damage: 15
+  damage: 35
   maxAmmo: 999
   totalReloadTime: 3
   attackSpeed: 12

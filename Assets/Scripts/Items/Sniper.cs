@@ -12,7 +12,8 @@ public class Sniper : Weapon
 
         if (lastMag != null)
             Destroy(lastMag.gameObject);
-        lastMag = null;
+       
+        DisAttachMagazine();
         hasMagazine = false;
     }
 }

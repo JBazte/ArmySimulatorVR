@@ -4,7 +4,7 @@ using Valve.VR;
 public class UnitSelector : MonoBehaviour
 {
 
-    private Hand hand;
+    private Hand[] hands;
     private Vector3 startPosition;
     private Quaternion startRotation;
     private bool isIncarnated;
@@ -15,24 +15,35 @@ public class UnitSelector : MonoBehaviour
 
     private void Start()
     {
-        hand = GetComponentInParent<Hand>();
-
+       
         player = Player.instance;
+        hands = player.hands;
         startPosition = player.transform.position;
         startRotation = player.transform.rotation;
 
     }
     void Update()
     {
-        if (hand != null)
+       
+        if (hands != null)
         {
+
             // if (SteamVR_Input.GetStateDown(selected.InputAction., hand.handType))
             if (selected != null)
             {
-                if (selected.InputAction.GetStateDown(hand.handType))
+
+                foreach (var hand in hands)
                 {
-                    selected.OnInputAction(this);
+                    //if(selected.InputAction != SteamVR_Action_Boolean.)
+                    //if (selected.InputAction.GetStateDown(hand.handType))
+                    if(SteamVR_Input.GetStateDown("Teleport", hand.handType))
+                    {
+                        
+                        selected.OnInputAction(this);
+                        return;
+                    }
                 }
+               
 
             }
         }
@@ -52,11 +63,11 @@ public class UnitSelector : MonoBehaviour
 
     public void Select(Selectable newSelected)
     {
-        if (newSelected != null)
+        if (!BlockSelection)
         {
-
-            if (!BlockSelection)
-            {
+            if (newSelected != null) { 
+        
+           
                 if (selected != null)
                 {
                     // Two Step Selection
@@ -68,11 +79,13 @@ public class UnitSelector : MonoBehaviour
                 if (newSelected != null)
                     Debug.Log(newSelected);
             }
+            else
+            {
+                UnSelect();
+            }
         }
-        else
-        {
-            UnSelect();
-        }
+        
+        
     }
 
     void UnSelect()

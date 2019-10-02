@@ -43,12 +43,26 @@ public class Enemy : Selectable
         }
     }
 
+    public void ChangeToNewColor(Color newColor)
+    {
+       //meshRenderers = grx.GetComponentsInChildren<Renderer>();
+        foreach (Renderer rend in meshRenderers)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var j = 0; j < rend.materials.Length; j++)
+            {
+                mats[j].color = newColor;
+            }
+            rend.materials = mats;
+        }
+    }
+
     private void OnEnable()
     {
         //children is a reference to the renderers
 
         //meshRenderers = GetComponentsInChildren<Renderer>();
-        meshRenderers = GetComponentsInChildren<Renderer>(true);
+        meshRenderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer rend in meshRenderers)
         {
             //make array of all materials in renderer
