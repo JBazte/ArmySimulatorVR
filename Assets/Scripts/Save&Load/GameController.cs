@@ -73,6 +73,7 @@ public class GameController : PersistableObject
     }
     public override void Save(GameDataWriter writer)
     {
+        DebugFactoryID();
         writer.Write(Random.state);
         scoreController.Save(writer);
         writer.Write(buildIndex);
@@ -98,6 +99,7 @@ public class GameController : PersistableObject
         {
             int factoryId = reader.ReadInt();
             int enemyId = reader.ReadInt();
+            //Debug.Log(factoryId);
             Enemy instance = factories[factoryId].Get(enemyId);
             instance.Load(reader);
         }
@@ -122,6 +124,7 @@ public class GameController : PersistableObject
         enemies.Clear();
         int seed = Random.Range(0, int.MaxValue) ^ (int)Time.unscaledTime;
         Random.InitState(seed);
+
     }
 
 
@@ -134,6 +137,13 @@ public class GameController : PersistableObject
         enemies.Remove(enemy);
     }
 
+    void DebugFactoryID()
+    {
+        for (int i = 0; i < factories.Length; i++)
+        {
+            Debug.Log(factories[i].FactoryID);
+        }
+    }
     void OnEnable()
     {
         if (factories[0].FactoryID != 0)

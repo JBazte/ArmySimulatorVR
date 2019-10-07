@@ -32,7 +32,7 @@ public class SquareSpawnZone : SpawnZone
 
     }
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.matrix = transform.localToWorldMatrix;
