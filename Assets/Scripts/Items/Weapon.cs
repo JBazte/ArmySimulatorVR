@@ -62,7 +62,7 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float recoilForceMultiplier = 10f;
 
-    private float currentAmmo;
+    protected float currentAmmo;
     private float lastAttack;
     private bool isReloading = false;
     private Rigidbody rb;
@@ -213,7 +213,10 @@ public class Weapon : MonoBehaviour
 
                             else
                             {
+                               
                                 StartLinearDrive(magazine);
+                          
+                               
                                 return;
                             }
                         }
@@ -227,13 +230,20 @@ public class Weapon : MonoBehaviour
 
     public void StartLinearDrive(Magazine magazine)
     {
-        isLinearDriving = true;
+        
         MyLinearDrive ld = magazine.GetComponent<MyLinearDrive>();
+        if(ld != null) {
+           
+        isLinearDriving = true;
         //Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
         ld.startPosition = startMagazineLinearDrivePosition;
         ld.endPosition = endMagazineLinearDrivePosition;
         ld.startingRotation = magazinePostition.rotation;
         ld.OnActivated(GetComponentInChildren<LinearMapping>(), this);
+        }else
+        {
+            DisAttachMagazine();
+        }
 
     }
 

@@ -54,10 +54,26 @@ public class AllyController : EnemyController
         if (w != null)
         {
             hand.DetachObject(w.gameObject, false);
+            hand.otherHand.DetachObject(hand.currentAttachedObject, false);
             Destroy(w.gameObject);
         }
         isIncarnated = false;
 
+    }
+    public override void SetPoint(Vector3 position)
+    {
+        if (!priorityMoving)
+        {
+            base.SetPoint(position);
+
+        }
+    }
+
+    public void SetPrioirityPoint(Vector3 position)
+    {
+        priorityMoving = false;
+        SetPoint(position);
+        priorityMoving = true;
     }
     private void Start()
     {
@@ -104,7 +120,7 @@ public class AllyController : EnemyController
     }
     public override void Diselected()
     {
-        ResetSpecificColor();
+        ChangeSpecificColor(Color.yellow);
     }
     public override void AfterSelected(Selectable selectable)
     {
@@ -133,6 +149,7 @@ public class AllyController : EnemyController
 
     public override void OnInputAction(UnitSelector selector)
     {
+        Debug.Log("incarnating");
         if (!isIncarnated)
         {
             selector.BlockSelection = true;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEffect : MonoBehaviour
+public class DisolveEffect : MonoBehaviour
 {
 
     public float spawnEffectTime = 2;
@@ -11,16 +11,16 @@ public class SpawnEffect : MonoBehaviour
 
     ParticleSystem ps;
     float timer = 0;
-    public Renderer _renderer;
-    public Material mat;
+    public Renderer[] renderers;
+
     int shaderProperty;
     bool hasStarted;
 
     void Start()
     {
         shaderProperty = Shader.PropertyToID("_cutoff");
-        if (_renderer == null)
-            _renderer = GetComponent<Renderer>();
+        StartDisolve();
+
         //ps = GetComponentInChildren<ParticleSystem>();
 
         //  var main = ps.main;
@@ -28,11 +28,13 @@ public class SpawnEffect : MonoBehaviour
 
         //ps.Play();
 
+
     }
 
     public float StartDisolve()
     {
         // ps.Play();
+        renderers = GetComponentsInChildren<Renderer>();
         hasStarted = true;
         return spawnEffectTime;
     }
@@ -51,7 +53,16 @@ public class SpawnEffect : MonoBehaviour
             {
                 timer += Time.deltaTime;
             }
-            mat.SetFloat(shaderProperty, fadeIn.Evaluate(Mathf.InverseLerp(0, spawnEffectTime, timer)));
+            float value = fadeIn.Evaluate(Mathf.InverseLerp(0, spawnEffectTime, timer));
+            foreach (var r in renderers)
+            {
+                foreach (var mat in r.materials)
+                {
+                    mat.SetFloat(shaderProperty, value);
+                }
+
+            }
+
         }
 
     }

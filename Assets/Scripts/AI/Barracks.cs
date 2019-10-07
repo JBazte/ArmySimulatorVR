@@ -32,7 +32,7 @@ public class Barracks : Selectable
         }
         else
         {
-            newOccupant.SetPoint(GetStandPoint.position);
+            newOccupant.SetPrioirityPoint(GetStandPoint.position);
         }
         occupant = newOccupant;
     }
