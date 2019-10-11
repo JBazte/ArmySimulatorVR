@@ -57,6 +57,7 @@ public class GameController : PersistableObject
         }
     }
 
+
     IEnumerator LoadLevel(int levelBuildIndex)
     {
         enabled = false;
@@ -73,18 +74,19 @@ public class GameController : PersistableObject
     }
     public override void Save(GameDataWriter writer)
     {
-        DebugFactoryID();
+        //DebugFactoryID();
         writer.Write(Random.state);
         scoreController.Save(writer);
         writer.Write(buildIndex);
         LevelController.current.Save(writer);
-        writer.Write(enemies.Count);
-        foreach (var enemy in enemies)
-        {
-            writer.Write(enemy.OriginFactory.FactoryID);
-            writer.Write(enemy.EnemyID);
-            enemy.Save(writer);
-        }
+        /* writer.Write(enemies.Count);
+         foreach (var enemy in enemies)
+         {
+             writer.Write(enemy.OriginFactory.FactoryID);
+             writer.Write(enemy.EnemyID);
+             enemy.Save(writer);
+         }
+         */
     }
 
     public IEnumerator LoadGame(GameDataReader reader)
@@ -94,6 +96,7 @@ public class GameController : PersistableObject
 
         yield return LoadLevel(reader.ReadInt());
         LevelController.current.Load(reader);
+        /* 
         int enemiesLenght = reader.ReadInt();
         for (int i = 0; i < enemiesLenght; i++)
         {
@@ -103,6 +106,7 @@ public class GameController : PersistableObject
             Enemy instance = factories[factoryId].Get(enemyId);
             instance.Load(reader);
         }
+        */
     }
     public override void Load(GameDataReader reader)
     {

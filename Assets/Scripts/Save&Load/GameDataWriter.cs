@@ -46,6 +46,12 @@ public class GameDataWriter
         writer.Write(data);
     }
 
+    public void Write(Score score)
+    {
+        writer.Write(score.name);
+        writer.Write(score.score);
+        writer.Write(score.id);
+    }
 
 
 }
