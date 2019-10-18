@@ -12,7 +12,7 @@ public class BarrackStats : CharacterStats
 
 
         GameController.instance.LoadNextLevel();
-
+        Destroy(this);
 
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -226,6 +226,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -255,21 +270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -499,6 +499,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -528,21 +543,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -652,6 +652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -706,11 +711,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -812,6 +812,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,11 +871,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -1263,6 +1263,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -1292,21 +1307,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -1500,6 +1500,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -1529,21 +1544,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -1720,6 +1720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1774,11 +1779,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -1958,6 +1958,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -1987,21 +2002,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -2296,6 +2296,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -2325,21 +2340,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -2416,6 +2416,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -2445,21 +2460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -2888,6 +2888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2942,11 +2947,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3286,6 +3286,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3340,11 +3345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3806,6 +3806,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3860,11 +3865,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3955,6 +3955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4009,11 +4014,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4223,6 +4223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4277,11 +4282,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4431,6 +4431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4485,11 +4490,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4647,6 +4647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4702,11 +4707,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &698718040 stripped
@@ -4726,6 +4726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -4781,11 +4786,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -5000,6 +5000,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5029,21 +5044,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -5391,12 +5391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
-        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5452,6 +5446,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5482,21 +5491,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
         type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &831570739 stripped
@@ -5641,6 +5641,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5670,21 +5685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -5828,6 +5828,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5883,11 +5888,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &887579614 stripped
@@ -5907,6 +5907,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -5962,11 +5967,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -6409,6 +6409,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6463,11 +6468,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -7009,6 +7009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7063,11 +7068,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -7293,16 +7293,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: accuracy
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: movePoint
       value: 
       objectReference: {fileID: 730875830}
+    - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: accuracy
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1140168253 stripped
@@ -7328,6 +7328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -7383,11 +7388,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -7450,6 +7450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7505,11 +7510,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1157301938 stripped
@@ -7529,6 +7529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -7584,11 +7589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -7864,6 +7864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7919,11 +7924,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1244065498 stripped
@@ -7949,6 +7949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -8004,11 +8009,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -8212,6 +8212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8267,11 +8272,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1321375213 stripped
@@ -8291,6 +8291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -8346,11 +8351,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -8553,6 +8553,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8607,11 +8612,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -8831,12 +8831,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
-        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8892,6 +8886,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -8922,21 +8931,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
         type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1519820061 stripped
@@ -8956,6 +8956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -9012,11 +9017,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1526452018 stripped
@@ -9036,6 +9036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -9092,11 +9097,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1560131456 stripped
@@ -9117,12 +9117,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
-        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9178,6 +9172,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -9208,21 +9217,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
         type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1568733099 stripped
@@ -9242,6 +9242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -9297,11 +9302,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -9378,6 +9378,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -9407,21 +9422,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -9619,6 +9619,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9673,11 +9678,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -9981,6 +9981,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10035,11 +10040,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -10116,6 +10116,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -10145,21 +10160,6 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -10420,13 +10420,14 @@ GameObject:
   - component: {fileID: 1730221043}
   - component: {fileID: 1730221045}
   - component: {fileID: 1730221044}
+  - component: {fileID: 1730221046}
   m_Layer: 0
   m_Name: AllyCompositeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1730221043
 Transform:
   m_ObjectHideFlags: 0
@@ -10479,6 +10480,25 @@ MonoBehaviour:
   - {fileID: 168737618}
   sequencial: 0
   overrideConf: 1
+--- !u!114 &1730221046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730221042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fdaa7b4470b664cb668d3643e27e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnZone: {fileID: 1730221045}
+  maxCount: 08000000050000000300000003000000
+  importance:
+  - 1
+  - 2
+  - 5
+  - 5
 --- !u!1001 &1751664368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10490,6 +10510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SMG (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -10545,11 +10570,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -10826,12 +10846,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
-        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10887,6 +10901,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -10917,21 +10946,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
         type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1810968277 stripped
@@ -11187,6 +11207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11241,11 +11266,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -11514,6 +11534,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11568,11 +11593,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -11834,6 +11854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11888,11 +11913,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -11953,12 +11973,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
-        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12014,6 +12028,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -12044,21 +12073,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
         type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1994200687 stripped
@@ -12223,6 +12243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMG (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12277,11 +12302,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -12862,6 +12882,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12916,11 +12941,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
@@ -13020,11 +13040,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8334331223620789535, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13079,6 +13094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8716247851204649051, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
