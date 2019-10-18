@@ -56,8 +56,8 @@ public class GameDataReader
     {
         string name = reader.ReadString();
         float score = reader.ReadSingle();
-        int id = reader.ReadInt32();
-        return new Score(name, score, id);
+
+        return new Score(name, score);
 
     }
 }

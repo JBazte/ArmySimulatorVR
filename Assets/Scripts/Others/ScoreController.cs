@@ -21,15 +21,26 @@ public class ScoreController : PersistableObject
     }
 
     #endregion
+    PersistantStorage storage;
 
     public System.Action OnScoreChange;
-
+    private void Start()
+    {
+        storage = GameController.instance.Storage;
+        storage.LoadHighScore(this);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
             AddScore(1000);
         }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            AddTopScore(new Score(playerName, score));
+        }
+
+
     }
 
     public void AddScore(float amount)
@@ -46,10 +57,6 @@ public class ScoreController : PersistableObject
 
     public int CompareScores(Score x, Score y)
     {
-        if (x.score == 0 || y.score == 0)
-        {
-            return 0;
-        }
 
         // CompareTo() method 
         return y.score.CompareTo(x.score);
@@ -61,43 +68,72 @@ public class ScoreController : PersistableObject
 
     }
 
+    public string TopScoresString
+    {
+        get
+        {
+            string result = "";
+            foreach (var s in topScores)
+            {
+                result += s + "\n";
+            }
+
+            return result;
+
+
+        }
+    }
     private void AddTopScore(Score score)
     {
 
         if (topScores.Count >= topScores.Capacity)
         {
+
             SortTopScores();
+            storage.SaveHighScore(this);
             int lastScore = topScores.Count - 1;
 
             if (topScores[lastScore].score < score.score)
             {
                 topScores[lastScore] = score;
             }
+            SortTopScores();
         }
         else
         {
             topScores.Add(score);
             SortTopScores();
+            storage.SaveHighScore(this);
         }
     }
     public override void Save(GameDataWriter writer)
     {
-        AddTopScore(new Score(playerName, score));
+        //AddTopScore(new Score(playerName, score));
+
+        writer.Write(score);
+        writer.Write(playerName);
+    }
+    public override void Load(GameDataReader reader)
+    {
+        score = reader.ReadFloat();
+        playerName = reader.ReadString();
+    }
+
+    public void SaveHighScores(GameDataWriter writer)
+    {
         writer.Write(topScores.Count);
         foreach (var score in topScores)
         {
             writer.Write(score);
         }
-        writer.Write(score);
     }
-    public override void Load(GameDataReader reader)
+    public void LoadHighScores(GameDataReader reader)
     {
         int index = reader.ReadInt();
         for (int i = 0; i < index; i++)
         {
             AddTopScore(reader.ReadScore());
         }
-        score = reader.ReadFloat();
+        Debug.Log(TopScoresString);
     }
-
 }

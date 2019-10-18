@@ -3,27 +3,18 @@
 public class Score
 {
 
-    public Score(string name, float score, int id)
+    public Score(string name, float score)
     {
         this.name = name;
         this.score = score;
-        Id = id;
+
     }
     public string name;
     public float score;
-    public int id = int.MinValue;
-    public int Id
+
+    public override string ToString()
     {
-        get
-        {
-            return id;
-        }
-        set
-        {
-            if (id == int.MinValue && value != int.MinValue)
-            {
-                id = value;
-            }
-        }
+        return name + " " + score;
     }
+
 }

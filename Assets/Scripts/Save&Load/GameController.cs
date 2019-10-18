@@ -9,6 +9,14 @@ public class GameController : PersistableObject
     public static GameController instance;
     [SerializeField]
     PersistantStorage storage;
+    public PersistantStorage Storage
+    {
+        get
+        {
+            return storage;
+        }
+
+    }
     [SerializeField]
     ScoreController scoreController;
     [SerializeField]
@@ -23,6 +31,17 @@ public class GameController : PersistableObject
     EnemyFactory[] factories;
     private List<Enemy> enemies;
     private int buildIndex;
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,
+         KeyCode.Alpha6,
+         KeyCode.Alpha7,
+         KeyCode.Alpha8,
+         KeyCode.Alpha9,
+     };
     private void Awake()
     {
         instance = this;
@@ -55,6 +74,16 @@ public class GameController : PersistableObject
             BeginNewGame();
             storage.Load(this);
         }
+
+
+        for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i - 1]))
+            {
+                StartCoroutine(LoadLevel(i));
+
+            }
+        }
     }
 
 
@@ -68,6 +97,7 @@ public class GameController : PersistableObject
         yield return SceneManager.LoadSceneAsync(
             levelBuildIndex, LoadSceneMode.Additive
         );
+        Debug.Log("cganging level");
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(levelBuildIndex));
         buildIndex = levelBuildIndex;
         enabled = true;

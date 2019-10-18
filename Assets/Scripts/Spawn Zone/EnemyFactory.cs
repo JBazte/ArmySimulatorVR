@@ -9,7 +9,17 @@ public class EnemyFactory : ScriptableObject
 
     [SerializeField]
     Enemy[] prefabs;
-
+    [SerializeField]
+    float[] spawnWeights;
+    public float[] SpawnWeights
+    {
+        set
+        {
+            SpawnWeights = value;
+        }
+    }
+    public bool isWeighted;
+    private float totalWeight;
     [SerializeField]
     private bool recycle;
 
@@ -105,6 +115,50 @@ public class EnemyFactory : ScriptableObject
         return Get(Random.Range(0, prefabs.Length));
     }
 
+    public Enemy GetWeighted()
+    {
+        if (!isWeighted || prefabs.Length != spawnWeights.Length)
+        {
+            return GetRandom();
+        }
+        else
+        {
+            spawnWeight[] weights = new spawnWeight[prefabs.Length];
+            float currenttotalWeight = 0;
+            for (int i = 0; i < prefabs.Length; i++)
+            {
+                weights[i].weight = spawnWeights[i];
+                if (weights[i].weight < 0)
+                {
+                    weights[i].weight = 0;
+
+                }
+                weights[i].fromweight = currenttotalWeight;
+                currenttotalWeight += weights[i].weight;
+                weights[i].toweight = currenttotalWeight;
+
+
+            }
+            totalWeight = currenttotalWeight;
+            for (int i = 0; i < weights.Length; i++)
+            {
+                weights[i].probability = (weights[i].weight / totalWeight) * 100;
+                //Debug.Log(weights[i].probability);
+
+            }
+            float pickNumber = Random.Range(0, totalWeight);
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                if (pickNumber > weights[i].fromweight && pickNumber < weights[i].toweight)
+                {
+                    return Get(i);
+                }
+            }
+            return GetRandom();
+        }
+    }
+
     void CreatePools()
     {
         pools = new List<Enemy>[prefabs.Length];
@@ -114,6 +168,17 @@ public class EnemyFactory : ScriptableObject
             pools[i] = new List<Enemy>();
         }
         poolScene = SceneManager.CreateScene(name);
+    }
+
+    [System.Serializable]
+    public struct spawnWeight
+    {
+        public float weight;
+        public float fromweight;
+        public float toweight;
+        public float probability;
+
+
     }
 
 }
