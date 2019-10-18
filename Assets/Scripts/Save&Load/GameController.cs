@@ -42,6 +42,7 @@ public class GameController : PersistableObject
          KeyCode.Alpha8,
          KeyCode.Alpha9,
      };
+    public System.Action OnFinishLevel;
     private void Awake()
     {
         instance = this;
@@ -86,7 +87,14 @@ public class GameController : PersistableObject
         }
     }
 
-
+    public void LoadScene(int levelBuildIndex)
+    {
+        StartCoroutine(LoadLevel(levelBuildIndex));
+    }
+    public void LoadNextLevel()
+    {
+        LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     IEnumerator LoadLevel(int levelBuildIndex)
     {
         enabled = false;

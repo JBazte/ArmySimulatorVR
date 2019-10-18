@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -226,21 +226,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -270,6 +255,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -499,21 +499,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -543,6 +528,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -1263,21 +1263,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -1307,6 +1292,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -1500,21 +1500,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -1544,6 +1529,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -1958,21 +1958,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -2002,6 +1987,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -2296,21 +2296,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -2340,6 +2325,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -2416,21 +2416,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -2460,6 +2445,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -4341,7 +4341,7 @@ PrefabInstance:
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
@@ -5000,21 +5000,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5044,6 +5029,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -5258,6 +5258,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932362, guid: cd050a6c86f405041911c25331816759,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5312,11 +5317,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd050a6c86f405041911c25331816759, type: 3}
@@ -5391,6 +5391,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5446,21 +5452,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5491,12 +5482,21 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &831570739 stripped
@@ -5641,21 +5641,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -5685,6 +5670,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -7293,16 +7293,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 730875830}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: accuracy
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 730875830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1140168253 stripped
@@ -8068,7 +8068,7 @@ PrefabInstance:
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
@@ -8410,7 +8410,7 @@ PrefabInstance:
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
@@ -8831,6 +8831,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8886,21 +8892,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -8931,12 +8922,21 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1519820061 stripped
@@ -9117,6 +9117,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9172,21 +9178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -9217,12 +9208,21 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1568733099 stripped
@@ -9378,21 +9378,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -9422,6 +9407,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -9687,6 +9687,97 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1631514677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1639086377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639086378}
+  - component: {fileID: 1639086381}
+  - component: {fileID: 1639086380}
+  - component: {fileID: 1639086379}
+  m_Layer: 14
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639086378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639086377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997893396}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1639086379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639086377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1639086380
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639086377}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1639086381
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639086377}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1644900672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8357617921144659849, guid: a4aa1fa9c77637440b667b3ab0d709fd,
@@ -10025,21 +10116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -10069,6 +10145,21 @@ PrefabInstance:
         type: 3}
       propertyPath: reloadTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
@@ -10335,7 +10426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1730221043
 Transform:
   m_ObjectHideFlags: 0
@@ -10380,8 +10471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factories:
-  - {fileID: 11400000, guid: 970a960798312924f8f960a85964b375, type: 2}
-  - {fileID: 11400000, guid: f8dd010e2727e8d48b58d98cf273e31f, type: 2}
+  - {fileID: 11400000, guid: 76a852efdea217b40bcb52b28a8401fc, type: 2}
   movePosition: {fileID: 0}
   spawnZones:
   - {fileID: 763812051}
@@ -10736,6 +10826,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10791,21 +10887,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -10836,12 +10917,21 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1810968277 stripped
@@ -11863,6 +11953,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ally (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+        type: 3}
     - target: {fileID: 4521389609776072315, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11918,21 +12014,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: detectRadious
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: attackRadious
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
-        type: 3}
-      propertyPath: shotForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4521389609776072313, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
       propertyPath: damage
@@ -11963,12 +12044,21 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
-      propertyPath: objectPrefab
-      value: 
-      objectReference: {fileID: 2105335930772628060, guid: 62c4eef83ba5a98428036a079766c8a2,
+      propertyPath: detectRadious
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
         type: 3}
+      propertyPath: attackRadious
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521389609776072314, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
 --- !u!4 &1994200687 stripped
@@ -12003,6 +12093,118 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1845238886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1997893392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997893396}
+  - component: {fileID: 1997893395}
+  - component: {fileID: 1997893394}
+  - component: {fileID: 1997893393}
+  - component: {fileID: 1997893397}
+  m_Layer: 14
+  m_Name: Barracks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1997893393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997893392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1997893394
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997893392}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1997893395
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997893392}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1997893396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997893392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.42, y: 1.25, z: -30.61}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 10}
+  m_Children:
+  - {fileID: 1639086378}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997893397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997893392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec7585141a847547855246a990a0dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
+  damage: 10
+  speed: 5
+  attackSpeed: 3
+  accuracy: 80
+  maxAmmo: 30
+  reloadTime: 3
 --- !u!198 &2000387898 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
@@ -12818,6 +13020,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
+        type: 3}
+      propertyPath: movePoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8334331223620789535, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12873,11 +13080,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8716247851204649051, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
       propertyPath: speed
@@ -12901,6 +13103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932362, guid: cd050a6c86f405041911c25331816759,
         type: 3}
@@ -12956,11 +13163,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
-        type: 3}
-      propertyPath: movePoint
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4021843349622524622, guid: cd050a6c86f405041911c25331816759,
         type: 3}
@@ -13358,7 +13560,7 @@ PrefabInstance:
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7372512999633280085, guid: 56c5bd02f7229dd4ebf16d6ad752dfda,
         type: 3}

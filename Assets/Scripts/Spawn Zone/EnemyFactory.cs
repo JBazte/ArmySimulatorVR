@@ -11,12 +11,15 @@ public class EnemyFactory : ScriptableObject
     Enemy[] prefabs;
     [SerializeField]
     float[] spawnWeights;
+
+    private int[] instancesAlive;
     public float[] SpawnWeights
     {
         set
         {
             SpawnWeights = value;
         }
+
     }
     public bool isWeighted;
     private float totalWeight;
@@ -55,6 +58,7 @@ public class EnemyFactory : ScriptableObject
             }
             List<Enemy> pool = pools[enemyId];
             int lastIndex = pool.Count - 1;
+            instancesAlive[enemyId]++;
             if (lastIndex >= 0)
             {
                 instance = pool[lastIndex];
@@ -82,6 +86,8 @@ public class EnemyFactory : ScriptableObject
 
     }
 
+
+
     public void Reclaim(Enemy enemy)
     {
         if (enemy.OriginFactory != this)
@@ -89,7 +95,7 @@ public class EnemyFactory : ScriptableObject
             Debug.LogError("Trying to Reclaim an Enemy from a different Factory");
             return;
         }
-
+        instancesAlive[enemy.EnemyID]--;
         if (recycle)
         {
             if (pools == null)
@@ -143,7 +149,7 @@ public class EnemyFactory : ScriptableObject
             for (int i = 0; i < weights.Length; i++)
             {
                 weights[i].probability = (weights[i].weight / totalWeight) * 100;
-                //Debug.Log(weights[i].probability);
+                Debug.Log(prefabs[i].name + " Probabilities are: " + weights[i].probability + "%");
 
             }
             float pickNumber = Random.Range(0, totalWeight);
@@ -162,7 +168,7 @@ public class EnemyFactory : ScriptableObject
     void CreatePools()
     {
         pools = new List<Enemy>[prefabs.Length];
-
+        instancesAlive = new int[prefabs.Length];
         for (int i = 0; i < pools.Length; i++)
         {
             pools[i] = new List<Enemy>();
@@ -179,6 +185,11 @@ public class EnemyFactory : ScriptableObject
         public float probability;
 
 
+    }
+
+    public int ActiveInstances(int i)
+    {
+        return instancesAlive[i];
     }
 
 }

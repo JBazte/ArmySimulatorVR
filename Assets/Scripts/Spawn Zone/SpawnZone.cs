@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class SpawnZone : PersistableObject
 {
     [SerializeField]
-    protected EnemyFactory[] factories;
+    public EnemyFactory[] factories;
     [SerializeField]
     Transform movePosition;
 

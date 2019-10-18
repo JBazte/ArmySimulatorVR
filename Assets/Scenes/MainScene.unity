@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af4d5620bb4c147bb799eb1e5a810d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Nico
+  playerName: supernico12
   lastID: 0
 --- !u!4 &1797062968
 Transform:

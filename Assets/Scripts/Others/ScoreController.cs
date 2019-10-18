@@ -27,6 +27,7 @@ public class ScoreController : PersistableObject
     private void Start()
     {
         storage = GameController.instance.Storage;
+        GameController.instance.OnFinishLevel += AddCurrentScore;
         storage.LoadHighScore(this);
     }
     void Update()
@@ -42,7 +43,11 @@ public class ScoreController : PersistableObject
 
 
     }
-
+    private void AddCurrentScore()
+    {
+        Debug.Log("Adding current score");
+        AddTopScore(new Score(playerName, score));
+    }
     public void AddScore(float amount)
     {
         if (amount > 0)
@@ -90,14 +95,15 @@ public class ScoreController : PersistableObject
         {
 
             SortTopScores();
-            storage.SaveHighScore(this);
-            int lastScore = topScores.Count - 1;
 
+            int lastScore = topScores.Count - 1;
+            Debug.Log(topScores[lastScore]);
             if (topScores[lastScore].score < score.score)
             {
                 topScores[lastScore] = score;
             }
             SortTopScores();
+            storage.SaveHighScore(this);
         }
         else
         {

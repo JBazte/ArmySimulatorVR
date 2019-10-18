@@ -14488,10 +14488,10 @@ MonoBehaviour:
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2
-    m_Bits: 9216
+    m_Bits: 25600
   attackMask:
     serializedVersion: 2
-    m_Bits: 11264
+    m_Bits: 27648
   shotSpawnPosition: {fileID: 736575421}
   shotInstance: {fileID: 8020285274578604413, guid: 986ce682c91dec746b5425c02feee44f,
     type: 3}
