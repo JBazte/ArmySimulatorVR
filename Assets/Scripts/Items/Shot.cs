@@ -7,10 +7,17 @@ public class Shot : MonoBehaviour
 
     [SerializeField]
     float lifeSpam;
-    private LayerMask collideMask;
-    private float damage;
+    protected LayerMask collideMask;
+    protected float damage;
 
     private void OnCollisionEnter(Collision other)
+    {
+
+        OnImpact(other);
+    }
+
+
+    protected virtual void OnImpact(Collision other)
     {
         if (collideMask == (collideMask | (1 << other.gameObject.layer)))
         {
