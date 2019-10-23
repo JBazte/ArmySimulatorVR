@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class SpawnZone : PersistableObject
 {
     [SerializeField]
-    EnemyFactory[] factories;
+    public EnemyFactory[] factories;
     [SerializeField]
     Transform movePosition;
 
@@ -13,8 +13,9 @@ public abstract class SpawnZone : PersistableObject
 
     public virtual Enemy SpawnEnemy()
     {
+
         int factoryIndex = Random.Range(0, factories.Length);
-        Enemy enemy = factories[factoryIndex].GetRandom();
+        Enemy enemy = factories[factoryIndex].GetWeighted();
         enemy.transform.position = SpawnPoint;
         if (movePosition != null)
         {

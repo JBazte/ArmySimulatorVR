@@ -15,7 +15,7 @@ public class UnitSelector : MonoBehaviour
 
     private void Start()
     {
-       
+
         player = Player.instance;
         hands = player.hands;
         startPosition = player.transform.position;
@@ -24,7 +24,7 @@ public class UnitSelector : MonoBehaviour
     }
     void Update()
     {
-       
+
         if (hands != null)
         {
 
@@ -36,14 +36,14 @@ public class UnitSelector : MonoBehaviour
                 {
                     //if(selected.InputAction != SteamVR_Action_Boolean.)
                     //if (selected.InputAction.GetStateDown(hand.handType))
-                    if(SteamVR_Input.GetStateDown("Teleport", hand.handType))
+                    if (SteamVR_Input.GetStateDown("Teleport", hand.handType))
                     {
-                        
+
                         selected.OnInputAction(this);
                         return;
                     }
                 }
-               
+
 
             }
         }
@@ -65,9 +65,10 @@ public class UnitSelector : MonoBehaviour
     {
         if (!BlockSelection)
         {
-            if (newSelected != null) { 
-        
-           
+            if (newSelected != null)
+            {
+
+
                 if (selected != null)
                 {
                     // Two Step Selection
@@ -84,8 +85,8 @@ public class UnitSelector : MonoBehaviour
                 UnSelect();
             }
         }
-        
-        
+
+
     }
 
     void UnSelect()

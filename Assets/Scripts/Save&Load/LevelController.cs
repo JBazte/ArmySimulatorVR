@@ -17,12 +17,12 @@ public class LevelController : PersistableObject
         current = this;
         if (waveController == null)
         {
-            waveController = GetComponentInChildren<WaveController>();
+            //waveController = GetComponentInChildren<WaveController>();
         }
     }
     public override void Save(GameDataWriter writer)
     {
-        waveController.Save(writer);
+        // waveController.Save(writer);
         writer.Write(objectToSave.Length);
         foreach (var o in objectToSave)
         {
@@ -31,7 +31,7 @@ public class LevelController : PersistableObject
     }
     public override void Load(GameDataReader reader)
     {
-        waveController.Load(reader);
+        // waveController.Load(reader);
         int index = reader.ReadInt();
         for (int i = 0; i < index; i++)
         {

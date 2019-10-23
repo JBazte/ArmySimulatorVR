@@ -52,4 +52,12 @@ public class GameDataReader
     {
         return reader.ReadBoolean();
     }
+    public Score ReadScore()
+    {
+        string name = reader.ReadString();
+        float score = reader.ReadSingle();
+
+        return new Score(name, score);
+
+    }
 }
