@@ -1,29 +1,43 @@
 fileFormatVersion: 2
-guid: 7d486c0c83ed2aa48807e7be38d84425
+guid: eb93bd1c0fccc884591bcfa2ab0bd525
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Cylinder
-    100006: Cylinder.001
     400000: //RootNode
-    400002: Camera
-    400004: Cylinder
-    400006: Cylinder.001
-    2000000: Camera
-    2100000: GreenMetal.002
-    2100002: BlackMetal.005
-    2100004: BlackMetal.004
-    2100006: Metal02.002
-    2100008: RedMetal.002
-    2100010: Material.003
-    2300000: Cylinder
-    2300002: Cylinder.001
-    3300000: Cylinder
-    3300002: Cylinder.001
-    4300000: Cylinder
-    4300002: Cylinder.001
+    2100000: BlackMetal
+    2100002: BlackMetal.002
+    2100004: Red
+    2100006: Metal02
+    2100008: Outline
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
+    7400000: Cube|Cube.001Action
+    7400002: Cube|Cube.002Action
+    7400004: Cube|Cube.014Action
+    7400006: Cube|CubeAction
+    7400008: Cube|Cylinder.000Action
+    7400010: Cube|Cylinder.001Action
+    7400012: Cube|Cylinder.002Action
+    7400014: Cube|Cylinder.003Action
+    7400016: Cube|Cylinder.004Action
+    7400018: Cube|Cylinder.005Action
+    7400020: Cube|Cylinder.006Action
+    7400022: Cube|Cylinder.007Action
+    7400024: Cube|Cylinder.008Action
+    7400026: Cube|Cylinder.009Action
+    7400028: Cube|Cylinder.010Action
+    7400030: Cube|Cylinder.011Action
+    7400032: Cube|Cylinder.012Action
+    7400034: Cube|Cylinder.013Action
+    7400036: Cube|Cylinder.014Action
+    7400038: Cube|Cylinder.015Action
+    7400040: Cube|Cylinder.016Action
+    7400042: Cube|Cylinder.017Action
+    7400044: Cube|Cylinder.018Action
+    7400046: Cube|IcosphereAction.001
+    9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -77,8 +91,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -105,7 +119,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
