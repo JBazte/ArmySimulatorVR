@@ -364,6 +364,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0d1f81dadf5c1419ff16ca2458f010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectionTransform: {fileID: 7949867569123073152}
+  cursorTransform: {fileID: 8544432453097413216}
+  top:
+    icon: {fileID: 21300000, guid: 22729aa6aab177c439c1f21db0f1063b, type: 3}
+    iconRenderer: {fileID: 7949867568816526483}
+    onPress:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  right:
+    icon: {fileID: 21300000, guid: 8578abba712579240bf08fc95853eafb, type: 3}
+    iconRenderer: {fileID: 7949867569736044955}
+    onPress:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  bottom:
+    icon: {fileID: 21300000, guid: c58b99da959f1124f9ca04d39515ad77, type: 3}
+    iconRenderer: {fileID: 7949867568838440139}
+    onPress:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  left:
+    icon: {fileID: 21300000, guid: 39ce0797d329d944685a7c2f75c9860c, type: 3}
+    iconRenderer: {fileID: 7949867570309217590}
+    onPress:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &7949867569123073155
 GameObject:
   m_ObjectHideFlags: 0

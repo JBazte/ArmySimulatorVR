@@ -300,6 +300,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3686282c9bdfe458528313d7d062cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touch:
+    actionPath: /actions/default/in/ActivateMenu
+    needsReinit: 0
+  press:
+    actionPath: /actions/default/in/Select
+    needsReinit: 0
+  touchPosition:
+    actionPath: /actions/default/in/MenuSelectionPosition
+    needsReinit: 0
+  radialMenu: {fileID: 7949867569511796715}
 --- !u!4 &1410318642
 Transform:
   m_ObjectHideFlags: 0
@@ -325,6 +335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Guns Radial
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949867569115068648, guid: 8bfe864fd53820b48b94df2ba15f7dad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7949867569115068649, guid: 8bfe864fd53820b48b94df2ba15f7dad,
         type: 3}
@@ -395,11 +410,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadialMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 7949867569115068648, guid: e34ed511fb45f2849a53e98192168e2b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7949867569115068649, guid: e34ed511fb45f2849a53e98192168e2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,3 +467,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e34ed511fb45f2849a53e98192168e2b, type: 3}
+--- !u!114 &7949867569511796715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7949867569115068654, guid: e34ed511fb45f2849a53e98192168e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7949867569511796714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0d1f81dadf5c1419ff16ca2458f010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
