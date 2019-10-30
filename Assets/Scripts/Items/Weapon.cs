@@ -68,6 +68,8 @@ public class Weapon : MonoBehaviour
     private Rigidbody rb;
     private float recoilTime;
     private float shotCount;
+    private float magazinetoNullTime = 3f;
+    private float timeBeforeReload;
     protected bool hasMagazine;
 
     private bool isLinearDriving;
@@ -94,6 +96,7 @@ public class Weapon : MonoBehaviour
     private void Update()
     {
         lastAttack -= Time.deltaTime;
+        timeBeforeReload -= Time.deltaTime;
         if (recoilTime > 0)
             recoilTime -= (Time.deltaTime * (recoilTime / coolOffTime));
         CheckAmunition();
@@ -164,6 +167,7 @@ public class Weapon : MonoBehaviour
         if (magazine.GetMagazineType == ammoType)
         {
             // Debug.Log("attached");
+
             magazine.OnAttachedToWeapon(this);
             currentAmmo = magazine.GetCurrentAmmo;
             hasMagazine = true;
@@ -194,6 +198,10 @@ public class Weapon : MonoBehaviour
                         }
                     }
                 }
+                if (timeBeforeReload >= 0)
+                {
+                    lastMag = null;
+                }
                 if (distance < startMagazineLinearDrive)
                 {
 
@@ -201,7 +209,7 @@ public class Weapon : MonoBehaviour
                     {
 
                         float angle = Quaternion.Angle(magazinePostition.rotation, magazine.transform.rotation);
-
+                        Debug.Log(angle);
                         if (angle <= attachAngle)
                         {
                             lastMag = magazine;
@@ -213,10 +221,10 @@ public class Weapon : MonoBehaviour
 
                             else
                             {
-                               
+
                                 StartLinearDrive(magazine);
-                          
-                               
+
+
                                 return;
                             }
                         }
@@ -230,17 +238,19 @@ public class Weapon : MonoBehaviour
 
     public void StartLinearDrive(Magazine magazine)
     {
-        
+
         MyLinearDrive ld = magazine.GetComponent<MyLinearDrive>();
-        if(ld != null) {
-           
-        isLinearDriving = true;
-        //Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
-        ld.startPosition = startMagazineLinearDrivePosition;
-        ld.endPosition = endMagazineLinearDrivePosition;
-        ld.startingRotation = magazinePostition.rotation;
-        ld.OnActivated(GetComponentInChildren<LinearMapping>(), this);
-        }else
+        if (ld != null)
+        {
+
+            isLinearDriving = true;
+            //Physics.IgnoreCollision(GetComponentInChildren<Collider>(), magazine.GetComponentInChildren<Collider>(), true);
+            ld.startPosition = startMagazineLinearDrivePosition;
+            ld.endPosition = endMagazineLinearDrivePosition;
+            ld.startingRotation = magazinePostition.rotation;
+            ld.OnActivated(GetComponentInChildren<LinearMapping>(), this);
+        }
+        else
         {
             DisAttachMagazine();
         }
@@ -256,6 +266,7 @@ public class Weapon : MonoBehaviour
     {
         currentAmmo = 0;
         hasMagazine = false;
+        timeBeforeReload = magazinetoNullTime;
         Debug.Log("disattached");
     }
 

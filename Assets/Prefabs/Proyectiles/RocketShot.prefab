@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4694275113841910616}
   - component: {fileID: 4694275113841910623}
   - component: {fileID: 4694275113841910612}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RocketShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4694275113841910622}
-  m_LocalRotation: {x: -0.48645842, y: -0.48645842, z: 0.51318437, w: -0.51318437}
+  m_LocalRotation: {x: 0.48645815, y: 0.48645815, z: -0.5131846, w: 0.5131846}
   m_LocalPosition: {x: -3.067, y: 0.97937316, z: 2.0674973}
   m_LocalScale: {x: 0.14999999, y: 0.15, z: 0.14999999}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 86.937004, y: 0, z: -90.00001}
 --- !u!33 &4694275113841910618
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba5e984de65a894ba985611d8ee2e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpam: 0
+  lifeSpam: 3
   explosionRadious: 3
 --- !u!54 &4694275113841910612
 Rigidbody:
@@ -126,4 +126,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
