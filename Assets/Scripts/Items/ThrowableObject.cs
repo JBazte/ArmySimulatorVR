@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Rigidbody), typeof(VelocityEstimator))]
-public class ThrowableObject : GrabableObject
+public class ThrowableObject : GrabbableObject
 {
 
     public ReleaseStyle releaseVelocityStyle = ReleaseStyle.GetFromHand;
@@ -18,6 +18,8 @@ public class ThrowableObject : GrabableObject
     private Rigidbody rigidBody;
     protected float attachTime;
     protected Vector3 attachPosition;
+
+
 
     private void Awake()
     {

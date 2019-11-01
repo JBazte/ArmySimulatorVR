@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 public class ItemSpawner : MonoBehaviour
 {
     [SerializeField]
-    protected GrabableObject item;
+    protected GrabbableObject item;
     [SerializeField]
     Transform transformPositon;
 
@@ -25,26 +25,26 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnObject(Hand hand)
     {
-        if(item != null)
+        if (item != null)
         {
 
-        GrabableObject gb = Instantiate(item, hand.transform.position, Quaternion.identity);
-        if (attachToHand)
-        {
-            gb.AttachToHand(hand);
-        }
+            GrabbableObject gb = Instantiate(item, hand.transform.position, Quaternion.identity);
+            if (attachToHand)
+            {
+                gb.AttachToHand(hand);
+            }
         }
     }
     public void SpawnObject()
     {
-        GrabableObject gb = Instantiate(item, transformPositon.position, Quaternion.identity);
+        GrabbableObject gb = Instantiate(item, transformPositon.position, Quaternion.identity);
     }
-    public void SpawnObject(GrabableObject item)
+    public void SpawnObject(GrabbableObject item)
     {
 
         Instantiate(item, transformPositon.position, Quaternion.identity);
     }
-    public void SpawnObject(GrabableObject item, Transform parent)
+    public void SpawnObject(GrabbableObject item, Transform parent)
     {
 
         Instantiate(item, transformPositon.position, Quaternion.identity, parent);

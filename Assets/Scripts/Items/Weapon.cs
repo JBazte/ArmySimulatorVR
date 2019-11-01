@@ -200,7 +200,7 @@ public class Weapon : MonoBehaviour
                 }
                 if (timeBeforeReload >= 0)
                 {
-                    lastMag = null;
+                    // lastMag = null;
                 }
                 if (distance < startMagazineLinearDrive)
                 {

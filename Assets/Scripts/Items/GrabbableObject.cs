@@ -4,13 +4,21 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
-public class GrabableObject : MonoBehaviour
+public class GrabbableObject : MonoBehaviour
 {
 
     [SerializeField]
     Transform grabposition;
     protected Interactable interactable;
 
+    [SerializeField]
+    protected bool isDoubleHanded;
+    [SerializeField]
+    Transform secondGrabPosition;
+    SecondHanded secondHand;
+    public bool HasDoubleHands;
+
+    Hand grabbingHand;
 
     [EnumFlags]
     [Tooltip("The flags used to attach this object to the hand.")]
@@ -23,6 +31,10 @@ public class GrabableObject : MonoBehaviour
         if (grabposition != null)
         {
             attachmentFlags = Hand.AttachmentFlags.SnapOnAttach | attachmentFlags;
+        }
+        if (isDoubleHanded)
+        {
+            secondHand = secondGrabPosition.GetComponentInChildren<SecondHanded>();
         }
     }
     //-------------------------------------------------
@@ -53,7 +65,7 @@ public class GrabableObject : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
-
+            grabbingHand = hand;
             hand.HoverLock(interactable);
 
             // Attach this object to the hand
@@ -76,6 +88,8 @@ public class GrabableObject : MonoBehaviour
         GrabTypes startingGrabType = hand.GetGrabStarting();
         hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
         //hand.HoverLock(interactable);
+
+
     }
 
     //-------------------------------------------------
@@ -83,7 +97,10 @@ public class GrabableObject : MonoBehaviour
     //-------------------------------------------------
     private void OnAttachedToHand(Hand hand)
     {
-
+        if (isDoubleHanded)
+        {
+            secondHand.StartGrabbable(this);
+        }
     }
 
 
@@ -93,7 +110,10 @@ public class GrabableObject : MonoBehaviour
     //-------------------------------------------------
     private void OnDetachedFromHand(Hand hand)
     {
-
+        if (isDoubleHanded)
+        {
+            secondHand.StopGrabble();
+        }
     }
 
 
@@ -102,17 +122,35 @@ public class GrabableObject : MonoBehaviour
     //-------------------------------------------------
     private void HandAttachedUpdate(Hand hand)
     {
-       
+
 
     }
 
 
     private void Update()
     {
+        if (isDoubleHanded)
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+
+                secondHand.StartGrabbable(this);
+            }
+
+            if (HasDoubleHands)
+            {
+                TwoHandedPosition();
+            }
+        }
+
 
     }
 
-
+    private void TwoHandedPosition()
+    {
+        //if (grabbingHand.otherHand != null)
+        //  transform.LookAt(grabbingHand.otherHand.transform.position);
+    }
     //-------------------------------------------------
     // Called when this attached GameObject becomes the primary attached object
     //-------------------------------------------------

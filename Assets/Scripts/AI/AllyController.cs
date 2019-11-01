@@ -6,12 +6,12 @@ using Valve.VR;
 public class AllyController : EnemyController
 {
     [SerializeField]
-    GrabableObject objectPrefab;
+    GrabbableObject objectPrefab;
     [SerializeField]
     SteamVR_Input_Sources handType = SteamVR_Input_Sources.RightHand;
 
     List<Color> defaultColors;
-    private GrabableObject w;
+    private GrabbableObject w;
     private Hand hand;
     SkinnedMeshRenderer mr;
     bool isIncarnated;
