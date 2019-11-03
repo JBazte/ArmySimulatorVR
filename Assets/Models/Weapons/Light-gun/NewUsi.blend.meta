@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb93bd1c0fccc884591bcfa2ab0bd525
+guid: 01c5af307f3290342a9f8aae41baee32
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -13,30 +13,30 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
-    7400000: Cube|Cube.001Action
-    7400002: Cube|Cube.002Action
-    7400004: Cube|Cube.014Action
-    7400006: Cube|CubeAction
-    7400008: Cube|Cylinder.000Action
-    7400010: Cube|Cylinder.001Action
-    7400012: Cube|Cylinder.002Action
-    7400014: Cube|Cylinder.003Action
-    7400016: Cube|Cylinder.004Action
-    7400018: Cube|Cylinder.005Action
-    7400020: Cube|Cylinder.006Action
-    7400022: Cube|Cylinder.007Action
-    7400024: Cube|Cylinder.008Action
-    7400026: Cube|Cylinder.009Action
-    7400028: Cube|Cylinder.010Action
-    7400030: Cube|Cylinder.011Action
-    7400032: Cube|Cylinder.012Action
-    7400034: Cube|Cylinder.013Action
-    7400036: Cube|Cylinder.014Action
-    7400038: Cube|Cylinder.015Action
-    7400040: Cube|Cylinder.016Action
-    7400042: Cube|Cylinder.017Action
-    7400044: Cube|Cylinder.018Action
-    7400046: Cube|IcosphereAction.001
+    7400000: Cube|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400002: Cube|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400004: Cube|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400006: Cube|Cube|Cube|CubeAction|Cube|CubeAction
+    7400008: Cube|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400010: Cube|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400012: Cube|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400014: Cube|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400016: Cube|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400018: Cube|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400020: Cube|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400022: Cube|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400024: Cube|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400026: Cube|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400028: Cube|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400030: Cube|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400032: Cube|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400034: Cube|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400036: Cube|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400038: Cube|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400040: Cube|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400042: Cube|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400044: Cube|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400046: Cube|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -71,7 +71,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 1
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
@@ -91,7 +91,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

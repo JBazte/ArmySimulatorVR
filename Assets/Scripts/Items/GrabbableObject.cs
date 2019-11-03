@@ -13,13 +13,12 @@ public class GrabbableObject : MonoBehaviour
 
     [SerializeField]
     protected bool isDoubleHanded;
-    [SerializeField]
-    Transform secondGrabPosition;
+
     SecondHanded secondHand;
-    public bool HasDoubleHands;
+
 
     Hand grabbingHand;
-
+    public int HandsAttached { get; private set; }
     [EnumFlags]
     [Tooltip("The flags used to attach this object to the hand.")]
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.DetachOthers | Hand.AttachmentFlags.VelocityMovement;
@@ -34,7 +33,7 @@ public class GrabbableObject : MonoBehaviour
         }
         if (isDoubleHanded)
         {
-            secondHand = secondGrabPosition.GetComponentInChildren<SecondHanded>();
+            secondHand = GetComponentInChildren<SecondHanded>();
         }
     }
     //-------------------------------------------------
@@ -65,6 +64,7 @@ public class GrabbableObject : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
+            HandsAttached = 1;
             grabbingHand = hand;
             hand.HoverLock(interactable);
 
@@ -137,20 +137,25 @@ public class GrabbableObject : MonoBehaviour
                 secondHand.StartGrabbable(this);
             }
 
-            if (HasDoubleHands)
-            {
-                TwoHandedPosition();
-            }
+
         }
 
 
     }
 
-    private void TwoHandedPosition()
+    public void DoubleHanded()
     {
-        //if (grabbingHand.otherHand != null)
-        //  transform.LookAt(grabbingHand.otherHand.transform.position);
+        grabbingHand.SetSecondHand(transform);
+        HandsAttached = 2;
+
     }
+    public void StopDoubleHanded()
+    {
+        grabbingHand.RemoveSecondHand();
+        HandsAttached = 1;
+    }
+
+
     //-------------------------------------------------
     // Called when this attached GameObject becomes the primary attached object
     //-------------------------------------------------

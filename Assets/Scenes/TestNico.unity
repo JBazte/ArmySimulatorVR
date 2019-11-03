@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -647,6 +647,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -706,11 +711,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -807,6 +807,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -866,11 +871,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (30)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -1871,6 +1871,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -1930,11 +1935,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3039,6 +3039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -3098,11 +3103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3210,6 +3210,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868835669}
     m_Modifications:
+    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
+        type: 3}
+      propertyPath: m_Name
+      value: UziMag
+      objectReference: {fileID: 0}
     - target: {fileID: 8022051481694081398, guid: 3d951490e31ee424f8c9dfa3118b09cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3274,11 +3279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0053696064
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
-        type: 3}
-      propertyPath: m_Name
-      value: UziMag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d951490e31ee424f8c9dfa3118b09cd, type: 3}
@@ -3437,6 +3437,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -3496,11 +3501,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -3736,8 +3736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabposition: {fileID: 0}
   isDoubleHanded: 0
-  secondGrabPosition: {fileID: 0}
-  HasDoubleHands: 0
   attachmentFlags: 0
   restoreParent: 0
 --- !u!114 &549170850
@@ -3960,6 +3958,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -4019,11 +4022,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4109,6 +4107,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -4168,11 +4171,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4377,6 +4375,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -4436,11 +4439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4585,6 +4583,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -4644,11 +4647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -4777,8 +4775,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabposition: {fileID: 0}
   isDoubleHanded: 1
-  secondGrabPosition: {fileID: 184196939}
-  HasDoubleHands: 0
   attachmentFlags: 30
   restoreParent: 1
 --- !u!114 &695853981
@@ -4981,6 +4977,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -5041,11 +5042,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &698718040 stripped
@@ -5061,6 +5057,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -5120,11 +5121,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (27)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -5587,11 +5583,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 267890082}
     m_Modifications:
-    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932360, guid: cd050a6c86f405041911c25331816759,
         type: 3}
       propertyPath: m_Name
@@ -5601,6 +5592,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932362, guid: cd050a6c86f405041911c25331816759,
         type: 3}
@@ -5743,6 +5739,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5500162024633306689, guid: 7b33408e2e11c664f9e280371506d449,
+        type: 3}
+      propertyPath: isDoubleHanded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500162024633306689, guid: 7b33408e2e11c664f9e280371506d449,
+        type: 3}
+      propertyPath: secondGrabPosition
+      value: 
+      objectReference: {fileID: 1149696415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b33408e2e11c664f9e280371506d449, type: 3}
 --- !u!4 &787929517 stripped
@@ -6162,6 +6168,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 823415314}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099180, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6217,11 +6228,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG
-      objectReference: {fileID: 0}
     - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: accuracy
@@ -6242,6 +6248,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -6302,11 +6313,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &887579614 stripped
@@ -6322,6 +6328,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -6381,11 +6392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -6519,6 +6525,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868835669}
     m_Modifications:
+    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
+        type: 3}
+      propertyPath: m_Name
+      value: UziMag (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8022051481694081398, guid: 3d951490e31ee424f8c9dfa3118b09cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6583,11 +6594,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0053696064
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
-        type: 3}
-      propertyPath: m_Name
-      value: UziMag (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d951490e31ee424f8c9dfa3118b09cd, type: 3}
@@ -6823,6 +6829,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -6882,11 +6893,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -7022,8 +7028,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabposition: {fileID: 0}
   isDoubleHanded: 0
-  secondGrabPosition: {fileID: 0}
-  HasDoubleHands: 0
   attachmentFlags: 30
   restoreParent: 0
   releaseVelocityStyle: 1
@@ -7426,6 +7430,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -7485,11 +7494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (31)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -7746,6 +7750,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 823415314}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -7806,11 +7815,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: accuracy
@@ -7828,6 +7832,81 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e4ed0a8dece1d346a353686d6aaaedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1149696414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1977234379411431876, guid: 7b33408e2e11c664f9e280371506d449,
+    type: 3}
+  m_PrefabInstance: {fileID: 787929516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1149696415 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1977234379411668388, guid: 7b33408e2e11c664f9e280371506d449,
+    type: 3}
+  m_PrefabInstance: {fileID: 787929516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1149696416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149696414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
+--- !u!114 &1149696419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149696414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc2a93f8676d44188fc71fc76f7f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1156595577
@@ -7867,6 +7946,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -7927,11 +8011,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1157301938 stripped
@@ -7947,6 +8026,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -8007,11 +8091,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (13)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1163503726 stripped
@@ -8027,6 +8106,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868835669}
     m_Modifications:
+    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
+        type: 3}
+      propertyPath: m_Name
+      value: UziMag (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8022051481694081398, guid: 3d951490e31ee424f8c9dfa3118b09cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8091,11 +8175,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0053696064
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
-        type: 3}
-      propertyPath: m_Name
-      value: UziMag (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d951490e31ee424f8c9dfa3118b09cd, type: 3}
@@ -8281,6 +8360,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -8341,11 +8425,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1244065498 stripped
@@ -8367,6 +8446,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -8426,11 +8510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -8629,6 +8708,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -8689,11 +8773,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1321375213 stripped
@@ -8709,6 +8788,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -8768,11 +8852,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (28)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -8970,6 +9049,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -9029,11 +9113,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -9244,6 +9323,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -9304,11 +9388,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
 --- !u!4 &1526452018 stripped
@@ -9324,6 +9403,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -9383,11 +9467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -9530,6 +9609,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -9589,11 +9673,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -9906,6 +9985,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -9965,11 +10049,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -10180,6 +10259,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -10239,11 +10323,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -10710,6 +10789,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -10769,11 +10853,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -11490,6 +11569,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -11549,11 +11633,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (24)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -11817,6 +11896,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -11876,11 +11960,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -12010,6 +12089,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1868835669}
     m_Modifications:
+    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
+        type: 3}
+      propertyPath: m_Name
+      value: UziMag (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8022051481694081398, guid: 3d951490e31ee424f8c9dfa3118b09cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12075,11 +12159,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0053696064
       objectReference: {fileID: 0}
-    - target: {fileID: 8022051481693850966, guid: 3d951490e31ee424f8c9dfa3118b09cd,
-        type: 3}
-      propertyPath: m_Name
-      value: UziMag (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d951490e31ee424f8c9dfa3118b09cd, type: 3}
 --- !u!1 &1926794562
@@ -12137,6 +12216,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -12196,11 +12280,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -12526,6 +12605,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1112497253}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: SMG (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -12585,11 +12669,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_Name
-      value: SMG (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -13195,8 +13274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabposition: {fileID: 0}
   isDoubleHanded: 0
-  secondGrabPosition: {fileID: 0}
-  HasDoubleHands: 0
   attachmentFlags: 30
   restoreParent: 0
   releaseVelocityStyle: 1
@@ -13574,6 +13651,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990883249}
     m_Modifications:
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5207481418220099181, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: movePoint
@@ -13634,25 +13721,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
+    - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
-      propertyPath: m_Name
-      value: Enemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207481418220099182, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: reloadTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4835630046225453864, guid: bf1990017d1770d4a8bb6a38fe638aa9,
         type: 3}
       propertyPath: speed
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 816744119649649843, guid: bf1990017d1770d4a8bb6a38fe638aa9,
-        type: 3}
-      propertyPath: reloadTime
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf1990017d1770d4a8bb6a38fe638aa9, type: 3}
@@ -13732,10 +13809,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990883249}
     m_Modifications:
-    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
+    - target: {fileID: 8334331223620789533, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
-      propertyPath: movePoint
-      value: 
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334331223620789533, guid: 1fed6735e20112948bdee990f858c7c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8334331223620789535, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
@@ -13792,15 +13874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8334331223620789533, guid: 1fed6735e20112948bdee990f858c7c0,
+    - target: {fileID: 8334331223620789534, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
-      propertyPath: m_Name
-      value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8334331223620789533, guid: 1fed6735e20112948bdee990f858c7c0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8716247851204649051, guid: 1fed6735e20112948bdee990f858c7c0,
         type: 3}
@@ -13816,11 +13893,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1990883249}
     m_Modifications:
-    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
-        type: 3}
-      propertyPath: movePoint
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932360, guid: cd050a6c86f405041911c25331816759,
         type: 3}
       propertyPath: m_Name
@@ -13830,6 +13902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363810044966932363, guid: cd050a6c86f405041911c25331816759,
+        type: 3}
+      propertyPath: movePoint
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4363810044966932362, guid: cd050a6c86f405041911c25331816759,
         type: 3}

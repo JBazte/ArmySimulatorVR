@@ -13,6 +13,7 @@ ModelImporter:
     100014: Cube.038
     100016: Cube.040
     100018: Magazine
+    100020: Cube.000
     400000: //RootNode
     400002: Bullet
     400004: Bullet.001
@@ -23,6 +24,7 @@ ModelImporter:
     400014: Cube.038
     400016: Cube.040
     400018: Magazine
+    400020: Cube.000
     2100000: DarkMetal
     2100002: LightMetal
     2100004: BlackMetal.002
@@ -37,6 +39,7 @@ ModelImporter:
     2300014: Cube.038
     2300016: Cube.040
     2300018: Magazine
+    2300020: Cube.000
     3300000: //RootNode
     3300002: Bullet
     3300004: Bullet.001
@@ -47,6 +50,7 @@ ModelImporter:
     3300014: Cube.038
     3300016: Cube.040
     3300018: Magazine
+    3300020: Cube.000
     4300000: Cube.001
     4300002: Cube.003
     4300004: Cube.031
@@ -56,6 +60,7 @@ ModelImporter:
     4300012: Cube.040
     4300014: Bullet
     4300016: Bullet.001
+    4300018: Cube.000
   externalObjects: {}
   materials:
     importMaterials: 1

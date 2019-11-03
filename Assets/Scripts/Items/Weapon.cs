@@ -71,6 +71,7 @@ public class Weapon : MonoBehaviour
     private float magazinetoNullTime = 3f;
     private float timeBeforeReload;
     protected bool hasMagazine;
+    private GrabbableObject grabbable;
 
     private bool isLinearDriving;
     protected Magazine lastMag;
@@ -88,6 +89,7 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        grabbable = GetComponent<GrabbableObject>();
         if (!hasMagazine)
         {
             currentAmmo = maxAmmo;
@@ -153,7 +155,7 @@ public class Weapon : MonoBehaviour
         //recoilForce 
         //Debug.Log(recoilForce);
         rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
-        return recoilForce;
+        return recoilForce / grabbable.HandsAttached;
     }
 
     private float CuadraticFunction(float x)

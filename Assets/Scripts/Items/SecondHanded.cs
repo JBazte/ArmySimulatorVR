@@ -1,6 +1,7 @@
 ﻿using Valve.VR.InteractionSystem;
 using UnityEngine;
 
+[RequireComponent(typeof(Interactable))]
 public class SecondHanded : MonoBehaviour
 {
     protected Interactable interactable;
@@ -23,6 +24,7 @@ public class SecondHanded : MonoBehaviour
     {
         isGrabbable = false;
         interactable.highlightOnHover = false;
+        grabbableObject.StopDoubleHanded();
     }
 
     private void Start()
@@ -41,12 +43,12 @@ public class SecondHanded : MonoBehaviour
 
             if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
             {
-                grabbableObject.HasDoubleHands = true;
+                grabbableObject.DoubleHanded();
 
             }
             else if (isGrabEnding)
             {
-                grabbableObject.HasDoubleHands = false;
+
                 StopGrabble();
             }
         }
