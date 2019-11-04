@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 01c5af307f3290342a9f8aae41baee32
+guid: e1b66f1d0b35a924e97c6c372c5f19fa
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -39,7 +39,32 @@ ModelImporter:
     7400046: Cube|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackMetal
+    second: {fileID: 2100000, guid: 6eddda93c15d8ac4fb8b9fd2ef3ee1e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackMetal.002
+    second: {fileID: 2100000, guid: 170f540e9aeaf1c4fad955f64e94f490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal02
+    second: {fileID: 2100000, guid: 5b5595e43a047854fa6ccdae1cda978f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outline
+    second: {fileID: 2100000, guid: aa807ee46fd836040886b6fb17b2c029, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 97b63101dcf02f342a63750fd43181aa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -71,7 +96,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 1
+    meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
