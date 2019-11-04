@@ -27,7 +27,7 @@ public class ThrowableObject : GrabbableObject
         rigidBody = GetComponentInChildren<Rigidbody>();
         velocityEstimator = GetComponent<VelocityEstimator>();
     }
-    private void OnDetachedFromHand(Hand hand)
+    protected virtual void OnDetachedFromHand(Hand hand)
     {
         attached = false;
 

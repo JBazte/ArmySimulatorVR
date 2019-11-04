@@ -90,7 +90,7 @@ public class CharacterStats : PersistableObject
         currentHealth = health;
         controller = GetComponentInChildren<Enemy>();
     }
-
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -98,9 +98,11 @@ public class CharacterStats : PersistableObject
             TakeDamage(10f);
         }
     }
+    */
 
     public void TakeDamage(float amount)
     {
+        Debug.Log(amount);
         currentHealth -= amount;
         if (currentHealth <= 0)
         {

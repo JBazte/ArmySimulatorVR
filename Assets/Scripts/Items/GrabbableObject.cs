@@ -7,6 +7,7 @@ using Valve.VR.InteractionSystem;
 public class GrabbableObject : MonoBehaviour
 {
 
+
     [SerializeField]
     Transform grabposition;
     protected Interactable interactable;
@@ -20,13 +21,18 @@ public class GrabbableObject : MonoBehaviour
     Hand grabbingHand;
     public int HandsAttached { get; private set; }
     [EnumFlags]
-    [Tooltip("The flags used to attach this object to the hand.")]
+
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.DetachOthers | Hand.AttachmentFlags.VelocityMovement;
     [SerializeField]
+    public GrabTypes grabTypes;
+    [SerializeField]
     protected bool restoreParent = true;
+
+    private Socket activeSocket;
+    private bool isAvailable;
     void Start()
     {
-        interactable = GetComponentInChildren<Interactable>();
+
         if (grabposition != null)
         {
             attachmentFlags = Hand.AttachmentFlags.SnapOnAttach | attachmentFlags;
@@ -35,6 +41,31 @@ public class GrabbableObject : MonoBehaviour
         {
             secondHand = GetComponentInChildren<SecondHanded>();
         }
+
+
+    }
+    public void AttachNewSocket(Socket newSocket)
+    {
+        if (newSocket.GetStoredObject)
+            return;
+        RealeaseOldSocket();
+        activeSocket = newSocket;
+
+        activeSocket.Attach(this);
+        isAvailable = false;
+
+    }
+
+    public void RealeaseOldSocket()
+    {
+        if (!activeSocket)
+            return;
+
+        activeSocket.DetAttach();
+        activeSocket = null;
+        isAvailable = true;
+
+
     }
     //-------------------------------------------------
     // Called when a Hand starts hovering over this object
@@ -64,6 +95,12 @@ public class GrabbableObject : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
+            if (activeSocket)
+            {
+                activeSocket.InteractSlot(hand);
+                return;
+            }
+
             HandsAttached = 1;
             grabbingHand = hand;
             hand.HoverLock(interactable);
@@ -85,8 +122,8 @@ public class GrabbableObject : MonoBehaviour
 
     public void AttachToHand(Hand hand)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
+        // GrabTypes startingGrabType = hand.GetGrabStarting();
+        hand.AttachObject(gameObject, grabTypes, attachmentFlags, grabposition);
         //hand.HoverLock(interactable);
 
 
@@ -134,7 +171,7 @@ public class GrabbableObject : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.K))
             {
 
-                secondHand.StartGrabbable(this);
+                //secondHand.StartGrabbable(this);
             }
 
 

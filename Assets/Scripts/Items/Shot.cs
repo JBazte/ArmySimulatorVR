@@ -21,10 +21,17 @@ public class Shot : MonoBehaviour
     {
         if (collideMask == (collideMask | (1 << other.gameObject.layer)))
         {
+            float porsentage = 100f;
+            var d = other.gameObject.GetComponent<HitBonuses>();
+            if (d != null)
+            {
+                porsentage = d.damagePorsentage;
+            }
             CharacterStats stats = other.transform.GetComponentInParent<CharacterStats>();
+
             if (stats != null)
             {
-                stats.TakeDamage(damage);
+                stats.TakeDamage(damage * (porsentage / 100));
             }
 
             Destroy(gameObject);
