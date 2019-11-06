@@ -29,7 +29,7 @@ public class GrabbableObject : MonoBehaviour
     protected bool restoreParent = true;
 
     private Socket activeSocket;
-    private bool isAvailable;
+    private bool isAvailable = true;
     void Start()
     {
 
@@ -90,33 +90,37 @@ public class GrabbableObject : MonoBehaviour
     //-------------------------------------------------
     private void HandHoverUpdate(Hand hand)
     {
-        GrabTypes startingGrabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-        if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
+        if (isAvailable)
         {
-            if (activeSocket)
+
+            GrabTypes startingGrabType = hand.GetGrabStarting();
+            bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+
+            if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
             {
-                activeSocket.InteractSlot(hand);
-                return;
+                if (activeSocket)
+                {
+                    activeSocket.InteractSlot(hand);
+                    return;
+                }
+
+                HandsAttached = 1;
+                grabbingHand = hand;
+                hand.HoverLock(interactable);
+
+                // Attach this object to the hand
+                hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
             }
+            else if (isGrabEnding)
+            {
+                // Detach this object from the hand
+                hand.DetachObject(gameObject, restoreParent);
 
-            HandsAttached = 1;
-            grabbingHand = hand;
-            hand.HoverLock(interactable);
-
-            // Attach this object to the hand
-            hand.AttachObject(gameObject, startingGrabType, attachmentFlags, grabposition);
-        }
-        else if (isGrabEnding)
-        {
-            // Detach this object from the hand
-            hand.DetachObject(gameObject, restoreParent);
-
-            // Call this to undo HoverLock
-            hand.HoverUnlock(interactable);
+                // Call this to undo HoverLock
+                hand.HoverUnlock(interactable);
 
 
+            }
         }
     }
 

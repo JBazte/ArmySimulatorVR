@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 public class Belt : MonoBehaviour
 {
     [Range(0.5f, 0.75f)]
@@ -11,6 +12,7 @@ public class Belt : MonoBehaviour
     private void Start()
     {
         head = SteamVR_Render.Top().head;
+
     }
 
     private void Update()
