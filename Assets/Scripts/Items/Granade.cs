@@ -13,6 +13,8 @@ public class Granade : ThrowableObject
     float timeToExplote = 5f;
     [SerializeField]
     float damage = 125f;
+    [SerializeField]
+    float explosionForce = 1f;
 
     [SerializeField]
     ParticleSystem explosion;
@@ -25,14 +27,26 @@ public class Granade : ThrowableObject
 
     private void Explode()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadious, damageLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadious);
 
         foreach (var col in colliders)
         {
-            CharacterStats stats = col.GetComponentInParent<CharacterStats>();
-            float distance = Vector3.Distance(transform.position, stats.transform.position);
-            float finalDamage = Mathf.Lerp(0, damage, 1 - (distance / explosionRadious));
-            stats.TakeDamage(finalDamage / 2);
+            float distance = Vector3.Distance(transform.position, col.transform.position);
+            if (((1 << col.gameObject.layer) & damageLayer) != 0)
+            {
+                //It matched one
+                CharacterStats stats = col.GetComponentInParent<CharacterStats>();
+                float finalDamage = Mathf.Lerp(0, damage, 1 - (distance / explosionRadious));
+                stats.TakeDamage(finalDamage / 2);
+            }
+            Rigidbody rb = col.GetComponentInParent<Rigidbody>();
+            if (rb != null)
+            {
+                float finalForceAmount = Mathf.Lerp(0, explosionForce, 1 - (distance / explosionRadious));
+                Vector3 direction = (this.transform.position - rb.transform.position).normalized;
+                rb.AddForce(-direction * finalForceAmount, ForceMode.Impulse);
+            }
+
             //Debug.Log(finalDamage);
         }
 

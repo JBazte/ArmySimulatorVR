@@ -38,6 +38,18 @@ public class Slot : MonoBehaviour
     }
 
 
+    private void OnHoverUpdate(Hand hand)
+    {
+        if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+        {
+            StartInteraction(hand);
+        }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            StartInteraction(hand);
+        }
+    }
+
 
     private void Update()
     {
@@ -48,6 +60,10 @@ public class Slot : MonoBehaviour
             {
 
                 if (SteamVR_Input.GetStateDown("Shoot", hands[i].handType))
+                {
+                    StartInteraction(hands[i]);
+                }
+                else if (Input.GetKeyDown(KeyCode.N))
                 {
                     StartInteraction(hands[i]);
                 }
@@ -65,7 +81,10 @@ public class Slot : MonoBehaviour
 
         GrabbableObject gr = g.GetComponentInChildren<GrabbableObject>();
         gr.AttachNewSocket(socket);
-        StartCoroutine(WaitStore(hand));
+        hand.DetachObject(g, false);
+        hand.HoverUnlock(interactable);
+
+        // StartCoroutine(WaitStore(hand));
 
     }
 
@@ -82,6 +101,7 @@ public class Slot : MonoBehaviour
         if (!socket.GetStoredObject)
             return;
         GrabbableObject ob = socket.GetStoredObject;
+        socket.DetAttach();
         ob.AttachToHand(hand);
     }
 

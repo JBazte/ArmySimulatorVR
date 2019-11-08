@@ -4,15 +4,64 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cube
+    100004: Cube.001
+    100006: Cube.002
+    100008: Cube.003
+    100010: Cube.004
+    100012: Cube.005
+    100014: Cube.006
+    100016: Cube.007
+    100018: Cube.008
+    100020: Cube.009
     400000: //RootNode
+    400002: Cube
+    400004: Cube.001
+    400006: Cube.002
+    400008: Cube.003
+    400010: Cube.004
+    400012: Cube.005
+    400014: Cube.006
+    400016: Cube.007
+    400018: Cube.008
+    400020: Cube.009
     2100000: BlackMetal
     2100002: BlackMetal.002
     2100004: Red
     2100006: Metal02
     2100008: Outline
     2300000: //RootNode
+    2300002: Cube
+    2300004: Cube.001
+    2300006: Cube.002
+    2300008: Cube.003
+    2300010: Cube.004
+    2300012: Cube.005
+    2300014: Cube.006
+    2300016: Cube.007
+    2300018: Cube.008
+    2300020: Cube.009
     3300000: //RootNode
+    3300002: Cube
+    3300004: Cube.001
+    3300006: Cube.002
+    3300008: Cube.003
+    3300010: Cube.004
+    3300012: Cube.005
+    3300014: Cube.006
+    3300016: Cube.007
+    3300018: Cube.008
+    3300020: Cube.009
     4300000: Cube
+    4300002: Cube.001
+    4300004: Cube.002
+    4300006: Cube.003
+    4300008: Cube.004
+    4300010: Cube.005
+    4300012: Cube.006
+    4300014: Cube.007
+    4300016: Cube.008
+    4300018: Cube.009
     7400000: Cube|Cube|Cube|Cube.001Action|Cube|Cube.001Action
     7400002: Cube|Cube|Cube|Cube.002Action|Cube|Cube.002Action
     7400004: Cube|Cube|Cube|Cube.014Action|Cube|Cube.014Action
@@ -37,6 +86,222 @@ ModelImporter:
     7400042: Cube|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
     7400044: Cube|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
     7400046: Cube|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400048: Cube.001|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400050: Cube.001|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400052: Cube.001|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400054: Cube.001|Cube|Cube|CubeAction|Cube|CubeAction
+    7400056: Cube.001|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400058: Cube.001|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400060: Cube.001|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400062: Cube.001|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400064: Cube.001|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400066: Cube.001|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400068: Cube.001|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400070: Cube.001|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400072: Cube.001|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400074: Cube.001|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400076: Cube.001|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400078: Cube.001|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400080: Cube.001|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400082: Cube.001|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400084: Cube.001|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400086: Cube.001|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400088: Cube.001|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400090: Cube.001|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400092: Cube.001|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400094: Cube.001|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400096: Cube.002|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400098: Cube.002|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400100: Cube.002|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400102: Cube.002|Cube|Cube|CubeAction|Cube|CubeAction
+    7400104: Cube.002|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400106: Cube.002|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400108: Cube.002|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400110: Cube.002|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400112: Cube.002|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400114: Cube.002|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400116: Cube.002|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400118: Cube.002|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400120: Cube.002|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400122: Cube.002|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400124: Cube.002|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400126: Cube.002|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400128: Cube.002|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400130: Cube.002|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400132: Cube.002|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400134: Cube.002|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400136: Cube.002|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400138: Cube.002|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400140: Cube.002|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400142: Cube.002|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400144: Cube.003|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400146: Cube.003|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400148: Cube.003|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400150: Cube.003|Cube|Cube|CubeAction|Cube|CubeAction
+    7400152: Cube.003|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400154: Cube.003|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400156: Cube.003|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400158: Cube.003|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400160: Cube.003|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400162: Cube.003|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400164: Cube.003|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400166: Cube.003|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400168: Cube.003|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400170: Cube.003|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400172: Cube.003|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400174: Cube.003|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400176: Cube.003|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400178: Cube.003|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400180: Cube.003|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400182: Cube.003|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400184: Cube.003|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400186: Cube.003|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400188: Cube.003|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400190: Cube.003|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400192: Cube.004|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400194: Cube.004|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400196: Cube.004|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400198: Cube.004|Cube|Cube|CubeAction|Cube|CubeAction
+    7400200: Cube.004|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400202: Cube.004|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400204: Cube.004|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400206: Cube.004|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400208: Cube.004|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400210: Cube.004|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400212: Cube.004|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400214: Cube.004|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400216: Cube.004|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400218: Cube.004|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400220: Cube.004|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400222: Cube.004|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400224: Cube.004|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400226: Cube.004|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400228: Cube.004|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400230: Cube.004|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400232: Cube.004|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400234: Cube.004|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400236: Cube.004|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400238: Cube.004|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400240: Cube.005|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400242: Cube.005|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400244: Cube.005|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400246: Cube.005|Cube|Cube|CubeAction|Cube|CubeAction
+    7400248: Cube.005|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400250: Cube.005|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400252: Cube.005|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400254: Cube.005|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400256: Cube.005|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400258: Cube.005|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400260: Cube.005|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400262: Cube.005|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400264: Cube.005|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400266: Cube.005|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400268: Cube.005|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400270: Cube.005|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400272: Cube.005|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400274: Cube.005|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400276: Cube.005|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400278: Cube.005|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400280: Cube.005|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400282: Cube.005|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400284: Cube.005|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400286: Cube.005|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400288: Cube.006|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400290: Cube.006|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400292: Cube.006|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400294: Cube.006|Cube|Cube|CubeAction|Cube|CubeAction
+    7400296: Cube.006|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400298: Cube.006|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400300: Cube.006|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400302: Cube.006|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400304: Cube.006|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400306: Cube.006|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400308: Cube.006|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400310: Cube.006|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400312: Cube.006|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400314: Cube.006|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400316: Cube.006|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400318: Cube.006|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400320: Cube.006|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400322: Cube.006|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400324: Cube.006|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400326: Cube.006|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400328: Cube.006|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400330: Cube.006|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400332: Cube.006|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400334: Cube.006|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400336: Cube.007|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400338: Cube.007|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400340: Cube.007|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400342: Cube.007|Cube|Cube|CubeAction|Cube|CubeAction
+    7400344: Cube.007|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400346: Cube.007|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400348: Cube.007|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400350: Cube.007|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400352: Cube.007|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400354: Cube.007|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400356: Cube.007|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400358: Cube.007|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400360: Cube.007|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400362: Cube.007|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400364: Cube.007|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400366: Cube.007|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400368: Cube.007|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400370: Cube.007|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400372: Cube.007|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400374: Cube.007|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400376: Cube.007|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400378: Cube.007|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400380: Cube.007|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400382: Cube.007|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400384: Cube.008|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400386: Cube.008|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400388: Cube.008|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400390: Cube.008|Cube|Cube|CubeAction|Cube|CubeAction
+    7400392: Cube.008|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400394: Cube.008|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400396: Cube.008|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400398: Cube.008|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400400: Cube.008|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400402: Cube.008|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400404: Cube.008|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400406: Cube.008|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400408: Cube.008|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400410: Cube.008|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400412: Cube.008|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400414: Cube.008|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400416: Cube.008|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400418: Cube.008|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400420: Cube.008|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400422: Cube.008|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400424: Cube.008|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400426: Cube.008|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400428: Cube.008|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400430: Cube.008|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
+    7400432: Cube.009|Cube|Cube|Cube.001Action|Cube|Cube.001Action
+    7400434: Cube.009|Cube|Cube|Cube.002Action|Cube|Cube.002Action
+    7400436: Cube.009|Cube|Cube|Cube.014Action|Cube|Cube.014Action
+    7400438: Cube.009|Cube|Cube|CubeAction|Cube|CubeAction
+    7400440: Cube.009|Cube|Cube|Cylinder.000Action|Cube|Cylinder.000Action
+    7400442: Cube.009|Cube|Cube|Cylinder.001Action|Cube|Cylinder.001Action
+    7400444: Cube.009|Cube|Cube|Cylinder.002Action|Cube|Cylinder.002Action
+    7400446: Cube.009|Cube|Cube|Cylinder.003Action|Cube|Cylinder.003Action
+    7400448: Cube.009|Cube|Cube|Cylinder.004Action|Cube|Cylinder.004Action
+    7400450: Cube.009|Cube|Cube|Cylinder.005Action|Cube|Cylinder.005Action
+    7400452: Cube.009|Cube|Cube|Cylinder.006Action|Cube|Cylinder.006Action
+    7400454: Cube.009|Cube|Cube|Cylinder.007Action|Cube|Cylinder.007Action
+    7400456: Cube.009|Cube|Cube|Cylinder.008Action|Cube|Cylinder.008Action
+    7400458: Cube.009|Cube|Cube|Cylinder.009Action|Cube|Cylinder.009Action
+    7400460: Cube.009|Cube|Cube|Cylinder.010Action|Cube|Cylinder.010Action
+    7400462: Cube.009|Cube|Cube|Cylinder.011Action|Cube|Cylinder.011Action
+    7400464: Cube.009|Cube|Cube|Cylinder.012Action|Cube|Cylinder.012Action
+    7400466: Cube.009|Cube|Cube|Cylinder.013Action|Cube|Cylinder.013Action
+    7400468: Cube.009|Cube|Cube|Cylinder.014Action|Cube|Cylinder.014Action
+    7400470: Cube.009|Cube|Cube|Cylinder.015Action|Cube|Cylinder.015Action
+    7400472: Cube.009|Cube|Cube|Cylinder.016Action|Cube|Cylinder.016Action
+    7400474: Cube.009|Cube|Cube|Cylinder.017Action|Cube|Cylinder.017Action
+    7400476: Cube.009|Cube|Cube|Cylinder.018Action|Cube|Cylinder.018Action
+    7400478: Cube.009|Cube|Cube|IcosphereAction.001|Cube|IcosphereAction.001
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects:
@@ -95,7 +360,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -116,7 +381,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 0.1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
