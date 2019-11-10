@@ -27,8 +27,9 @@ public class ThrowableObject : GrabbableObject
         rigidBody = GetComponentInChildren<Rigidbody>();
         velocityEstimator = GetComponent<VelocityEstimator>();
     }
-    protected virtual void OnDetachedFromHand(Hand hand)
+    protected override void OnDetachedFromHand(Hand hand)
     {
+        base.OnAttachedToHand(hand);
         attached = false;
 
         //onDetachFromHand.Invoke();
@@ -46,8 +47,9 @@ public class ThrowableObject : GrabbableObject
         rigidBody.angularVelocity = angularVelocity;
     }
 
-    protected virtual void OnAttachedToHand(Hand hand)
+    protected override void OnAttachedToHand(Hand hand)
     {
+        base.OnAttachedToHand(hand);
         //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
 
         //hadInterpolation = this.rigidbody.interpolation;

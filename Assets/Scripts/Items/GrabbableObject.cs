@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 [RequireComponent(typeof(Interactable))]
 public class GrabbableObject : MonoBehaviour
@@ -24,7 +25,7 @@ public class GrabbableObject : MonoBehaviour
 
     public Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.DetachFromOtherHand | Hand.AttachmentFlags.DetachOthers | Hand.AttachmentFlags.VelocityMovement;
     [SerializeField]
-    public GrabTypes grabTypes;
+    public MyGrabTypes grabTypes = MyGrabTypes.Press;
     [SerializeField]
     protected bool restoreParent = true;
 
@@ -90,6 +91,7 @@ public class GrabbableObject : MonoBehaviour
     //-------------------------------------------------
     private void HandHoverUpdate(Hand hand)
     {
+        /*
         if (isAvailable)
         {
 
@@ -121,13 +123,71 @@ public class GrabbableObject : MonoBehaviour
 
 
             }
+         */
+        if (isAvailable)
+        {
+            if (grabTypes == MyGrabTypes.Press)
+            {
+                if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+                {
+                    if (activeSocket)
+                    {
+                        activeSocket.InteractSlot(hand);
+                        return;
+                    }
+                    if (hand.ObjectIsAttached(this.gameObject))
+                    {
+                        // Detach this object from the hand
+                        hand.DetachObject(gameObject, restoreParent);
+                        // Call this to undo HoverLock
+                        hand.HoverUnlock(interactable);
+                    }
+                    else
+                    {
+                        HandsAttached = 1;
+                        grabbingHand = hand;
+                        hand.HoverLock(interactable);
+                        // Attach this object to the hand
+                        hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
+                    }
+
+                }
+            }
+            else if (grabTypes == MyGrabTypes.Hold)
+            {
+                if (SteamVR_Input.GetStateUp("Shoot", hand.handType))
+                {
+                    if (hand.ObjectIsAttached(this.gameObject))
+                    {
+                        // Detach this object from the hand
+                        hand.DetachObject(gameObject, restoreParent);
+                        // Call this to undo HoverLock
+                        hand.HoverUnlock(interactable);
+                    }
+                }
+                else if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+                {
+                    if (!hand.ObjectIsAttached(this.gameObject))
+                    {
+                        HandsAttached = 1;
+                        grabbingHand = hand;
+                        hand.HoverLock(interactable);
+                        // Attach this object to the hand
+                        hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
+                    }
+                }
+
+            }
         }
     }
+
 
     public void AttachToHand(Hand hand)
     {
         // GrabTypes startingGrabType = hand.GetGrabStarting();
-        hand.AttachObject(gameObject, grabTypes, attachmentFlags, grabposition);
+        hand.HoverLock(interactable);
+        hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
+        RealeaseOldSocket();
         //hand.HoverLock(interactable);
 
 
@@ -136,8 +196,9 @@ public class GrabbableObject : MonoBehaviour
     //-------------------------------------------------
     // Called when this GameObject becomes attached to the hand
     //-------------------------------------------------
-    private void OnAttachedToHand(Hand hand)
+    protected virtual void OnAttachedToHand(Hand hand)
     {
+        Debug.Log("Attached to hand");
         if (isDoubleHanded)
         {
             secondHand.StartGrabbable(this);
@@ -149,8 +210,9 @@ public class GrabbableObject : MonoBehaviour
     //-------------------------------------------------
     // Called when this GameObject is detached from the hand
     //-------------------------------------------------
-    private void OnDetachedFromHand(Hand hand)
+    protected virtual void OnDetachedFromHand(Hand hand)
     {
+        Debug.Log("Detached from hand");
         if (isDoubleHanded)
         {
             secondHand.StopGrabble();
@@ -211,4 +273,11 @@ public class GrabbableObject : MonoBehaviour
     private void OnHandFocusLost(Hand hand)
     {
     }
+}
+
+public enum MyGrabTypes
+{
+    None,
+    Press,
+    Hold
 }

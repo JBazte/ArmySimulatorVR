@@ -211,7 +211,7 @@ public class Weapon : MonoBehaviour
                     {
 
                         float angle = Quaternion.Angle(magazinePostition.rotation, magazine.transform.rotation);
-                        Debug.Log(angle);
+                        //Debug.Log(angle);
                         if (angle <= attachAngle)
                         {
                             lastMag = magazine;

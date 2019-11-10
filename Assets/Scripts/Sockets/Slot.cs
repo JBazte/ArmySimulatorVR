@@ -58,8 +58,12 @@ public class Slot : MonoBehaviour
             float distance = Vector3.Distance(transform.position, hands[i].transform.position);
             if (distance < InteractRadious)
             {
-
-                if (SteamVR_Input.GetStateDown("Shoot", hands[i].handType))
+                if (SteamVR_Input.GetStateUp("Shoot", hands[i].handType))
+                {
+                    if (hands[i].currentAttachedObject.GetComponent<GrabbableObject>().grabTypes == MyGrabTypes.Hold)
+                        StartInteraction(hands[i]);
+                }
+                else if (SteamVR_Input.GetStateDown("Shoot", hands[i].handType))
                 {
                     StartInteraction(hands[i]);
                 }
@@ -88,13 +92,6 @@ public class Slot : MonoBehaviour
 
     }
 
-    IEnumerator WaitStore(Hand hand)
-    {
-        yield return new WaitForSeconds(.5f);
-        GameObject g = hand.currentAttachedObject;
-        hand.DetachObject(g, false);
-        hand.HoverUnlock(interactable);
-    }
 
     private void TryRetrieve(Hand hand)
     {

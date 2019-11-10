@@ -9,11 +9,7 @@ public class SecondHanded : MonoBehaviour
     private bool isGrabbable;
     public void StartGrabbable(GrabbableObject o)
     {
-        if (isGrabbable)
-        {
-            StopGrabble();
-            return;
-        }
+
 
         grabbableObject = o;
         isGrabbable = true;

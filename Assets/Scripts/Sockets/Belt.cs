@@ -4,16 +4,19 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 public class Belt : MonoBehaviour
 {
-    [Range(0.5f, 0.75f)]
+    [Range(0.5f, 1f)]
     public float height;
 
     private Transform head = null;
 
     private void Start()
     {
-        head = SteamVR_Render.Top().head;
+        //head = SteamVR_Render.Top().head;
+        head = Player.instance.hmdTransform;
+        // if (head == null)
 
     }
+
 
     private void Update()
     {
@@ -26,8 +29,9 @@ public class Belt : MonoBehaviour
 
     private void PositionUnderHead()
     {
-        Vector3 adjustableHeight = head.localPosition;
+        Vector3 adjustableHeight = head.position;
         adjustableHeight.y = Mathf.Lerp(0f, adjustableHeight.y, height);
+        transform.position = adjustableHeight;
     }
 
     private void RotateWithHead()

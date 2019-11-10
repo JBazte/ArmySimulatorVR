@@ -1110,13 +1110,18 @@ namespace Valve.VR.InteractionSystem
         {
             float rotSpeed = 100 * Time.deltaTime;
             //Vector3 rotation = Vector3.RotateTowards(transform1.position , transform2.position, 100, 0f);
-            Vector3 lookRotation = transform.position - otherHand.transform.position;
+            Vector3 lookRotation = otherHand.transform.position - transform.position;
             Debug.DrawRay(transform.position, lookRotation * 100, Color.red);
 
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, otherHand.transform.rotation, rotSpeed);
+            //Quaternion rotation = Quaternion.RotateTowards(transform.rotation, otherHand.transform.rotation, rotSpeed);
 
             Quaternion rot = Quaternion.LookRotation(lookRotation);
+            rot = Quaternion.Euler(rot.eulerAngles.x, rot.eulerAngles.y, otherHand.transform.eulerAngles.z);
 
+
+
+            Vector3 centerPos = Vector3.Lerp(transform.position, otherHand.transform.position, 0.5f);
+            attachedObject.transform.position = centerPos;
             attachedObject.transform.rotation = rot;
 
             // Vector3 direction;
