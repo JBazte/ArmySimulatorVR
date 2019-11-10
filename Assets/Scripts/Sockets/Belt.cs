@@ -42,4 +42,30 @@ public class Belt : MonoBehaviour
 
         transform.localEulerAngles = adjustableRotation;
     }
+
+    public void ConfigureBelt(GrabbableObject spawnAble = null, GrabbableObject slot1 = null, GrabbableObject slot2 = null)
+    {
+        if (spawnAble == null)
+        {
+            GetComponentInChildren<SlotSpawner>().gameObject.SetActive(false);
+        }
+        else
+        {
+            var gb = GetComponentInChildren<SlotSpawner>();
+            gb.gameObject.SetActive(false);
+            gb.ChangeSpawn(spawnAble);
+        }
+        var slots = GetComponentsInChildren<Slot>();
+        if (slot1 != null)
+        {
+            slots[0].TryStore(slot1);
+        }
+        if (slot2 != null)
+        {
+            slots[1].TryStore(slot2);
+        }
+
+    }
+
+
 }

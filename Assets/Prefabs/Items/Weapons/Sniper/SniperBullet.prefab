@@ -227,6 +227,7 @@ MonoBehaviour:
   attachmentFlags: 30
   grabTypes: 2
   restoreParent: 0
+  resetRotationOnSocket: 1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1

@@ -32,6 +32,7 @@ namespace Valve.VR.InteractionSystem
             TurnOnKinematic = 1 << 5, // The object will not respond to external physics.
             TurnOffGravity = 1 << 6, // The object will not respond to external physics.
             AllowSidegrade = 1 << 7, // The object is able to switch from a pinch grab to a grip grab. Decreases likelyhood of a good throw but also decreases likelyhood of accidental drop
+            SecondHand = 1 << 8, // The object is able to switch from a pinch grab to a grip grab. Decreases likelyhood of a good throw but also decreases likelyhood of accidental drop
         };
 
         public const AttachmentFlags defaultAttachmentFlags = AttachmentFlags.ParentToHand |
@@ -558,6 +559,11 @@ namespace Valve.VR.InteractionSystem
             if (spewDebugText)
                 HandDebugLog("AttachObject " + objectToAttach);
             objectToAttach.SendMessage("OnAttachedToHand", this, SendMessageOptions.DontRequireReceiver);
+
+            if (attachedObject.HasAttachFlag(AttachmentFlags.SecondHand))
+            {
+                SetSecondHand(otherHand.currentAttachedObject.transform);
+            }
         }
 
         public bool ObjectIsAttached(GameObject go)
@@ -655,6 +661,10 @@ namespace Valve.VR.InteractionSystem
 
                     attachedObjects[index].attachedObject.SendMessage("OnDetachedFromHand", this, SendMessageOptions.DontRequireReceiver);
                 }
+                if (attachedObjects[index].HasAttachFlag(AttachmentFlags.SecondHand))
+                {
+                    RemoveSecondHand();
+                }
 
                 attachedObjects.RemoveAt(index);
 
@@ -671,6 +681,7 @@ namespace Valve.VR.InteractionSystem
                     newTopObject.SetActive(true);
                     newTopObject.SendMessage("OnHandFocusAcquired", this, SendMessageOptions.DontRequireReceiver);
                 }
+
             }
 
             CleanUpAttachedObjectStack();
@@ -1075,6 +1086,7 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void Update()
         {
+
             UpdateNoSteamVRFallback();
 
             GameObject attachedObject = currentAttachedObject;
@@ -1088,17 +1100,17 @@ namespace Valve.VR.InteractionSystem
                 hoveringInteractable.SendMessage("HandHoverUpdate", this, SendMessageOptions.DontRequireReceiver);
             }
 
-            if (doubleHandWeapon)
-            {
-                UpdateTwoHandedObject(objecttorotate);
-            }
+
         }
         public bool doubleHandWeapon;
         Transform objecttorotate;
         public void SetSecondHand(Transform rotateObject)
         {
-            doubleHandWeapon = true;
-            objecttorotate = rotateObject;
+            if (rotateObject != null)
+            {
+                doubleHandWeapon = true;
+                objecttorotate = rotateObject;
+            }
         }
 
         public void RemoveSecondHand()
@@ -1110,17 +1122,18 @@ namespace Valve.VR.InteractionSystem
         {
             float rotSpeed = 100 * Time.deltaTime;
             //Vector3 rotation = Vector3.RotateTowards(transform1.position , transform2.position, 100, 0f);
-            Vector3 lookRotation = otherHand.transform.position - transform.position;
+            Vector3 lookRotation = transform.position - otherHand.transform.position;
             Debug.DrawRay(transform.position, lookRotation * 100, Color.red);
 
             //Quaternion rotation = Quaternion.RotateTowards(transform.rotation, otherHand.transform.rotation, rotSpeed);
 
             Quaternion rot = Quaternion.LookRotation(lookRotation);
-            rot = Quaternion.Euler(rot.eulerAngles.x, rot.eulerAngles.y, otherHand.transform.eulerAngles.z);
+            float distance = Vector3.Distance(transform.position, otherHand.transform.position);
+            //rot = Quaternion.Euler(rot.eulerAngles.x, rot.eulerAngles.y, distance > 0.25f ? transform.eulerAngles.z : rot.eulerAngles.z);
 
 
 
-            Vector3 centerPos = Vector3.Lerp(transform.position, otherHand.transform.position, 0.5f);
+            Vector3 centerPos = Vector3.Lerp(transform.position, otherHand.transform.position, 0.5f) + otherHand.currentAttachedObjectInfo.Value.initialPositionalOffset;
             attachedObject.transform.position = centerPos;
             attachedObject.transform.rotation = rot;
 
@@ -1197,6 +1210,10 @@ namespace Valve.VR.InteractionSystem
 
         protected virtual void FixedUpdate()
         {
+            if (doubleHandWeapon)
+            {
+                UpdateTwoHandedObject(objecttorotate);
+            }
             if (currentAttachedObject != null)
             {
                 AttachedObject attachedInfo = currentAttachedObjectInfo.Value;

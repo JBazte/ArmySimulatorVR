@@ -21,7 +21,8 @@ public class Socket : MonoBehaviour
         storedObject = newObject;
 
         storedObject.transform.position = transform.position;
-        storedObject.transform.rotation = Quaternion.identity;
+        if (newObject.resetRotationOnSocket)
+            storedObject.transform.rotation = Quaternion.identity;
 
         Rigidbody targetBody = storedObject.gameObject.GetComponent<Rigidbody>();
         joint.connectedBody = targetBody;

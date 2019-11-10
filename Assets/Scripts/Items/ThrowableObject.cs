@@ -29,7 +29,7 @@ public class ThrowableObject : GrabbableObject
     }
     protected override void OnDetachedFromHand(Hand hand)
     {
-        base.OnAttachedToHand(hand);
+        base.OnDetachedFromHand(hand);
         attached = false;
 
         //onDetachFromHand.Invoke();

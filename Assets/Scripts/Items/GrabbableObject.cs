@@ -29,6 +29,8 @@ public class GrabbableObject : MonoBehaviour
     [SerializeField]
     protected bool restoreParent = true;
 
+    public bool resetRotationOnSocket = true;
+
     private Socket activeSocket;
     private bool isAvailable = true;
     void Start()
@@ -178,6 +180,20 @@ public class GrabbableObject : MonoBehaviour
                 }
 
             }
+            else
+            {
+                if (SteamVR_Input.GetStateDown("Shoot", hand.handType))
+                {
+                    if (!hand.ObjectIsAttached(this.gameObject))
+                    {
+                        HandsAttached = 1;
+                        grabbingHand = hand;
+                        hand.HoverLock(interactable);
+                        // Attach this object to the hand
+                        hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
+                    }
+                }
+            }
         }
     }
 
@@ -215,7 +231,7 @@ public class GrabbableObject : MonoBehaviour
         Debug.Log("Detached from hand");
         if (isDoubleHanded)
         {
-            secondHand.StopGrabble();
+            secondHand.StopGrabble(hand.otherHand);
         }
     }
 
@@ -248,13 +264,10 @@ public class GrabbableObject : MonoBehaviour
 
     public void DoubleHanded()
     {
-        grabbingHand.SetSecondHand(transform);
         HandsAttached = 2;
-
     }
     public void StopDoubleHanded()
     {
-        grabbingHand.RemoveSecondHand();
         HandsAttached = 1;
     }
 

@@ -5,22 +5,35 @@ using UnityEngine;
 public class SecondHanded : MonoBehaviour
 {
     protected Interactable interactable;
-    GrabbableObject grabbableObject;
+
     private bool isGrabbable;
+    Hand lockedHand;
+    GrabbableObject grabbableObject;
+    Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.SecondHand;
     public void StartGrabbable(GrabbableObject o)
     {
-
-
-        grabbableObject = o;
         isGrabbable = true;
         interactable.highlightOnHover = true;
+        grabbableObject = o;
     }
 
-    public void StopGrabble()
+    public void StopGrabble(Hand hand)
     {
         isGrabbable = false;
         interactable.highlightOnHover = false;
-        grabbableObject.StopDoubleHanded();
+        //grabbableObject.StopDoubleHanded();
+        Detach(hand);
+
+    }
+
+    private void Detach(Hand hand)
+    {
+        if (!lockedHand)
+        {
+            lockedHand.HoverUnlock(interactable);
+            hand.DetachObject(this.gameObject);
+            grabbableObject.StopDoubleHanded();
+        }
     }
 
     private void Start()
@@ -34,20 +47,24 @@ public class SecondHanded : MonoBehaviour
         if (isGrabbable)
         {
 
-            GrabTypes startingGrabType = hand.GetGrabStarting();
-            bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
-
-            if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
+            if (Valve.VR.SteamVR_Input.GetStateDown("Shoot", hand.handType))
             {
-                grabbableObject.DoubleHanded();
-
+                if (!hand.ObjectIsAttached(this.gameObject))
+                {
+                    //grabbableObject.DoubleHanded();
+                    hand.HoverLock(interactable);
+                    hand.AttachObject(this.gameObject, GrabTypes.Scripted, attachmentFlags);
+                    lockedHand = hand;
+                    grabbableObject.DoubleHanded();
+                }
+                else
+                {
+                    Detach(hand);
+                }
             }
-            else if (isGrabEnding)
-            {
 
-                StopGrabble();
-            }
         }
+
     }
 
 
