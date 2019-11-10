@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Rigidbody), typeof(VelocityEstimator))]
-public class ThrowableObject : GrabableObject
+public class ThrowableObject : GrabbableObject
 {
 
     public ReleaseStyle releaseVelocityStyle = ReleaseStyle.GetFromHand;
@@ -19,14 +19,17 @@ public class ThrowableObject : GrabableObject
     protected float attachTime;
     protected Vector3 attachPosition;
 
+
+
     private void Awake()
     {
         interactable = GetComponentInChildren<Interactable>();
         rigidBody = GetComponentInChildren<Rigidbody>();
         velocityEstimator = GetComponent<VelocityEstimator>();
     }
-    private void OnDetachedFromHand(Hand hand)
+    protected override void OnDetachedFromHand(Hand hand)
     {
+        base.OnDetachedFromHand(hand);
         attached = false;
 
         //onDetachFromHand.Invoke();
@@ -44,8 +47,9 @@ public class ThrowableObject : GrabableObject
         rigidBody.angularVelocity = angularVelocity;
     }
 
-    protected virtual void OnAttachedToHand(Hand hand)
+    protected override void OnAttachedToHand(Hand hand)
     {
+        base.OnAttachedToHand(hand);
         //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
 
         //hadInterpolation = this.rigidbody.interpolation;

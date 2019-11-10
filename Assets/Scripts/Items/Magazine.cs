@@ -47,8 +47,9 @@ public class Magazine : MonoBehaviour
 
     }
 
-    void Awake(){
-         col = GetComponentInChildren<Collider>();
+    void Awake()
+    {
+        col = GetComponentInChildren<Collider>();
         rb = GetComponentInChildren<Rigidbody>();
         interactable = GetComponentInChildren<Interactable>();
     }
@@ -111,5 +112,6 @@ public enum MagazineTypes
     Pistol,
     LightGun,
     Rifle,
-    Sniper
+    Sniper,
+    RocketLauncher
 }

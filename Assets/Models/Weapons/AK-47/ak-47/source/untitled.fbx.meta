@@ -21,6 +21,7 @@ ModelImporter:
     100030: Bullet.001
     100032: Cube.013
     100034: Trigger
+    100036: Base.001
     400000: Camera
     400002: Cube.002
     400004: Cube.014
@@ -39,6 +40,7 @@ ModelImporter:
     400030: Bullet.001
     400032: Cube.013
     400034: Trigger
+    400036: Base.001
     2000000: Camera
     2100000: BlackMetal
     2100002: BulletCase
@@ -67,6 +69,7 @@ ModelImporter:
     2300024: Bullet.001
     2300026: Cube.013
     2300028: Trigger
+    2300030: Base.001
     3300000: Cube.002
     3300002: Cube.014
     3300004: Cube.031
@@ -82,6 +85,7 @@ ModelImporter:
     3300024: Bullet.001
     3300026: Cube.013
     3300028: Trigger
+    3300030: Base.001
     4300000: Cube.002
     4300002: Cube.014
     4300004: Cube.031
@@ -97,6 +101,7 @@ ModelImporter:
     4300024: Cube.013
     4300026: Trigger
     4300028: Bullet.001
+    4300030: Base.001
     10800000: Light
   externalObjects: {}
   materials:

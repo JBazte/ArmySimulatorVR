@@ -223,8 +223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabposition: {fileID: 8187339500204608593}
+  isDoubleHanded: 0
   attachmentFlags: 30
+  grabTypes: 2
   restoreParent: 0
+  resetRotationOnSocket: 1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
