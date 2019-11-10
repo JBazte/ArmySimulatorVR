@@ -5,7 +5,9 @@
       "app_key": "application.generated.unity.proyecto2019.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\_Programacion\\Proyecto2019\\actions.json",
+
+      "action_manifest_path": "C:\\Users\\43322826\\Documents\\GitHub\\Proyecto2019\\actions.json",
+
       "strings": {
         "en_us": {
           "name": "Proyecto2019 [Testing]"
