@@ -49,7 +49,7 @@ public class HandSelector : MonoBehaviour
 
 
         Selectable selected = Raycast<Selectable>(layerMask, ray);
-        unitSelector.Select(selected);
+        unitSelector.Select(selected, hand);
     }
 
     public T Raycast<T>(LayerMask mask, Ray ray) where T : Selectable

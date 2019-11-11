@@ -12,6 +12,19 @@ public class UnitSelector : MonoBehaviour
 
     Player player;
     public bool BlockSelection { get; set; }
+    [SerializeField]
+    private RadialMenu[] radialMenus;
+    private static RadialMenu[] radialInstances;
+
+    public static RadialMenu GetRadialMenus(int index)
+    {
+        if (index < 0)
+            return null;
+        if (index > radialInstances.Length)
+            return null;
+        return radialInstances[index];
+
+    }
 
     private void Start()
     {
@@ -20,6 +33,12 @@ public class UnitSelector : MonoBehaviour
         hands = player.hands;
         startPosition = player.transform.position;
         startRotation = player.transform.rotation;
+
+        radialInstances = new RadialMenu[radialMenus.Length];
+        for (int i = 0; i < radialMenus.Length; i++)
+        {
+            radialInstances[i] = Instantiate(radialMenus[i]);
+        }
 
     }
     void Update()
@@ -61,13 +80,12 @@ public class UnitSelector : MonoBehaviour
 
     }
 
-    public void Select(Selectable newSelected)
+    public void Select(Selectable newSelected, Hand selectedHand)
     {
         if (!BlockSelection)
         {
             if (newSelected != null)
             {
-
 
                 if (selected != null)
                 {
@@ -75,7 +93,7 @@ public class UnitSelector : MonoBehaviour
                     selected.AfterSelected(newSelected);
                     selected.Diselected();
                 }
-                newSelected.OnSelected();
+                newSelected.OnSelected(selectedHand);
                 this.selected = newSelected;
                 if (newSelected != null)
                     Debug.Log(newSelected);

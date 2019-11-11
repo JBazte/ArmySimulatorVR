@@ -4,7 +4,17 @@ using UnityEngine;
 using Valve.VR;
 public abstract class Selectable : PersistableObject
 {
-    public abstract void OnSelected();
+    [SerializeField]
+    protected int myRadialMenuIndex = 0;
+    protected RadialMenu GetMyRadialMenu
+    {
+        get
+        {
+            return UnitSelector.GetRadialMenus(myRadialMenuIndex);
+        }
+    }
+
+    public abstract void OnSelected(Valve.VR.InteractionSystem.Hand hand);
 
     public abstract void Diselected();
     //abstract void OnInteract();

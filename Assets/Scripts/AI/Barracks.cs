@@ -49,7 +49,7 @@ public class Barracks : Selectable
     }
 
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
 
     }

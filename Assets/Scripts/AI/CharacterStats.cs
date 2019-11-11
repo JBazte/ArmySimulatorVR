@@ -102,7 +102,7 @@ public class CharacterStats : PersistableObject
 
     public void TakeDamage(float amount)
     {
-        Debug.Log(amount);
+        //Debug.Log(amount);
         currentHealth -= amount;
         if (currentHealth <= 0)
         {

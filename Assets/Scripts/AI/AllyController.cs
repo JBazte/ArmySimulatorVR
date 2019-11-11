@@ -113,13 +113,17 @@ public class AllyController : EnemyController
         }
     }
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
+        base.OnSelected(hand);
         ChangeSpecificColor(Color.green);
+        var rm = GetMyRadialMenu;
+        //rm.
 
     }
     public override void Diselected()
     {
+        base.Diselected();
         ChangeSpecificColor(Color.yellow);
     }
     public override void AfterSelected(Selectable selectable)

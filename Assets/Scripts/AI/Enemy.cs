@@ -8,6 +8,7 @@ public class Enemy : Selectable
     [SerializeField]
     Transform grx;
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
+    RadialMenu instance;
     public int EnemyID
     {
         get
@@ -45,7 +46,7 @@ public class Enemy : Selectable
 
     public void ChangeToNewColor(Color newColor)
     {
-       //meshRenderers = grx.GetComponentsInChildren<Renderer>();
+        //meshRenderers = grx.GetComponentsInChildren<Renderer>();
         foreach (Renderer rend in meshRenderers)
         {
             var mats = new Material[rend.materials.Length];
@@ -117,14 +118,27 @@ public class Enemy : Selectable
 
 
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
         // Show Info
         // Show Options
+        var rm = GetMyRadialMenu;
+        if (rm != null)
+        {
+            rm.Show(true);
+            rm.transform.SetParent(transform);
+            rm.transform.position = transform.position + Vector3.up * 3;
+        }
+
     }
 
     public override void Diselected()
     {
+        var rm = GetMyRadialMenu;
+        if (rm != null)
+        {
+            rm.Show(false);
+        }
         // UnShow Info
 
     }

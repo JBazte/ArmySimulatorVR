@@ -104,7 +104,7 @@ public class MedicController : Selectable
         Gizmos.DrawWireSphere(transform.position, interactRadious);
     }
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
 
     }

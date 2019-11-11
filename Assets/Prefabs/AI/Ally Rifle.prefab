@@ -92,6 +92,12 @@ PrefabInstance:
       propertyPath: shotForce
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8270039033554843499, guid: 930d88bc689248f4481071c43190ca3e,
+        type: 3}
+      propertyPath: myRadialMenu
+      value: 
+      objectReference: {fileID: 4766822835557721526, guid: 6a609c64268041a449887bb2c4bcd70b,
+        type: 3}
     - target: {fileID: 1789530640, guid: 930d88bc689248f4481071c43190ca3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.106
