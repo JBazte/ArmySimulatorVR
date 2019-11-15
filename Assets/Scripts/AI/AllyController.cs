@@ -118,6 +118,7 @@ public class AllyController : EnemyController
         base.OnSelected(hand);
         ChangeSpecificColor(Color.green);
         var rm = GetMyRadialMenu;
+        //rm.right.AddFunctionOnPress(SetPrioirityPoint());
         //rm.
 
     }

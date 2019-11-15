@@ -79,6 +79,7 @@ public class EnemyFactory : ScriptableObject
                 SceneManager.MoveGameObjectToScene(
                     instance.gameObject, poolScene
                 );
+                GameController.instance.AddEnemy(instance);
             }
         }
         else
@@ -86,7 +87,7 @@ public class EnemyFactory : ScriptableObject
             instance = Instantiate(prefabs[enemyId]);
             instance.EnemyID = enemyId;
         }
-        GameController.instance.AddEnemy(instance);
+
 
         return instance;
 

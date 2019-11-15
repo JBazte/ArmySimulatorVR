@@ -9,6 +9,7 @@ public class Barracks : Selectable
 
     AllyController occupant;
 
+
     public Transform GetStandPoint
     {
         get
@@ -45,12 +46,14 @@ public class Barracks : Selectable
 
     public override void Diselected()
     {
-
+        HideRadialMenu();
     }
 
 
     public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
+        ShowRadialMenu();
+
 
     }
 }

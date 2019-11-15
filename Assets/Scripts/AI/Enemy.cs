@@ -7,8 +7,26 @@ public class Enemy : Selectable
     Renderer[] meshRenderers;
     [SerializeField]
     Transform grx;
+    [SerializeField]
+    EnemyTypes enemyType = EnemyTypes.None;
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
     RadialMenu instance;
+    protected bool availability;
+
+    public bool GetAvailability
+    {
+        get
+        {
+            return availability;
+        }
+    }
+    public EnemyTypes EType
+    {
+        get
+        {
+            return enemyType;
+        }
+    }
     public int EnemyID
     {
         get
@@ -122,25 +140,27 @@ public class Enemy : Selectable
     {
         // Show Info
         // Show Options
-        var rm = GetMyRadialMenu;
-        if (rm != null)
-        {
-            rm.Show(true);
-            rm.transform.SetParent(transform);
-            rm.transform.position = transform.position + Vector3.up * 3;
-        }
+        ShowRadialMenu();
+
 
     }
 
     public override void Diselected()
     {
-        var rm = GetMyRadialMenu;
-        if (rm != null)
-        {
-            rm.Show(false);
-        }
+        HideRadialMenu();
         // UnShow Info
 
     }
 
+
+
+}
+
+public enum EnemyTypes
+{
+    None,
+    Rifle,
+    Sniper,
+    Medic,
+    Mechanic
 }

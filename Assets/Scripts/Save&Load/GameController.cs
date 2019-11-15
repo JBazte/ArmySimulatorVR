@@ -196,4 +196,18 @@ public class GameController : PersistableObject
             }
         }
     }
+
+    public List<Enemy> GetEnemiesByType(EnemyTypes type)
+    {
+        var enemeyList = new List<Enemy>();
+        foreach (var enemy in enemies)
+        {
+            if (enemy.EType == type)
+            {
+                enemeyList.Add(enemy);
+            }
+        }
+        return enemeyList;
+
+    }
 }

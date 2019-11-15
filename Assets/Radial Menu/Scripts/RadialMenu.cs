@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RadialMenu : MonoBehaviour
 {
     [Header("Scene")]
@@ -20,10 +21,16 @@ public class RadialMenu : MonoBehaviour
 
     private readonly float degreeIncrement = 90.0f;
 
-
     private void Awake()
     {
         CreateAndSetupSections();
+    }
+
+    protected void SetRadialFunction(int index, )
+    {
+        radialSections[index].onPress.AddListener(Start);
+
+
     }
 
     private void CreateAndSetupSections()
