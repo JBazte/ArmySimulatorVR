@@ -144,6 +144,7 @@ public class Weapon : MonoBehaviour
     {
 
         float recoilForce = CuadraticFunction(recoilTime) / (attackMask / 4);
+        recoilForce /= attackSpeed / 2;
         if (recoilForce < 0)
         {
             recoilForce = 0;
@@ -154,8 +155,12 @@ public class Weapon : MonoBehaviour
         }
         //recoilForce 
         //Debug.Log(recoilForce);
-        rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce) + (bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
-        return recoilForce / grabbable.HandsAttached;
+        recoilForce /= grabbable.HandsAttached;
+
+        Debug.Log(recoilForce);
+        rb.AddForceAtPosition((bulletSpawnPosition.up * recoilForce / 2) + (-bulletSpawnPosition.forward * recoilForce), bulletSpawnPosition.position, ForceMode.Impulse);
+
+        return recoilForce;
     }
 
     private float CuadraticFunction(float x)
@@ -269,7 +274,7 @@ public class Weapon : MonoBehaviour
         currentAmmo = 0;
         hasMagazine = false;
         timeBeforeReload = magazinetoNullTime;
-        Debug.Log("disattached");
+        //Debug.Log("disattached");
     }
 
     private void HandAttachedUpdate(Hand hand)

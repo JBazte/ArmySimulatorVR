@@ -535,7 +535,7 @@ Transform:
   m_GameObject: {fileID: 4766822835557721520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4766822834127101045}
   - {fileID: 4766822835561267672}
@@ -580,7 +580,18 @@ MonoBehaviour:
     iconRenderer: {fileID: 4766822835280701843}
     onPress:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4766822835557721526}
+          m_MethodName: Show
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   left:
@@ -588,9 +599,26 @@ MonoBehaviour:
     iconRenderer: {fileID: 4766822834331623534}
     onPress:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 4766822835557721526}
+          m_MethodName: Show
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  moveAction:
+    actionPath: /actions/default/in/MenuSelectionPosition
+    needsReinit: 0
+  activateMenu:
+    actionPath: /actions/default/in/Select
+    needsReinit: 0
 --- !u!1 &4766822835561267675
 GameObject:
   m_ObjectHideFlags: 0

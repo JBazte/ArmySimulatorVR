@@ -47,6 +47,14 @@ public class GrabbableObject : MonoBehaviour
 
 
     }
+
+    private void OnEnable()
+    {
+        if (secondHand == null)
+        {
+            secondHand = GetComponentInChildren<SecondHanded>();
+        }
+    }
     public void AttachNewSocket(Socket newSocket)
     {
         if (newSocket.GetStoredObject)
@@ -56,6 +64,7 @@ public class GrabbableObject : MonoBehaviour
 
         activeSocket.Attach(this);
         isAvailable = false;
+        interactable.highlightOnHover = false;
 
     }
 
@@ -67,6 +76,7 @@ public class GrabbableObject : MonoBehaviour
         activeSocket.DetAttach();
         activeSocket = null;
         isAvailable = true;
+        interactable.highlightOnHover = true;
 
 
     }
@@ -204,6 +214,8 @@ public class GrabbableObject : MonoBehaviour
         hand.HoverLock(interactable);
         hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
         RealeaseOldSocket();
+        grabbingHand = hand;
+        HandsAttached = 1;
         //hand.HoverLock(interactable);
 
 

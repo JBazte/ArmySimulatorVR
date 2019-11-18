@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd0780e0806374b8df13811eebbac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRadialMenuIndex: 0
   InputAction:
     actionPath: 
     needsReinit: 0
@@ -204,10 +205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8d68025f72088409494fc2f7f80b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRadialMenuIndex: 0
   InputAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
   grx: {fileID: 0}
+  enemyType: 0
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2
@@ -223,8 +226,12 @@ MonoBehaviour:
   shotForce: 40
   priorityMoving: 0
   animatorController: {fileID: 0}
-  objectPrefab: {fileID: 8029921448160060604, guid: 6ee5d341f61fc004dabcc912b044154d,
-    type: 3}
+  configuration:
+    spawnObject: {fileID: 8914479277591898034, guid: 1bc026b1cc2474b4d9d1e61fef6dfa32,
+      type: 3}
+    leftObject: {fileID: 8922257493189929887, guid: 126cc3a8ceb2adf49b5d584d74276ea2,
+      type: 3}
+    rightObject: {fileID: 0}
   handType: 2
 --- !u!1 &3722809179212571761
 GameObject:
@@ -430,6 +437,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8042697837925165269, guid: bcb044b4ab73eb14299e8274ce13b76e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97a4fd690e2580947aed6c4e2941e4d9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb044b4ab73eb14299e8274ce13b76e, type: 3}
 --- !u!4 &8818096513682368260 stripped

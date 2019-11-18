@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
-public class RadialMenu : MonoBehaviour {
+public class RadialMenu : MonoBehaviour
+{
     [Header("Scene")]
     public Transform selectionTransform = null;
     public Transform cursorTransform = null;
@@ -19,11 +21,23 @@ public class RadialMenu : MonoBehaviour {
 
     private readonly float degreeIncrement = 90.0f;
 
-    private void Awake() {
+
+    public SteamVR_Action_Vector2 moveAction = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("default", "MenuSelectionPosition");
+    public SteamVR_Action_Boolean activateMenu = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("default", "Select");
+    private void Awake()
+    {
         CreateAndSetupSections();
     }
 
-    private void CreateAndSetupSections() {
+    protected void SetRadialFunction(int index)
+    {
+        radialSections[index].onPress.AddListener(Start);
+
+
+    }
+
+    private void CreateAndSetupSections()
+    {
         radialSections = new List<RadialSection>() {
             top,
             right,
@@ -31,71 +45,100 @@ public class RadialMenu : MonoBehaviour {
             left
         };
 
-        foreach (RadialSection section in radialSections) {
+        foreach (RadialSection section in radialSections)
+        {
             section.iconRenderer.sprite = section.icon;
         }
     }
 
-    private void Start() {
+    private void Start()
+    {
         Show(false);
     }
 
-    public void Show(bool value) {
+    public void Show(bool value)
+    {
         gameObject.SetActive(value);
     }
 
-    private void Update() {
+    private void Update()
+    {
         Vector2 direction = Vector2.zero + touchPosition;
         float rotation = GetDegree(direction);
 
         SetCursorPosition();
         SetSelectionRotation(rotation);
         SetSelectedEvent(rotation);
+
+
+
+        //(SteamVR_Input.GetVector2(, "MenuSelectionPosition", SteamVR_Input_Sources.Any)
+        SetTouchPosition(moveAction.GetAxis(SteamVR_Input_Sources.Any));
+        if (activateMenu.GetStateDown(SteamVR_Input_Sources.Any))
+        {
+            Debug.Log("Touched Radial Menu");
+            ActivateHighlightedSection();
+        }
+
+
     }
 
-    private float GetDegree(Vector2 direction) {
+
+    private float GetDegree(Vector2 direction)
+    {
         float value = Mathf.Atan2(direction.x, direction.y);
         value *= Mathf.Rad2Deg;
 
-        if (value < 0) {
+        if (value < 0)
+        {
             value += 360.0f;
         }
 
         return value;
     }
 
-    private void SetCursorPosition() {
+    private void SetCursorPosition()
+    {
         cursorTransform.localPosition = touchPosition;
     }
 
-    private void SetSelectionRotation(float newRotation) {
+    private void SetSelectionRotation(float newRotation)
+    {
         float snappedRotation = SnapRotation(newRotation);
         selectionTransform.localEulerAngles = new Vector3(0, 0, -snappedRotation);
     }
 
-    private float SnapRotation(float rotation) {
+    private float SnapRotation(float rotation)
+    {
         return GetNearestIncrement(rotation) * degreeIncrement;
     }
 
-    private int GetNearestIncrement(float rotation) {
+    private int GetNearestIncrement(float rotation)
+    {
         return Mathf.RoundToInt(rotation / degreeIncrement);
     }
 
-    private void SetSelectedEvent(float currentRotation) {
+    private void SetSelectedEvent(float currentRotation)
+    {
         int index = GetNearestIncrement(currentRotation);
 
-        if (index == 4) {
+        if (index == 4)
+        {
             index = 0;
         }
 
         highlightedSection = radialSections[index];
     }
 
-    public void SetTouchPosition(Vector2 newValue) {
+    public void SetTouchPosition(Vector2 newValue)
+    {
         touchPosition = newValue;
     }
 
-    public void ActivateHighlightedSection() {
+    public void ActivateHighlightedSection()
+    {
         highlightedSection.onPress.Invoke();
     }
+
+
 }

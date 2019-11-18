@@ -7,7 +7,26 @@ public class Enemy : Selectable
     Renderer[] meshRenderers;
     [SerializeField]
     Transform grx;
+    [SerializeField]
+    EnemyTypes enemyType = EnemyTypes.None;
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
+    RadialMenu instance;
+    protected bool availability = true;
+
+    public bool GetAvailability
+    {
+        get
+        {
+            return availability;
+        }
+    }
+    public EnemyTypes EType
+    {
+        get
+        {
+            return enemyType;
+        }
+    }
     public int EnemyID
     {
         get
@@ -45,7 +64,7 @@ public class Enemy : Selectable
 
     public void ChangeToNewColor(Color newColor)
     {
-       //meshRenderers = grx.GetComponentsInChildren<Renderer>();
+        //meshRenderers = grx.GetComponentsInChildren<Renderer>();
         foreach (Renderer rend in meshRenderers)
         {
             var mats = new Material[rend.materials.Length];
@@ -117,16 +136,31 @@ public class Enemy : Selectable
 
 
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
         // Show Info
         // Show Options
+        ShowRadialMenu();
+
+
     }
 
     public override void Diselected()
     {
+        HideRadialMenu();
         // UnShow Info
 
     }
 
+
+
+}
+
+public enum EnemyTypes
+{
+    None,
+    Rifle,
+    Sniper,
+    Medic,
+    Mechanic
 }

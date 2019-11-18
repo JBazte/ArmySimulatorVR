@@ -39,6 +39,10 @@ public class CharacterStats : PersistableObject
         {
             return currentHealth;
         }
+        set
+        {
+            currentHealth = value;
+        }
     }
 
     public float MaxHealth
@@ -83,7 +87,7 @@ public class CharacterStats : PersistableObject
             return reloadTime;
         }
     }
-    private float currentHealth;
+    protected float currentHealth;
 
     private void Awake()
     {
@@ -102,7 +106,7 @@ public class CharacterStats : PersistableObject
 
     public void TakeDamage(float amount)
     {
-        Debug.Log(amount);
+        //Debug.Log(amount);
         currentHealth -= amount;
         if (currentHealth <= 0)
         {

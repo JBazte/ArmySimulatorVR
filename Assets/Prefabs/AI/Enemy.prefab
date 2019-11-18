@@ -14479,6 +14479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7c3888d00f7154eb457875b64e65ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRadialMenuIndex: -1
   InputAction:
     actionPath: 
     needsReinit: 0

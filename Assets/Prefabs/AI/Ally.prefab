@@ -119,10 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8d68025f72088409494fc2f7f80b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRadialMenuIndex: 0
   InputAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
   grx: {fileID: 4521389610365896247}
+  enemyType: 0
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2
@@ -138,8 +140,10 @@ MonoBehaviour:
   shotForce: 30
   priorityMoving: 0
   animatorController: {fileID: 0}
-  objectPrefab: {fileID: 8357617921144659852, guid: a4aa1fa9c77637440b667b3ab0d709fd,
-    type: 3}
+  configuration:
+    spawnObject: {fileID: 0}
+    leftObject: {fileID: 0}
+    rightObject: {fileID: 0}
   handType: 2
 --- !u!1 &4521389610365896240
 GameObject:

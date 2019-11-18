@@ -6,6 +6,7 @@ public class Belt : MonoBehaviour
 {
     [Range(0.5f, 1f)]
     public float height;
+    public static Belt instance;
 
     private Transform head = null;
 
@@ -13,6 +14,7 @@ public class Belt : MonoBehaviour
     {
         //head = SteamVR_Render.Top().head;
         head = Player.instance.hmdTransform;
+        instance = this;
         // if (head == null)
 
     }
@@ -43,29 +45,55 @@ public class Belt : MonoBehaviour
         transform.localEulerAngles = adjustableRotation;
     }
 
-    public void ConfigureBelt(GrabbableObject spawnAble = null, GrabbableObject slot1 = null, GrabbableObject slot2 = null)
+    public void ConfigureBelt(BeltPrefabs beltPrefab)
     {
-        if (spawnAble == null)
+        DeleteSlots();
+        if (beltPrefab.spawnObject == null)
         {
             GetComponentInChildren<SlotSpawner>().gameObject.SetActive(false);
         }
         else
         {
             var gb = GetComponentInChildren<SlotSpawner>();
-            gb.gameObject.SetActive(false);
-            gb.ChangeSpawn(spawnAble);
+            gb.gameObject.SetActive(true);
+            gb.ChangeSpawn(beltPrefab.spawnObject);
         }
         var slots = GetComponentsInChildren<Slot>();
-        if (slot1 != null)
+
+        //if (beltPrefab.leftObject != null)
+        //{
+        //  slots[0].TryStore(beltPrefab.leftObject);
+        //}
+        if (beltPrefab.rightObject != null)
         {
-            slots[0].TryStore(slot1);
-        }
-        if (slot2 != null)
-        {
-            slots[1].TryStore(slot2);
+            //deleteObj = 
+            slots[1].TryStore(Instantiate(beltPrefab.rightObject));
         }
 
     }
 
+    public void DeleteSlots()
+    {
+        var slots = GetComponentsInChildren<Slot>();
+        slots[0].DestroyAttachedObject();
+        slots[1].DestroyAttachedObject();
+    }
+
+    [System.Serializable]
+    public struct BeltPrefabs
+    {
+        public GrabbableObject spawnObject;
+        public GrabbableObject leftObject;
+        public GrabbableObject rightObject;
+
+
+        public BeltPrefabs(GrabbableObject spawnObject = null, GrabbableObject leftObject = null, GrabbableObject rightObject = null)
+        {
+            this.spawnObject = spawnObject;
+            this.leftObject = leftObject;
+            this.rightObject = rightObject;
+        }
+    }
 
 }
+

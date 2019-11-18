@@ -9,6 +9,7 @@ public class Barracks : Selectable
 
     AllyController occupant;
 
+
     public Transform GetStandPoint
     {
         get
@@ -45,12 +46,39 @@ public class Barracks : Selectable
 
     public override void Diselected()
     {
-
+        HideRadialMenu();
+        var rm = GetMyRadialMenu;
+        rm.top.RemoveFunctionsOnPress();
+        rm.right.RemoveFunctionsOnPress();
     }
 
 
-    public override void OnSelected()
+    public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
+        ShowRadialMenu();
+        var rm = GetMyRadialMenu;
+        rm.top.AddFunctionOnPress(delegate { SetTypeTarget(EnemyTypes.Rifle); });
+        rm.right.AddFunctionOnPress(delegate { SetTypeTarget(EnemyTypes.Sniper); });
 
+
+
+    }
+
+    public void SetTypeTarget(EnemyTypes enemyType)
+    {
+        var possibilites = GameController.instance.GetEnemiesByType(enemyType);
+        if (possibilites.Count > 0)
+        {
+            foreach (AllyController ally in possibilites)
+            {
+
+                if (ally.GetAvailability)
+                {
+                    ally.SetBarrack(this);
+                    break;
+                }
+            }
+        }
+        Diselected();
     }
 }

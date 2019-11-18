@@ -9,9 +9,15 @@ public class HandSelector : MonoBehaviour
     private float sphereSelectionRadious;
     [SerializeField]
     LayerMask layerMask;
+    [SerializeField]
+    Transform dot;
     UnitSelector unitSelector;
+    [SerializeField]
+    float pointerLenght = 50f;
 
     Camera mainCamera;
+    private LineRenderer lineRenderer = null;
+
     void Update()
     {
         if (hand != null)
@@ -32,6 +38,33 @@ public class HandSelector : MonoBehaviour
             }
 
         }
+        if (!unitSelector.BlockSelection)
+        {
+            UpdateLine();
+        }
+        else
+        {
+            lineRenderer.gameObject.SetActive(false);
+        }
+
+    }
+
+
+    private void UpdateLine()
+    {
+        lineRenderer.gameObject.SetActive(true);
+        //Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = new Ray(transform.position, transform.forward);
+        var hit = Raycast(layerMask, ray);
+        Vector3 endposition = transform.position + (transform.forward * pointerLenght);
+        if (hit.collider != null)
+            endposition = hit.point;
+
+        dot.position = endposition;
+
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, endposition);
+
     }
 
     void CheckUnit()
@@ -48,19 +81,26 @@ public class HandSelector : MonoBehaviour
         }
 
 
-        Selectable selected = Raycast<Selectable>(layerMask, ray);
-        unitSelector.Select(selected);
+        Selectable selected = SphereRaycast<Selectable>(layerMask, ray);
+        unitSelector.Select(selected, hand);
     }
 
-    public T Raycast<T>(LayerMask mask, Ray ray) where T : Selectable
+    public T SphereRaycast<T>(LayerMask mask, Ray ray) where T : Selectable
     {
         T selected = null;
         RaycastHit hit;
-        if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, 50f, layerMask))
+        if (Physics.SphereCast(ray, sphereSelectionRadious, out hit, pointerLenght, layerMask))
         {
             selected = hit.collider.GetComponentInParent<T>();
         }
+
         return selected;
+    }
+    public RaycastHit Raycast(LayerMask mask, Ray ray)
+    {
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit, pointerLenght, mask);
+        return hit;
     }
 
     void Start()
@@ -68,5 +108,6 @@ public class HandSelector : MonoBehaviour
         hand = GetComponentInParent<Hand>();
         unitSelector = GameController.instance.unitSelector;
         mainCamera = Player.instance.GetComponentInChildren<Camera>();
+        lineRenderer = GetComponentInChildren<LineRenderer>();
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MedicController : Selectable
+public class MedicController : MonoBehaviour
 {
 
     [SerializeField]
@@ -17,18 +17,13 @@ public class MedicController : Selectable
     private float healDelay;
     [SerializeField]
     private LayerMask healingMask;
+    [SerializeField]
+    private float healingDetectRadious;
+
 
     AllyController controller;
     protected NavMeshAgent agent;
     private float lastHeal;
-
-    public override SelectableTypes Type
-    {
-        get
-        {
-            return SelectableTypes.Medic;
-        }
-    }
 
     protected void Start()
     {
@@ -60,6 +55,7 @@ public class MedicController : Selectable
         {
             Heal();
         }
+        CheckHealing();
     }
 
     private void Heal()
@@ -97,34 +93,35 @@ public class MedicController : Selectable
         }
 
     }
-
+    private void CheckHealing()
+    {
+        Collider[] enemies = Physics.OverlapSphere(transform.position, healingDetectRadious, healingMask);
+        float closestDistance = int.MaxValue;
+        CharacterStats cs = null;
+        foreach (var enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                var characterstat = enemy.GetComponent<CharacterStats>();
+                if (cs.CurrentHealth < cs.MaxHealth)
+                {
+                    closestDistance = distance;
+                    cs = characterstat;
+                }
+            }
+            if (closestDistance != int.MaxValue)
+            {
+                SetTarget(cs);
+            }
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, interactRadious);
+        Gizmos.DrawWireSphere(transform.position, healingDetectRadious);
     }
 
-    public override void OnSelected()
-    {
 
-    }
-
-    public override void Diselected()
-    {
-
-    }
-    public override void AfterSelected(Selectable selectable)
-    {
-        controller.priorityMoving = false;
-        if (selectable.Type == SelectableTypes.Ally)
-        {
-            AllyController ally = selectable as AllyController;
-            SetTarget(ally.GetComponent<CharacterStats>());
-
-        }
-        else
-        {
-            controller.AfterSelected(selectable);
-        }
-    }
 }

@@ -36,8 +36,12 @@ public class Granade : ThrowableObject
             {
                 //It matched one
                 CharacterStats stats = col.GetComponentInParent<CharacterStats>();
-                float finalDamage = Mathf.Lerp(0, damage, 1 - (distance / explosionRadious));
-                stats.TakeDamage(finalDamage / 2);
+                if (stats != null)
+                {
+
+                    float finalDamage = Mathf.Lerp(0, damage, 1 - (distance / explosionRadious));
+                    stats.TakeDamage(finalDamage / 2);
+                }
             }
             Rigidbody rb = col.GetComponentInParent<Rigidbody>();
             if (rb != null)
