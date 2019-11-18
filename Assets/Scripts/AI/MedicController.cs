@@ -106,12 +106,12 @@ public class MedicController : Selectable
 
     public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
-
+        ShowRadialMenu();
     }
 
     public override void Diselected()
     {
-
+        HideRadialMenu();
     }
     public override void AfterSelected(Selectable selectable)
     {

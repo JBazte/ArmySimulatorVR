@@ -79,6 +79,7 @@ public class Slot : MonoBehaviour
         GameObject g = hand.currentAttachedObject;
 
         GrabbableObject gr = g.GetComponentInChildren<GrabbableObject>();
+        gr.AttachNewSocket(socket);
         hand.DetachObject(g, false);
         hand.HoverUnlock(interactable);
 
@@ -108,6 +109,17 @@ public class Slot : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, InteractRadious);
+    }
+
+    public void DestroyAttachedObject()
+    {
+        GrabbableObject attachedObject = socket.GetStoredObject;
+
+        if (attachedObject != null)
+        {
+            Destroy(attachedObject.gameObject);
+        }
+        socket.DetAttach();
     }
 
 }

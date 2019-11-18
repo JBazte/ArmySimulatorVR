@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Valve.VR;
 
 public class RadialMenu : MonoBehaviour
 {
@@ -21,12 +21,15 @@ public class RadialMenu : MonoBehaviour
 
     private readonly float degreeIncrement = 90.0f;
 
+
+    public SteamVR_Action_Vector2 moveAction = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("default", "MenuSelectionPosition");
+    public SteamVR_Action_Boolean activateMenu = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("default", "Select");
     private void Awake()
     {
         CreateAndSetupSections();
     }
 
-    protected void SetRadialFunction(int index, )
+    protected void SetRadialFunction(int index)
     {
         radialSections[index].onPress.AddListener(Start);
 
@@ -67,8 +70,18 @@ public class RadialMenu : MonoBehaviour
         SetSelectionRotation(rotation);
         SetSelectedEvent(rotation);
 
-    }
 
+
+        //(SteamVR_Input.GetVector2(, "MenuSelectionPosition", SteamVR_Input_Sources.Any)
+        SetTouchPosition(moveAction.GetAxis(SteamVR_Input_Sources.Any));
+        if (activateMenu.GetStateDown(SteamVR_Input_Sources.Any))
+        {
+            Debug.Log("Touched Radial Menu");
+            ActivateHighlightedSection();
+        }
+
+
+    }
 
 
     private float GetDegree(Vector2 direction)
@@ -126,4 +139,6 @@ public class RadialMenu : MonoBehaviour
     {
         highlightedSection.onPress.Invoke();
     }
+
+
 }

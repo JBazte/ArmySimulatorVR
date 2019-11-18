@@ -269,7 +269,7 @@ public class Weapon : MonoBehaviour
         currentAmmo = 0;
         hasMagazine = false;
         timeBeforeReload = magazinetoNullTime;
-        Debug.Log("disattached");
+        //Debug.Log("disattached");
     }
 
     private void HandAttachedUpdate(Hand hand)

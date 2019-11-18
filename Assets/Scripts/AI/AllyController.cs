@@ -6,7 +6,7 @@ using Valve.VR;
 public class AllyController : EnemyController
 {
     [SerializeField]
-    GrabbableObject objectPrefab;
+    public Belt.BeltPrefabs configuration;
     [SerializeField]
     SteamVR_Input_Sources handType = SteamVR_Input_Sources.RightHand;
 
@@ -16,6 +16,9 @@ public class AllyController : EnemyController
     SkinnedMeshRenderer mr;
     bool isIncarnated;
     Barracks barrack;
+
+    private bool shouldMove = false;
+
     public override SelectableTypes Type
     {
         get
@@ -28,44 +31,18 @@ public class AllyController : EnemyController
     public void Incarnate()
     {
 
-        Player player = Player.instance;
-        Hand hand = player.GetHand(handType);
-        if (hand == null)
-        {
-            hand = player.GetHand(SteamVR_Input_Sources.Any);
-        }
-        this.hand = hand;
-        w = Instantiate(objectPrefab);
-        w.transform.position = hand.transform.position;
-
-        w.AttachToHand(hand);
-
-        player.transform.position = transform.position;
-        player.transform.rotation = transform.rotation;
-        player.GetComponentInChildren<MagazineSpawner>(true).ChangeType((w.GetComponentInChildren<Weapon>()).MagazineType);
-        gameObject.SetActive(false);
-        isIncarnated = true;
+        PlayerStats player = Player.instance.GetComponent<PlayerStats>();
+        player.Incarnate(this);
 
     }
 
-    public void DisIncarnate()
-    {
-        gameObject.SetActive(true);
-        if (w != null)
-        {
-            hand.DetachObject(w.gameObject, false);
-            hand.otherHand.DetachObject(hand.currentAttachedObject, false);
-            Destroy(w.gameObject);
-        }
-        isIncarnated = false;
 
-    }
     public override void SetPoint(Vector3 position)
     {
         if (!priorityMoving)
         {
             base.SetPoint(position);
-
+            //availability = true;
         }
     }
 
@@ -74,73 +51,72 @@ public class AllyController : EnemyController
         priorityMoving = false;
         SetPoint(position);
         priorityMoving = true;
+        availability = false;
     }
-    private void Start()
-    {
-        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
-        foreach (var m in ms)
-        {
-            defaultColors.Add(m.material.color);
-        }
-        mr = GetComponentInChildren<SkinnedMeshRenderer>();
-        base.Start();
-    }
-    public void ChangeColor(Color color)
-    {
-        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
-        foreach (var m in ms)
-        {
-            m.material.color = color;
-        }
-    }
-    public void ChangeSpecificColor(Color color)
-    {
-        mr.materials[8].color = color;
-    }
+    /* private void Start()
+     {
+         MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
+         foreach (var m in ms)
+         {
+             defaultColors.Add(m.material.color);
+         }
+         mr = GetComponentInChildren<SkinnedMeshRenderer>();
+         base.Start();
+     }
+     public void ChangeColor(Color color)
+     {
+         MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
+         foreach (var m in ms)
+         {
+             m.material.color = color;
+         }
+     }
+     public void ChangeSpecificColor(Color color)
+     {
+         mr.materials[8].color = color;
+     }
 
-    public void ResetSpecificColor()
-    {
-        mr.materials[8].color = Color.yellow;
-    }
+     public void ResetSpecificColor()
+     {
+         mr.materials[8].color = Color.yellow;
+     }
 
-    public void ResetColors()
-    {
-        MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
+     public void ResetColors()
+     {
+         MeshRenderer[] ms = GetComponentsInChildren<MeshRenderer>();
 
-        for (int i = 0; i < defaultColors.Count; i++)
-        {
-            ms[i].material.color = defaultColors[i];
-        }
-    }
+         for (int i = 0; i < defaultColors.Count; i++)
+         {
+             ms[i].material.color = defaultColors[i];
+         }
+     }
+     */
 
     public override void OnSelected(Valve.VR.InteractionSystem.Hand hand)
     {
         base.OnSelected(hand);
-        ChangeSpecificColor(Color.green);
+        //ChangeSpecificColor(Color.green);
         var rm = GetMyRadialMenu;
+        rm.top.AddFunctionOnPress(Incarnated);
+        rm.left.AddFunctionOnPress(MoveTowards);
         //rm.right.AddFunctionOnPress(SetPrioirityPoint());
         //rm.
 
     }
+
+    private void MoveTowards()
+    {
+        UnitSelector.instance.allyMove = this;
+    }
+
+
     public override void Diselected()
     {
         base.Diselected();
-        ChangeSpecificColor(Color.yellow);
-    }
-    public override void AfterSelected(Selectable selectable)
-    {
-        if (selectable.Type == SelectableTypes.Barracks)
-        {
-            Barracks newBarrack = selectable as Barracks;
-            if (barrack != null)
-                barrack.DesOccupy();
-
-            newBarrack.Occupy(this);
-
-            barrack = newBarrack;
-            //SetPoint(b.GetStandPoint.position);
-
-        }
+        //ChangeSpecificColor(Color.yellow);
+        var rm = GetMyRadialMenu;
+        rm.top.RemoveFunctionsOnPress();
+        rm.left.RemoveFunctionsOnPress();
     }
 
     public void ChangeBarracks(AllyController other)
@@ -149,25 +125,17 @@ public class AllyController : EnemyController
         ChangeTarget(other);
         if (other.barrack != null)
             other.barrack.Occupy(this);
-
+        availability = false;
     }
 
-    public override void OnInputAction(UnitSelector selector)
+    public void Incarnated()
     {
-        Debug.Log("incarnating");
-        if (!isIncarnated)
-        {
-            selector.BlockSelection = true;
-            Incarnate();
-        }
-        else
-        {
-            selector.BlockSelection = false;
-            DisIncarnate();
-            selector.ResetPlayerPositon();
-
-        }
-
+        var rm = GetMyRadialMenu;
+        rm.right.RemoveFunctionsOnPress();
+        Incarnate();
     }
+
+
+
 
 }

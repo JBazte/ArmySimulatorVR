@@ -12,6 +12,7 @@ public class SecondHanded : MonoBehaviour
     Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.SecondHand;
     public void StartGrabbable(GrabbableObject o)
     {
+
         isGrabbable = true;
         interactable.highlightOnHover = true;
         grabbableObject = o;
@@ -28,7 +29,7 @@ public class SecondHanded : MonoBehaviour
 
     private void Detach(Hand hand)
     {
-        if (!lockedHand)
+        if (lockedHand != null)
         {
             lockedHand.HoverUnlock(interactable);
             hand.DetachObject(this.gameObject);
@@ -36,7 +37,7 @@ public class SecondHanded : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
         interactable = GetComponentInChildren<Interactable>();
         interactable.highlightOnHover = false;

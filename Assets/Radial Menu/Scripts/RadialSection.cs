@@ -15,8 +15,15 @@ public class RadialSection
 
     }
 
+    public void RemoveFuntionOnPress(UnityAction action)
+    {
+        onPress.RemoveListener(action);
+
+    }
+
     public void RemoveFunctionsOnPress()
     {
         onPress.RemoveAllListeners();
+
     }
 }

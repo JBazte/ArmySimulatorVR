@@ -11,7 +11,7 @@ public class Enemy : Selectable
     EnemyTypes enemyType = EnemyTypes.None;
     private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
     RadialMenu instance;
-    protected bool availability;
+    protected bool availability = true;
 
     public bool GetAvailability
     {

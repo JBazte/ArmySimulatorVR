@@ -39,6 +39,10 @@ public class CharacterStats : PersistableObject
         {
             return currentHealth;
         }
+        set
+        {
+            currentHealth = value;
+        }
     }
 
     public float MaxHealth
@@ -83,7 +87,7 @@ public class CharacterStats : PersistableObject
             return reloadTime;
         }
     }
-    private float currentHealth;
+    protected float currentHealth;
 
     private void Awake()
     {
