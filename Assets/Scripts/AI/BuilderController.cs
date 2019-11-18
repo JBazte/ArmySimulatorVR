@@ -48,11 +48,7 @@ public class BuilderController : MedicController
         isBuilding = true;
     }
 
-    private void Start()
-    {
-        base.Start();
 
-    }
 
     public void Checkdistance()
     {
@@ -66,23 +62,11 @@ public class BuilderController : MedicController
         }
     }
 
+
     new private void Update()
     {
         base.Update();
         Checkdistance();
     }
-    public override void AfterSelected(Selectable selectable)
-    {
-        if (selectable.Type == SelectableTypes.Barracks)
-        {
-            Barracks bar = selectable as Barracks;
-            SetTarget(bar.GetComponent<CharacterStats>());
 
-        }
-        else
-        {
-            base.AfterSelected(selectable);
-        }
-
-    }
 }

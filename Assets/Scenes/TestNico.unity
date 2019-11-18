@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &42206768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,7 +1757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &259345684
 Transform:
   m_ObjectHideFlags: 0
@@ -2653,7 +2653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4984,10 +4984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd0780e0806374b8df13811eebbac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRadialMenuIndex: 0
-  InputAction:
-    actionPath: 
-    needsReinit: 0
   home: {fileID: 1014575912}
   target: {fileID: 570515708}
   interactRadious: 3
@@ -4996,6 +4992,7 @@ MonoBehaviour:
   healingMask:
     serializedVersion: 2
     m_Bits: 2048
+  healingDetectRadious: 0
   buildingsPrefabs:
   - {fileID: 7372512999633280081, guid: 56c5bd02f7229dd4ebf16d6ad752dfda, type: 3}
   totalBuildingTime: 5
@@ -9925,7 +9922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23e3022260a3bb49ad3fff36a224444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0
+  spawnRate: 2
   zone: {fileID: 1730221045}
 --- !u!114 &1730221045
 MonoBehaviour:
@@ -10525,7 +10522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12133,10 +12130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96bab70f49a77246934380783a6ae2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRadialMenuIndex: 0
-  InputAction:
-    actionPath: 
-    needsReinit: 0
   home: {fileID: 730875830}
   target: {fileID: 1146211105}
   interactRadious: 3
@@ -12145,6 +12138,7 @@ MonoBehaviour:
   healingMask:
     serializedVersion: 2
     m_Bits: 1024
+  healingDetectRadious: 0
 --- !u!195 &2079802940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12812,6 +12806,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -361.656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922257493189929886, guid: 126cc3a8ceb2adf49b5d584d74276ea2,
+        type: 3}
+      propertyPath: recoilForceMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922257493189929886, guid: 126cc3a8ceb2adf49b5d584d74276ea2,
+        type: 3}
+      propertyPath: startingRecoilForce
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126cc3a8ceb2adf49b5d584d74276ea2, type: 3}

@@ -135,7 +135,13 @@ public class AllyController : EnemyController
         Incarnate();
     }
 
+    public void SetBarrack(Barracks b)
+    {
+        if (barrack != null)
+            barrack.DesOccupy();
 
+        b.Occupy(this);
 
-
+        barrack = b;
+    }
 }

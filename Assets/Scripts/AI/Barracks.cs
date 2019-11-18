@@ -74,7 +74,7 @@ public class Barracks : Selectable
 
                 if (ally.GetAvailability)
                 {
-                    ally.AfterSelected(this);
+                    ally.SetBarrack(this);
                     break;
                 }
             }

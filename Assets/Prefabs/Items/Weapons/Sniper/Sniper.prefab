@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564fa94c21960304a94fa369dd1ad644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotInstance: {fileID: 8020285274578604413, guid: f87e7551920409348b16968ca8b394a2,
+  shotInstance: {fileID: 4332649877015529679, guid: 2f904f9592e4dff47a3c2451e72ab3f8,
     type: 3}
   bulletSpawnPosition: {fileID: 2105335930650388901}
   bulletForce: 100
