@@ -1,61 +1,17 @@
 fileFormatVersion: 2
-guid: 7630e13e676501446b6a7a49ffefc84f
+guid: 71b19e68816c36244891f1029c33bda7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Military Canvas
-    100002: Military Canvas.001
-    100004: Military Canvas.002
-    100006: Military Canvas.055
-    100008: //RootNode
-    100010: Military Canvas.003
-    100012: Military Canvas.004
-    100014: Military Canvas.005
-    100016: Military Canvas.006
-    100018: Military Canvas.007
-    400000: Military Canvas
-    400002: Military Canvas.001
-    400004: Military Canvas.002
-    400006: Military Canvas.055
-    400008: //RootNode
-    400010: Military Canvas.003
-    400012: Military Canvas.004
-    400014: Military Canvas.005
-    400016: Military Canvas.006
-    400018: Military Canvas.007
-    2100000: Part36Mtl
-    2100002: Part13Mtl
-    2100004: Part1Mtl
-    2100006: Part3Mtl
-    2100008: Part4Mtl
-    2100010: Part6Mtl
-    2300000: Military Canvas
-    2300002: Military Canvas.001
-    2300004: Military Canvas.002
-    2300006: Military Canvas.055
-    2300008: Military Canvas.003
-    2300010: Military Canvas.004
-    2300012: Military Canvas.005
-    2300014: Military Canvas.006
-    2300016: Military Canvas.007
-    3300000: Military Canvas
-    3300002: Military Canvas.001
-    3300004: Military Canvas.002
-    3300006: Military Canvas.055
-    3300008: Military Canvas.003
-    3300010: Military Canvas.004
-    3300012: Military Canvas.005
-    3300014: Military Canvas.006
-    3300016: Military Canvas.007
-    4300000: Military Canvas
-    4300002: Military Canvas.001
-    4300004: Military Canvas.002
-    4300006: Military Canvas.055
-    4300008: Military Canvas.003
-    4300010: Military Canvas.004
-    4300012: Military Canvas.005
-    4300014: Military Canvas.006
-    4300016: Military Canvas.007
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 78909C
+    2100002: 455A64
+    2100004: 1A1A1A
+    2100006: F44336
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Digital_clock_Cube
   externalObjects: {}
   materials:
     importMaterials: 1

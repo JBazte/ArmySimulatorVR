@@ -1,62 +1,66 @@
 fileFormatVersion: 2
-guid: 7630e13e676501446b6a7a49ffefc84f
+guid: 38de678bbda5de24a8ac21b2c34e2134
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Military Canvas
-    100002: Military Canvas.001
-    100004: Military Canvas.002
-    100006: Military Canvas.055
-    100008: //RootNode
-    100010: Military Canvas.003
-    100012: Military Canvas.004
-    100014: Military Canvas.005
-    100016: Military Canvas.006
-    100018: Military Canvas.007
-    400000: Military Canvas
-    400002: Military Canvas.001
-    400004: Military Canvas.002
-    400006: Military Canvas.055
-    400008: //RootNode
-    400010: Military Canvas.003
-    400012: Military Canvas.004
-    400014: Military Canvas.005
-    400016: Military Canvas.006
-    400018: Military Canvas.007
-    2100000: Part36Mtl
-    2100002: Part13Mtl
-    2100004: Part1Mtl
-    2100006: Part3Mtl
-    2100008: Part4Mtl
-    2100010: Part6Mtl
-    2300000: Military Canvas
-    2300002: Military Canvas.001
-    2300004: Military Canvas.002
-    2300006: Military Canvas.055
-    2300008: Military Canvas.003
-    2300010: Military Canvas.004
-    2300012: Military Canvas.005
-    2300014: Military Canvas.006
-    2300016: Military Canvas.007
-    3300000: Military Canvas
-    3300002: Military Canvas.001
-    3300004: Military Canvas.002
-    3300006: Military Canvas.055
-    3300008: Military Canvas.003
-    3300010: Military Canvas.004
-    3300012: Military Canvas.005
-    3300014: Military Canvas.006
-    3300016: Military Canvas.007
-    4300000: Military Canvas
-    4300002: Military Canvas.001
-    4300004: Military Canvas.002
-    4300006: Military Canvas.055
-    4300008: Military Canvas.003
-    4300010: Military Canvas.004
-    4300012: Military Canvas.005
-    4300014: Military Canvas.006
-    4300016: Military Canvas.007
-  externalObjects: {}
+    100000: Camera
+    100002: Cube
+    100004: Cube.001
+    100006: Cube.002
+    100008: Cube.003
+    100010: Cube.004
+    100012: Lamp
+    100014: //RootNode
+    400000: Camera
+    400002: Cube
+    400004: Cube.001
+    400006: Cube.002
+    400008: Cube.003
+    400010: Cube.004
+    400012: Lamp
+    400014: //RootNode
+    2000000: Camera
+    2100000: Buttons Black
+    2100002: Button ON_OFF
+    2100004: White
+    2100006: Grey
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.004
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.004
+    4300000: Cube.004
+    4300002: Cube.003
+    4300004: Cube.002
+    4300006: Cube.001
+    4300008: Cube
+    10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button ON_OFF
+    second: {fileID: 2100000, guid: 4ce9fe4e245f667449cc2b4e0c2638f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttons Black
+    second: {fileID: 2100000, guid: 639038355c4cd6e4c94cd6ad90d45b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: e3698a48bd133e340900bc14bd9d5d35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: fa285a9481d07a844b1912599363ec48, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

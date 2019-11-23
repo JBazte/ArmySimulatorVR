@@ -1,61 +1,56 @@
 fileFormatVersion: 2
-guid: 7630e13e676501446b6a7a49ffefc84f
+guid: 28b25f7c014d588458743d0a16720b1a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Military Canvas
-    100002: Military Canvas.001
-    100004: Military Canvas.002
-    100006: Military Canvas.055
-    100008: //RootNode
-    100010: Military Canvas.003
-    100012: Military Canvas.004
-    100014: Military Canvas.005
-    100016: Military Canvas.006
-    100018: Military Canvas.007
-    400000: Military Canvas
-    400002: Military Canvas.001
-    400004: Military Canvas.002
-    400006: Military Canvas.055
-    400008: //RootNode
-    400010: Military Canvas.003
-    400012: Military Canvas.004
-    400014: Military Canvas.005
-    400016: Military Canvas.006
-    400018: Military Canvas.007
-    2100000: Part36Mtl
-    2100002: Part13Mtl
-    2100004: Part1Mtl
-    2100006: Part3Mtl
-    2100008: Part4Mtl
-    2100010: Part6Mtl
-    2300000: Military Canvas
-    2300002: Military Canvas.001
-    2300004: Military Canvas.002
-    2300006: Military Canvas.055
-    2300008: Military Canvas.003
-    2300010: Military Canvas.004
-    2300012: Military Canvas.005
-    2300014: Military Canvas.006
-    2300016: Military Canvas.007
-    3300000: Military Canvas
-    3300002: Military Canvas.001
-    3300004: Military Canvas.002
-    3300006: Military Canvas.055
-    3300008: Military Canvas.003
-    3300010: Military Canvas.004
-    3300012: Military Canvas.005
-    3300014: Military Canvas.006
-    3300016: Military Canvas.007
-    4300000: Military Canvas
-    4300002: Military Canvas.001
-    4300004: Military Canvas.002
-    4300006: Military Canvas.055
-    4300008: Military Canvas.003
-    4300010: Military Canvas.004
-    4300012: Military Canvas.005
-    4300014: Military Canvas.006
-    4300016: Military Canvas.007
+    100000: //RootNode
+    100002: group1236096718
+    100004: group1465410725
+    100006: group1736750755
+    100008: group1992870748
+    100010: group419263992
+    100012: group601020356
+    100014: group804261949
+    100016: group85029991
+    100018: group867109627
+    400000: //RootNode
+    400002: group1236096718
+    400004: group1465410725
+    400006: group1736750755
+    400008: group1992870748
+    400010: group419263992
+    400012: group601020356
+    400014: group804261949
+    400016: group85029991
+    400018: group867109627
+    2100000: mat20
+    2300000: group1236096718
+    2300002: group1465410725
+    2300004: group1736750755
+    2300006: group1992870748
+    2300008: group419263992
+    2300010: group601020356
+    2300012: group804261949
+    2300014: group85029991
+    2300016: group867109627
+    3300000: group1236096718
+    3300002: group1465410725
+    3300004: group1736750755
+    3300006: group1992870748
+    3300008: group419263992
+    3300010: group601020356
+    3300012: group804261949
+    3300014: group85029991
+    3300016: group867109627
+    4300000: group804261949
+    4300002: group1236096718
+    4300004: group1992870748
+    4300006: group601020356
+    4300008: group867109627
+    4300010: group419263992
+    4300012: group1465410725
+    4300014: group85029991
+    4300016: group1736750755
   externalObjects: {}
   materials:
     importMaterials: 1
