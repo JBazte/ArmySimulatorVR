@@ -4,13 +4,22 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Computer
+    100004: Computer.001
     400000: //RootNode
+    400002: Computer
+    400004: Computer.001
     2100000: _crayfishdiffuse.003
     2100002: 03___Default.003
     2100004: 02___Default.003
     2300000: //RootNode
+    2300002: Computer
+    2300004: Computer.001
     3300000: //RootNode
+    3300002: Computer
+    3300004: Computer.001
     4300000: Computer
+    4300002: Computer.001
   externalObjects: {}
   materials:
     importMaterials: 1

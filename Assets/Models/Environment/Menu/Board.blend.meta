@@ -6,9 +6,17 @@ ModelImporter:
     100000: 1344 Message Board 02
     100002: //RootNode
     100004: model
+    100006: model.001
+    100008: model.002
+    100010: model.003
+    100012: model.004
     400000: 1344 Message Board 02
     400002: //RootNode
     400004: model
+    400006: model.001
+    400008: model.002
+    400010: model.003
+    400012: model.004
     2100000: Mat
     2100002: mat3
     2100004: mat12
@@ -18,10 +26,22 @@ ModelImporter:
     2100012: mat8
     2300000: 1344 Message Board 02
     2300002: model
+    2300004: model.001
+    2300006: model.002
+    2300008: model.003
+    2300010: model.004
     3300000: 1344 Message Board 02
     3300002: model
+    3300004: model.001
+    3300006: model.002
+    3300008: model.003
+    3300010: model.004
     4300000: 1344 Message Board 02
     4300002: model
+    4300004: model.001
+    4300006: model.002
+    4300008: model.003
+    4300010: model.004
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -4,12 +4,21 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: breif case
+    100004: breif case.001
     400000: //RootNode
+    400002: breif case
+    400004: breif case.001
     2100000: lambert2SG
     2100002: lambert3SG
     2300000: //RootNode
+    2300002: breif case
+    2300004: breif case.001
     3300000: //RootNode
+    3300002: breif case
+    3300004: breif case.001
     4300000: breif case
+    4300002: breif case.001
   externalObjects: {}
   materials:
     importMaterials: 1
