@@ -40,11 +40,13 @@ public class HandSelector : MonoBehaviour
         }
         if (!unitSelector.BlockSelection)
         {
-            UpdateLine();
+            if (lineRenderer != null)
+                UpdateLine();
         }
         else
         {
-            lineRenderer.gameObject.SetActive(false);
+            if (lineRenderer != null)
+                lineRenderer.gameObject.SetActive(false);
         }
 
     }

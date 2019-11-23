@@ -34,7 +34,23 @@ public class EnemyController : Enemy
     private float lastAttack;
     private int currentAmmo;
     private bool isReloading;
-    public bool priorityMoving;
+    public bool PriorityMoving
+    {
+        set
+        {
+            if (value)
+                SetTarget(null);
+            value = priorityMoving;
+
+        }
+        get
+        {
+            return priorityMoving;
+        }
+
+    }
+
+    private bool priorityMoving;
 
     bool ischasingEnemy;
     bool isMoving;
@@ -82,16 +98,19 @@ public class EnemyController : Enemy
 
     public void SetTarget(CharacterStats target)
     {
+
         this.target = target;
         agent.stoppingDistance = attackRadious;
-        agent.SetDestination(target.transform.position);
+        if (target != null)
+            agent.SetDestination(target.transform.position);
         ischasingEnemy = true;
+
     }
     private void Update()
     {
         lastLookAround -= Time.deltaTime;
         lastAttack -= Time.deltaTime;
-        if (!priorityMoving)
+        if (!PriorityMoving)
         {
 
             SearchTargets();
@@ -103,7 +122,7 @@ public class EnemyController : Enemy
         {
             if (agent.remainingDistance < .3f)
             {
-                priorityMoving = false;
+                PriorityMoving = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.T))
@@ -185,10 +204,11 @@ public class EnemyController : Enemy
         LookAtTarget();
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
+
         if (distance <= attackRadious)
         {
             RaycastHit hit;
-            if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 100f))
+            if (Physics.SphereCast(shotSpawnPosition.position, 2f, shotSpawnPosition.forward, out hit, 25f))
             {
                 Shoot();
                 if (attackMask == (attackMask | (1 << hit.transform.gameObject.layer)))
@@ -221,6 +241,7 @@ public class EnemyController : Enemy
                 currentAmmo--;
                 lastAttack = 1 / stats.AttackSpeed;
                 Shot instance = Instantiate(shotInstance, shotSpawnPosition.position, transform.rotation);
+                instance.transform.rotation = transform.rotation;
                 instance.SetShot(stats.Damage, attackMask);
                 Vector3 offset = Random.insideUnitSphere * ((100 - stats.Accuracy) / 100) / shotAccuaracy;
                 Rigidbody rb = instance.GetComponent<Rigidbody>();

@@ -48,7 +48,11 @@ public class PlayerStats : CharacterStats
         objectInstance.AttachToHand(hand);
 
         transform.position = ally.transform.position;
-        transform.rotation = ally.transform.rotation;
+        var camera = GetComponentInChildren<Camera>();
+        //camera.transform.forward = ally.transform.forward; 
+        var forwardRotation = ally.transform.rotation * Quaternion.Inverse(camera.transform.rotation);
+        Vector3 newRotattion = new Vector3(0f, forwardRotation.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(newRotattion);
         belt.ConfigureBelt(ally.configuration);
         belt.gameObject.SetActive(true);
         ally.gameObject.SetActive(false);

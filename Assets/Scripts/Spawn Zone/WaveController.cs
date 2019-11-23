@@ -20,7 +20,7 @@ public class WaveController : PersistableObject
     private int enemyQuantity;
     private int currentWave = 0;
     private float waveTimeLeft;
-    const int changeFunction = 35;
+    const int changeFunction = 8;
 
     public System.Action OnWaveStart;
 

@@ -114,6 +114,7 @@ public class Weapon : MonoBehaviour
                 lastAttack = 1 / attackSpeed;
                 Shot instance = Instantiate(shotInstance);
                 instance.transform.position = bulletSpawnPosition.position;
+                instance.transform.rotation = transform.rotation;
                 Vector3 offset = Random.insideUnitCircle * recoilForce / maxForce / randomRecoil;
                 instance.GetComponent<Rigidbody>().AddForce((offset + bulletSpawnPosition.forward) * bulletForce, ForceMode.Impulse);
                 instance.SetShot(damage, attackMask);

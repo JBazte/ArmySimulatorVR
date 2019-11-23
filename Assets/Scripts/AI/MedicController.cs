@@ -43,7 +43,7 @@ public class MedicController : MonoBehaviour
             agent.SetDestination(target.transform.position);
             controller.SetPrioirityPoint(target.transform.position);
             this.target = target;
-            controller.priorityMoving = true;
+            controller.PriorityMoving = true;
 
         }
     }
@@ -73,7 +73,7 @@ public class MedicController : MonoBehaviour
                     if (hasFinished)
                     {
                         ReturnHome();
-                        controller.priorityMoving = false;
+                        controller.PriorityMoving = false;
                     }
                 }
             }
@@ -104,10 +104,14 @@ public class MedicController : MonoBehaviour
             if (distance < closestDistance)
             {
                 var characterstat = enemy.GetComponent<CharacterStats>();
-                if (cs.CurrentHealth < cs.MaxHealth)
+                if (characterstat != null)
                 {
-                    closestDistance = distance;
-                    cs = characterstat;
+
+                    if (characterstat.CurrentHealth < characterstat.MaxHealth)
+                    {
+                        closestDistance = distance;
+                        cs = characterstat;
+                    }
                 }
             }
             if (closestDistance != int.MaxValue)
