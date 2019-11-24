@@ -20,6 +20,13 @@ public class Enemy : Selectable
             return availability;
         }
     }
+    public bool SetAvailability
+    {
+        set
+        {
+            availability = value;
+        }
+    }
     public EnemyTypes EType
     {
         get

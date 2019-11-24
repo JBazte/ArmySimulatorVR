@@ -60,7 +60,8 @@ public enum SelectableTypes
     Enemy,
     Barracks,
     Medic,
-    Engenieer
+    Engenieer,
+    Box
 }
 
 

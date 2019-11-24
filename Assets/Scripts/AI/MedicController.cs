@@ -6,7 +6,7 @@ public class MedicController : MonoBehaviour
 {
 
     [SerializeField]
-    Transform home;
+    protected Vector3 home;
     [SerializeField]
     private CharacterStats target;
     [SerializeField]
@@ -20,8 +20,8 @@ public class MedicController : MonoBehaviour
     [SerializeField]
     private float healingDetectRadious;
 
-
-    AllyController controller;
+    protected bool checkHealing = true;
+    protected AllyController controller;
     protected NavMeshAgent agent;
     private float lastHeal;
 
@@ -55,7 +55,8 @@ public class MedicController : MonoBehaviour
         {
             Heal();
         }
-        CheckHealing();
+        if (checkHealing)
+            CheckHealing();
     }
 
     private void Heal()
@@ -83,14 +84,10 @@ public class MedicController : MonoBehaviour
     protected void ReturnHome()
     {
         agent.isStopped = false;
-        if (home == null)
-        {
-            controller.ReturnHome();
-        }
-        else
-        {
-            agent.SetDestination(home.transform.position);
-        }
+
+        controller.SetPoint(home);
+
+
 
     }
     private void CheckHealing()
@@ -117,6 +114,7 @@ public class MedicController : MonoBehaviour
             if (closestDistance != int.MaxValue)
             {
                 SetTarget(cs);
+                home = transform.position;
             }
         }
     }

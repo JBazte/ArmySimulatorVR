@@ -23,9 +23,9 @@ TagManager:
   - Magazine
   - Player
   - Barrack
-  - 
-  - 
-  - 
+  - Ground
+  - Boxes
+  - Non-BuildableGround
   - 
   - 
   - 

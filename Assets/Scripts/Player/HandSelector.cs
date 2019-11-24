@@ -100,6 +100,7 @@ public class HandSelector : MonoBehaviour
     }
     public RaycastHit Raycast(LayerMask mask, Ray ray)
     {
+
         RaycastHit hit;
         Physics.Raycast(ray, out hit, pointerLenght, mask);
         return hit;

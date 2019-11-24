@@ -48,8 +48,8 @@ public class AllyController : EnemyController
 
     public void SetPrioirityPoint(Vector3 position)
     {
-        PriorityMoving = false;
-        SetPoint(position);
+
+        base.SetPoint(position);
         PriorityMoving = true;
         availability = false;
     }

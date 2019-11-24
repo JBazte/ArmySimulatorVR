@@ -178,18 +178,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd0780e0806374b8df13811eebbac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  home: {fileID: 0}
+  home: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  interactRadious: 1.5
+  interactRadious: 3
   healing: 5
   healDelay: 4
   healingMask:
     serializedVersion: 2
-    m_Bits: 2048
-  healingDetectRadious: 0
+    m_Bits: 0
+  healingDetectRadious: 15
   buildingsPrefabs: []
-  totalBuildingTime: 0
-  constructPosition: {fileID: 0}
+  totalBuildingTime: 5
+  isBuilding: 0
 --- !u!114 &9209918908329465130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,11 +203,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRadialMenuIndex: 0
+  myRadialOffset: 3
   InputAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
   grx: {fileID: 0}
-  enemyType: 0
+  enemyType: 4
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2
