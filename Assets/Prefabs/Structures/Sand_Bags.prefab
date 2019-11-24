@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRadialMenuIndex: 1
+  myRadialOffset: 4
   InputAction:
     actionPath: 
     needsReinit: 0

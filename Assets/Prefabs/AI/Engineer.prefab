@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942695827312029774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.453, y: 0.875, z: 1.578}
+  m_LocalPosition: {x: 0.078, y: 0.875, z: 1.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3722809179008623674}
@@ -178,10 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd0780e0806374b8df13811eebbac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRadialMenuIndex: 0
-  InputAction:
-    actionPath: 
-    needsReinit: 0
   home: {fileID: 0}
   target: {fileID: 0}
   interactRadious: 1.5
@@ -190,6 +186,7 @@ MonoBehaviour:
   healingMask:
     serializedVersion: 2
     m_Bits: 2048
+  healingDetectRadious: 0
   buildingsPrefabs: []
   totalBuildingTime: 0
   constructPosition: {fileID: 0}
@@ -224,7 +221,6 @@ MonoBehaviour:
   detectRadious: 13
   attackRadious: 10
   shotForce: 40
-  priorityMoving: 0
   animatorController: {fileID: 0}
   configuration:
     spawnObject: {fileID: 8914479277591898034, guid: 1bc026b1cc2474b4d9d1e61fef6dfa32,

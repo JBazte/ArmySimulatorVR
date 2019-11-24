@@ -6,6 +6,8 @@ public abstract class Selectable : PersistableObject
 {
     [SerializeField]
     protected int myRadialMenuIndex = 0;
+    [SerializeField]
+    private float myRadialOffset = 3f;
     protected RadialMenu GetMyRadialMenu
     {
         get
@@ -38,7 +40,7 @@ public abstract class Selectable : PersistableObject
         {
             rm.Show(true);
             rm.transform.SetParent(transform);
-            rm.transform.position = transform.position + Vector3.up * 3;
+            rm.transform.position = transform.position + Vector3.up * myRadialOffset;
         }
     }
     protected void HideRadialMenu()
