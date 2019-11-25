@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
@@ -21,12 +22,15 @@ public class RadialMenu : MonoBehaviour
 
     private readonly float degreeIncrement = 90.0f;
 
+    private float startingScale;
 
+    new Camera camera;
     public SteamVR_Action_Vector2 moveAction = SteamVR_Input.GetAction<SteamVR_Action_Vector2>("default", "MenuSelectionPosition");
     public SteamVR_Action_Boolean activateMenu = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("default", "Select");
     private void Awake()
     {
         CreateAndSetupSections();
+        startingScale = transform.lossyScale.x;
     }
 
     protected void SetRadialFunction(int index)
@@ -54,12 +58,15 @@ public class RadialMenu : MonoBehaviour
     private void Start()
     {
         Show(false);
+        camera = Valve.VR.InteractionSystem.Player.instance.hmdTransform.GetComponentInChildren<Camera>();
     }
 
     public void Show(bool value)
     {
         gameObject.SetActive(value);
     }
+
+
 
     private void Update()
     {
@@ -69,7 +76,7 @@ public class RadialMenu : MonoBehaviour
         SetCursorPosition();
         SetSelectionRotation(rotation);
         SetSelectedEvent(rotation);
-
+        UpdateRotation();
 
 
         //(SteamVR_Input.GetVector2(, "MenuSelectionPosition", SteamVR_Input_Sources.Any)
@@ -83,6 +90,12 @@ public class RadialMenu : MonoBehaviour
 
     }
 
+    private void UpdateRotation()
+    {
+        transform.LookAt(2 * transform.position - camera.transform.position);
+        var size = (camera.transform.position - transform.position).magnitude;
+        transform.localScale = Vector3.one * size * startingScale;
+    }
 
     private float GetDegree(Vector2 direction)
     {

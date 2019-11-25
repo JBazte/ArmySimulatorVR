@@ -39,7 +39,7 @@ public class AllyController : EnemyController
 
     public override void SetPoint(Vector3 position)
     {
-        if (!priorityMoving)
+        if (!PriorityMoving)
         {
             base.SetPoint(position);
             //availability = true;
@@ -48,9 +48,9 @@ public class AllyController : EnemyController
 
     public void SetPrioirityPoint(Vector3 position)
     {
-        priorityMoving = false;
-        SetPoint(position);
-        priorityMoving = true;
+
+        base.SetPoint(position);
+        PriorityMoving = true;
         availability = false;
     }
     /* private void Start()

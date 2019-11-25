@@ -2651,10 +2651,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.352356
@@ -9938,7 +9934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factories:
   - {fileID: 11400000, guid: 76a852efdea217b40bcb52b28a8401fc, type: 2}
-  movePosition: {fileID: 0}
+  movePosition: {fileID: 874177420}
   spawnZones:
   - {fileID: 763812051}
   - {fileID: 532565824}

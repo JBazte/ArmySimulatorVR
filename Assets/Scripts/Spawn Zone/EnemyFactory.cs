@@ -165,7 +165,7 @@ public class EnemyFactory : ScriptableObject
             for (int i = 0; i < weights.Length; i++)
             {
                 weights[i].probability = ((weights[i].weight + modifingWeights[i]) / totalWeight) * 100;
-                //Debug.Log(prefabs[i].name + " Probabilities are: " + weights[i].probability + "%");
+                Debug.Log(prefabs[i].name + " Probabilities are: " + weights[i].probability + "%");
 
             }
             float pickNumber = Random.Range(0, totalWeight);

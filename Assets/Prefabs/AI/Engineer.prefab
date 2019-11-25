@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942695827312029774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.453, y: 0.875, z: 1.578}
+  m_LocalPosition: {x: 0.078, y: 0.875, z: 1.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3722809179008623674}
@@ -178,21 +178,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fd0780e0806374b8df13811eebbac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRadialMenuIndex: 0
-  InputAction:
-    actionPath: 
-    needsReinit: 0
-  home: {fileID: 0}
+  home: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  interactRadious: 1.5
+  interactRadious: 3
   healing: 5
   healDelay: 4
   healingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 0
+  healingDetectRadious: 15
   buildingsPrefabs: []
-  totalBuildingTime: 0
-  constructPosition: {fileID: 0}
+  totalBuildingTime: 5
+  isBuilding: 0
 --- !u!114 &9209918908329465130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,11 +203,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRadialMenuIndex: 0
+  myRadialOffset: 3
   InputAction:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
   grx: {fileID: 0}
-  enemyType: 0
+  enemyType: 4
   movePoint: {x: 0, y: 0, z: 0}
   detectMask:
     serializedVersion: 2
@@ -224,7 +222,6 @@ MonoBehaviour:
   detectRadious: 13
   attackRadious: 10
   shotForce: 40
-  priorityMoving: 0
   animatorController: {fileID: 0}
   configuration:
     spawnObject: {fileID: 8914479277591898034, guid: 1bc026b1cc2474b4d9d1e61fef6dfa32,

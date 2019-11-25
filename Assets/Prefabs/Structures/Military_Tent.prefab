@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 2163681222213930670}
   - component: {fileID: 2163681222210539150}
   - component: {fileID: 2163681222211636302}
-  m_Layer: 0
+  - component: {fileID: 706849303}
+  m_Layer: 14
   m_Name: Military_Tent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2163681222213930670
 Transform:
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2163681222213571214}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -18.442, y: 2.2010002, z: -2.1235}
-  m_LocalScale: {x: 2.8777342, y: 2.8777342, z: 2.8777342}
+  m_LocalScale: {x: 2.1870804, y: 2.187078, z: 2.1870804}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &706849303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163681222213571214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.094423, y: 1.7401291, z: 6.9605184}
+  m_Center: {x: -0.001941443, y: 0.90161806, z: 0.00012958053}

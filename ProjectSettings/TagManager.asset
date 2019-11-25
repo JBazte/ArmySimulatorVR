@@ -6,6 +6,7 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -22,9 +23,9 @@ TagManager:
   - Magazine
   - Player
   - Barrack
-  - 
-  - 
-  - 
+  - Ground
+  - Boxes
+  - Non-BuildableGround
   - 
   - 
   - 
