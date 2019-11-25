@@ -62,7 +62,14 @@ public class GameController : PersistableObject
             unitSelector = FindObjectOfType<UnitSelector>();
         }
     }
+    private void Start()
+    {
 
+        if (SceneManager.sceneCount <= 1)
+        {
+            LoadNextLevel();
+        }
+    }
     private void Update()
     {
 

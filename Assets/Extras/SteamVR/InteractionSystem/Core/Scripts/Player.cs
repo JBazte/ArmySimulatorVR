@@ -55,6 +55,7 @@ namespace Valve.VR.InteractionSystem
                 {
                     _instance = FindObjectOfType<Player>();
                 }
+
                 return _instance;
             }
         }
@@ -270,13 +271,26 @@ namespace Valve.VR.InteractionSystem
             {
                 trackingOriginTransform = this.transform;
             }
+            if (_instance != null)
+            {
+                instance.transform.position = transform.position;
+                instance.transform.localScale = transform.localScale;
+                instance.transform.rotation = transform.rotation;
+                gameObject.SetActive(false);
+                Destroy(gameObject);
+            }
+            else
+            {
+
+                _instance = this;
+            }
         }
 
 
         //-------------------------------------------------
         private IEnumerator Start()
         {
-            _instance = this;
+
 
             while (SteamVR.initializedState == SteamVR.InitializedStates.None || SteamVR.initializedState == SteamVR.InitializedStates.Initializing)
                 yield return null;

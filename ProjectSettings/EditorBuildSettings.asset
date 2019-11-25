@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 93f802cc96830a84aabac0edad11ead1
   - enabled: 1
-    path: Assets/Scenes/TestNico.unity
-    guid: ea51e678a68a5be479cef457393fc116
+    path: Assets/Scenes/Menu.unity
+    guid: 4bedcd0f1208aef40b201c67427c29d0
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 098a34d9c68692342943067d2876f441
   - enabled: 1
     path: Assets/Scenes/HighScores.unity
     guid: 3eaa8bc1d6a35984aa51d7b16f4cdc5c
