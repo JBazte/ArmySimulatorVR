@@ -141,7 +141,7 @@ public class EnemyFactory : ScriptableObject
         }
         else
         {
-            if (modifingWeights.Length == 0 || modifingWeights == null)
+            if (modifingWeights == null)
                 modifingWeights = new float[prefabs.Length];
 
             spawnWeight[] weights = new spawnWeight[prefabs.Length];

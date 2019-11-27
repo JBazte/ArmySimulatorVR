@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour
     Hand[] hands;
 
     [SerializeField]
-    GrabbableObject startingSelectable;
+    GrabbableObject startingSelectable = null;
     void Awake()
     {
         socket = GetComponent<Socket>();

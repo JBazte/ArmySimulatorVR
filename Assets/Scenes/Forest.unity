@@ -13926,8 +13926,9 @@ MonoBehaviour:
   minimunWaveLenght: 30
   waveMultiplier: 1
   minimunEnemyPerWave: 1
-  enemiesMultipier: 5
+  enemiesMultipier: 30
   enemiesSpawnZone: {fileID: 1929245125}
+  changeFunction: 4
 --- !u!4 &730990089
 Transform:
   m_ObjectHideFlags: 0
@@ -39272,6 +39273,7 @@ MonoBehaviour:
   minimunEnemyPerWave: 1
   enemiesMultipier: 3
   enemiesSpawnZone: {fileID: 1969554643}
+  changeFunction: 8
 --- !u!4 &2089957538
 Transform:
   m_ObjectHideFlags: 0
