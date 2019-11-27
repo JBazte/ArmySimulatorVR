@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 39ce0797d329d944685a7c2f75c9860c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c1fbc353f4124d4ca633cf974d9b067, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8578abba712579240bf08fc95853eafb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,7 +234,7 @@ SpriteRenderer:
   m_Size: {x: 0.68266666, y: 0.68266666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4766822835075339546
@@ -568,7 +568,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   right:
-    icon: {fileID: 21300000, guid: 8578abba712579240bf08fc95853eafb, type: 3}
+    icon: {fileID: 0}
     iconRenderer: {fileID: 4766822834836131011}
     onPress:
       m_PersistentCalls:
@@ -595,7 +595,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   left:
-    icon: {fileID: 21300000, guid: 39ce0797d329d944685a7c2f75c9860c, type: 3}
+    icon: {fileID: 21300000, guid: 4c1fbc353f4124d4ca633cf974d9b067, type: 3}
     iconRenderer: {fileID: 4766822834331623534}
     onPress:
       m_PersistentCalls:
