@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fb4ff47435a4440a8d075e1ed399d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
   moveSolider: 0
   radialMenus:
   - {fileID: 4766822835557721526, guid: 6a609c64268041a449887bb2c4bcd70b, type: 3}

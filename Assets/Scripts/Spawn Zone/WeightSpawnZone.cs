@@ -29,7 +29,7 @@ public class WeightSpawnZone : MonoBehaviour
 
     }
 
-    private void Start()
+    private void Awake()
     {
         foreach (var f in spawnZone.factories)
         {

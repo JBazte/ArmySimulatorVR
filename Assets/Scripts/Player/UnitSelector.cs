@@ -9,7 +9,7 @@ public class UnitSelector : MonoBehaviour
         instance = this;
     }
     private Hand[] hands;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
     private Quaternion startRotation;
     private bool isIncarnated;
     Selectable selected;

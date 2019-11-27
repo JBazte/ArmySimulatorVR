@@ -12,6 +12,9 @@ public class Slot : MonoBehaviour
     float InteractRadious;
     [SerializeField]
     Hand[] hands;
+
+    [SerializeField]
+    GrabbableObject startingSelectable;
     void Awake()
     {
         socket = GetComponent<Socket>();
@@ -21,6 +24,8 @@ public class Slot : MonoBehaviour
     private void Start()
     {
         hands = Player.instance.hands;
+        if (startingSelectable != null)
+            TryStore(startingSelectable);
     }
 
     public void StartInteraction(Hand hand)
@@ -105,7 +110,7 @@ public class Slot : MonoBehaviour
         ob.AttachToHand(hand);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, InteractRadious);

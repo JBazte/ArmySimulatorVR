@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabposition: {fileID: 8357617920304053347}
   isDoubleHanded: 1
-  attachmentFlags: 30
+  attachmentFlags: 31
   grabTypes: 0
   restoreParent: 1
   resetRotationOnSocket: 0

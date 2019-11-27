@@ -205,6 +205,24 @@ public class GrabbableObject : MonoBehaviour
                 }
             }
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!hand.ObjectIsAttached(this.gameObject))
+            {
+                HandsAttached = 1;
+                grabbingHand = hand;
+                hand.HoverLock(interactable);
+                // Attach this object to the hand
+                hand.AttachObject(gameObject, GrabTypes.Scripted, attachmentFlags, grabposition);
+            }
+            else
+            {
+                // Detach this object from the hand
+                hand.DetachObject(gameObject, restoreParent);
+                // Call this to undo HoverLock
+                hand.HoverUnlock(interactable);
+            }
+        }
     }
 
 

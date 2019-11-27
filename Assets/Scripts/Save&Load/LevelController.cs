@@ -11,9 +11,11 @@ public class LevelController : PersistableObject
     [SerializeField]
     public WaveController waveController;
 
-
+    [SerializeField]
+    Transform inicialPlayerPosition;
     public void Awake()
     {
+
         current = this;
         if (waveController == null)
         {
@@ -37,6 +39,11 @@ public class LevelController : PersistableObject
         {
             objectToSave[i].Load(reader);
         }
+    }
+    private void Start()
+    {
+        UnitSelector.instance.startPosition = inicialPlayerPosition.position;
+        UnitSelector.instance.BlockSelection = false;
     }
 
 

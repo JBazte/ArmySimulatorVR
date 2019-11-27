@@ -9687,6 +9687,7 @@ Transform:
   - {fileID: 1929245124}
   - {fileID: 1969554641}
   - {fileID: 625067168}
+  - {fileID: 1887360496}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21023,6 +21024,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+--- !u!4 &1117510188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1117510187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1125401675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30379,6 +30386,7 @@ MonoBehaviour:
   - {fileID: 1969554644}
   - {fileID: 1929245123}
   waveController: {fileID: 0}
+  inicialPlayerPosition: {fileID: 1117510188}
 --- !u!4 &1586668309
 Transform:
   m_ObjectHideFlags: 0
@@ -35874,6 +35882,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1885107760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1887360495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1887360496}
+  - component: {fileID: 1887360497}
+  m_Layer: 0
+  m_Name: BoxSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1887360496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887360495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -31.97, y: 2.28, z: 30}
+  m_LocalScale: {x: 11.5, y: 0.1, z: 11.5}
+  m_Children: []
+  m_Father: {fileID: 517626173}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1887360497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887360495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37fb33edd20b884c97b0ab4d47c138f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveController: {fileID: 2089957537}
+  surfaceOnly: 0
+  bidimensional: 1
+  boxesInstances:
+  - {fileID: 2115331982716299113, guid: 756cb04b18d295a45bc91256c72d9baa, type: 3}
+  - {fileID: 1368590334982882890, guid: 920bfd02836c57542ad663d9c51d9ba4, type: 3}
+  - {fileID: 2115331982716299113, guid: 756cb04b18d295a45bc91256c72d9baa, type: 3}
 --- !u!1001 &1887442939
 PrefabInstance:
   m_ObjectHideFlags: 0
