@@ -27,6 +27,11 @@ public class UnitSelector : MonoBehaviour
     {
         if (index < 0)
             return null;
+        if(radialInstances == null)
+        {
+
+           return null;
+        }
         if (index > radialInstances.Length)
             return null;
         return radialInstances[index];

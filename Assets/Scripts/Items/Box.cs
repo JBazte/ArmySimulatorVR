@@ -95,7 +95,7 @@ public class Box : Selectable
                 canBuild = true;
             }
 
-            if (Valve.VR.SteamVR_Input.GetStateDown("Shoot", selectedHand.handType))
+            if (Valve.VR.SteamVR_Input.GetStateDown("Teleport", selectedHand.handType))
             {
 
                 if (canBuild)

@@ -143,7 +143,8 @@ public class EnemyFactory : ScriptableObject
         {
             if (modifingWeights == null)
                 modifingWeights = new float[prefabs.Length];
-
+            if (modifingWeights.Length == 0)
+                return GetRandom();
             spawnWeight[] weights = new spawnWeight[prefabs.Length];
             float currenttotalWeight = 0;
             for (int i = 0; i < prefabs.Length; i++)

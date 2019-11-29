@@ -50,7 +50,7 @@ public class WaveController : PersistableObject
         {
             OnWaveStart.Invoke();
         }
-        enemyQuantity = Mathf.RoundToInt(ExpotentionalFunction(currentWave, 1 / enemiesMultipier, minimunEnemyPerWave));
+        enemyQuantity = Mathf.RoundToInt(ExpotentionalFunction(currentWave,  enemiesMultipier, minimunEnemyPerWave));
         if (enemyQuantity > changeFunction)
         {
             enemyQuantity = Mathf.RoundToInt(LogarithmFunction(currentWave, enemiesMultipier, minimunEnemyPerWave));
