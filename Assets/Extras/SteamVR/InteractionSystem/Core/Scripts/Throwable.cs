@@ -95,7 +95,7 @@ namespace Valve.VR.InteractionSystem
 
                 if ( bestGrabType != GrabTypes.None )
 				{
-					if (rigidbody.velocity.magnitude >= catchingThreshold)
+					if (rigidbody.linearVelocity.magnitude >= catchingThreshold)
 					{
 						hand.AttachObject( gameObject, bestGrabType, attachmentFlags );
 						showHint = false;
@@ -169,7 +169,7 @@ namespace Valve.VR.InteractionSystem
 
             GetReleaseVelocities(hand, out velocity, out angularVelocity);
 
-            rigidbody.velocity = velocity;
+            rigidbody.linearVelocity = velocity;
             rigidbody.angularVelocity = angularVelocity;
         }
 
@@ -195,7 +195,7 @@ namespace Valve.VR.InteractionSystem
                     break;
                 default:
                 case ReleaseStyle.NoChange:
-                    velocity = rigidbody.velocity;
+                    velocity = rigidbody.linearVelocity;
                     angularVelocity = rigidbody.angularVelocity;
                     break;
             }

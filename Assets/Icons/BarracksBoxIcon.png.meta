@@ -1,38 +1,96 @@
 fileFormatVersion: 2
 guid: 156b6c034f576b74c88284c12cab16cd
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: BarracksBoxIcon
-    21300002: BarracksBoxLogo_1
-    21300004: BarracksBoxLogo_2
-    21300006: BarracksBoxLogo_3
-    21300008: BarracksBoxLogo_4
-    21300010: BarracksBoxLogo_5
-    21300012: BarracksBoxLogo_6
-    21300014: BarracksBoxLogo_7
-    21300016: BarracksBoxLogo_8
-    21300018: BarracksBoxLogo_9
-    21300020: BarracksBoxLogo_10
-    21300022: BarracksBoxLogo_11
-    21300024: BarracksBoxLogo_12
-    21300026: BarracksBoxLogo_13
-    21300028: BarracksBoxLogo_14
-    21300030: BarracksBoxLogo_15
-    21300032: BarracksBoxLogo_16
-    21300034: BarracksBoxLogo_17
-    21300036: BarracksBoxLogo_18
-    21300038: BarracksBoxLogo_19
-    21300040: BarracksBoxLogo_20
-    21300042: BarracksBoxLogo_21
-    21300044: BarracksBoxLogo_22
-    21300046: BarracksBoxLogo_23
-    21300048: BarracksBoxLogo_24
-    21300050: BarracksBoxLogo_25
-    21300052: BarracksBoxLogo_26
-    21300054: BarracksBoxLogo_27
-    21300056: BarracksBoxLogo_28
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: BarracksBoxIcon
+  - first:
+      213: 21300002
+    second: BarracksBoxLogo_1
+  - first:
+      213: 21300004
+    second: BarracksBoxLogo_2
+  - first:
+      213: 21300006
+    second: BarracksBoxLogo_3
+  - first:
+      213: 21300008
+    second: BarracksBoxLogo_4
+  - first:
+      213: 21300010
+    second: BarracksBoxLogo_5
+  - first:
+      213: 21300012
+    second: BarracksBoxLogo_6
+  - first:
+      213: 21300014
+    second: BarracksBoxLogo_7
+  - first:
+      213: 21300016
+    second: BarracksBoxLogo_8
+  - first:
+      213: 21300018
+    second: BarracksBoxLogo_9
+  - first:
+      213: 21300020
+    second: BarracksBoxLogo_10
+  - first:
+      213: 21300022
+    second: BarracksBoxLogo_11
+  - first:
+      213: 21300024
+    second: BarracksBoxLogo_12
+  - first:
+      213: 21300026
+    second: BarracksBoxLogo_13
+  - first:
+      213: 21300028
+    second: BarracksBoxLogo_14
+  - first:
+      213: 21300030
+    second: BarracksBoxLogo_15
+  - first:
+      213: 21300032
+    second: BarracksBoxLogo_16
+  - first:
+      213: 21300034
+    second: BarracksBoxLogo_17
+  - first:
+      213: 21300036
+    second: BarracksBoxLogo_18
+  - first:
+      213: 21300038
+    second: BarracksBoxLogo_19
+  - first:
+      213: 21300040
+    second: BarracksBoxLogo_20
+  - first:
+      213: 21300042
+    second: BarracksBoxLogo_21
+  - first:
+      213: 21300044
+    second: BarracksBoxLogo_22
+  - first:
+      213: 21300046
+    second: BarracksBoxLogo_23
+  - first:
+      213: 21300048
+    second: BarracksBoxLogo_24
+  - first:
+      213: 21300050
+    second: BarracksBoxLogo_25
+  - first:
+      213: 21300052
+    second: BarracksBoxLogo_26
+  - first:
+      213: 21300054
+    second: BarracksBoxLogo_27
+  - first:
+      213: 21300056
+    second: BarracksBoxLogo_28
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -49,9 +107,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,12 +121,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 4
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -83,11 +144,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -97,8 +164,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -108,9 +177,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,8 +190,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -130,9 +203,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,7 +216,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -156,26 +233,34 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 4578211c6f317134baf9d487cff2ea96
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 2dc7b54b4c1a08546b00c5bfa4d8d985
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: 
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BarracksBoxIcon: 21300000
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

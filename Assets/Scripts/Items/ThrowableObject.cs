@@ -43,7 +43,7 @@ public class ThrowableObject : GrabbableObject
 
         GetReleaseVelocities(hand, out velocity, out angularVelocity);
 
-        rigidBody.velocity = velocity;
+        rigidBody.linearVelocity = velocity;
         rigidBody.angularVelocity = angularVelocity;
     }
 
@@ -90,7 +90,7 @@ public class ThrowableObject : GrabbableObject
                 break;
             default:
             case ReleaseStyle.NoChange:
-                velocity = rigidBody.velocity;
+                velocity = rigidBody.linearVelocity;
                 angularVelocity = rigidBody.angularVelocity;
                 break;
         }

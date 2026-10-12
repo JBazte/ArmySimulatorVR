@@ -1,38 +1,96 @@
 fileFormatVersion: 2
 guid: 303a29ea85ce7c74cab2861c8d91330b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: EngineerBoxIcon
-    21300002: noun_Wrench_2975160_1
-    21300004: noun_Wrench_2975160_2
-    21300006: noun_Wrench_2975160_3
-    21300008: noun_Wrench_2975160_4
-    21300010: noun_Wrench_2975160_5
-    21300012: noun_Wrench_2975160_6
-    21300014: noun_Wrench_2975160_7
-    21300016: noun_Wrench_2975160_8
-    21300018: noun_Wrench_2975160_9
-    21300020: noun_Wrench_2975160_10
-    21300022: noun_Wrench_2975160_11
-    21300024: noun_Wrench_2975160_12
-    21300026: noun_Wrench_2975160_13
-    21300028: noun_Wrench_2975160_14
-    21300030: noun_Wrench_2975160_15
-    21300032: noun_Wrench_2975160_16
-    21300034: noun_Wrench_2975160_17
-    21300036: noun_Wrench_2975160_18
-    21300038: noun_Wrench_2975160_19
-    21300040: noun_Wrench_2975160_20
-    21300042: noun_Wrench_2975160_21
-    21300044: noun_Wrench_2975160_22
-    21300046: noun_Wrench_2975160_23
-    21300048: noun_Wrench_2975160_24
-    21300050: noun_Wrench_2975160_25
-    21300052: noun_Wrench_2975160_26
-    21300054: noun_Wrench_2975160_27
-    21300056: noun_Wrench_2975160_28
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: EngineerBoxIcon
+  - first:
+      213: 21300002
+    second: noun_Wrench_2975160_1
+  - first:
+      213: 21300004
+    second: noun_Wrench_2975160_2
+  - first:
+      213: 21300006
+    second: noun_Wrench_2975160_3
+  - first:
+      213: 21300008
+    second: noun_Wrench_2975160_4
+  - first:
+      213: 21300010
+    second: noun_Wrench_2975160_5
+  - first:
+      213: 21300012
+    second: noun_Wrench_2975160_6
+  - first:
+      213: 21300014
+    second: noun_Wrench_2975160_7
+  - first:
+      213: 21300016
+    second: noun_Wrench_2975160_8
+  - first:
+      213: 21300018
+    second: noun_Wrench_2975160_9
+  - first:
+      213: 21300020
+    second: noun_Wrench_2975160_10
+  - first:
+      213: 21300022
+    second: noun_Wrench_2975160_11
+  - first:
+      213: 21300024
+    second: noun_Wrench_2975160_12
+  - first:
+      213: 21300026
+    second: noun_Wrench_2975160_13
+  - first:
+      213: 21300028
+    second: noun_Wrench_2975160_14
+  - first:
+      213: 21300030
+    second: noun_Wrench_2975160_15
+  - first:
+      213: 21300032
+    second: noun_Wrench_2975160_16
+  - first:
+      213: 21300034
+    second: noun_Wrench_2975160_17
+  - first:
+      213: 21300036
+    second: noun_Wrench_2975160_18
+  - first:
+      213: 21300038
+    second: noun_Wrench_2975160_19
+  - first:
+      213: 21300040
+    second: noun_Wrench_2975160_20
+  - first:
+      213: 21300042
+    second: noun_Wrench_2975160_21
+  - first:
+      213: 21300044
+    second: noun_Wrench_2975160_22
+  - first:
+      213: 21300046
+    second: noun_Wrench_2975160_23
+  - first:
+      213: 21300048
+    second: noun_Wrench_2975160_24
+  - first:
+      213: 21300050
+    second: noun_Wrench_2975160_25
+  - first:
+      213: 21300052
+    second: noun_Wrench_2975160_26
+  - first:
+      213: 21300054
+    second: noun_Wrench_2975160_27
+  - first:
+      213: 21300056
+    second: noun_Wrench_2975160_28
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -49,9 +107,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,12 +121,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 4
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -83,11 +144,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -97,8 +164,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -108,9 +177,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -119,8 +190,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -130,9 +203,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Windows Store Apps
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,7 +216,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -156,26 +233,34 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 002aa34a6e3838743b2607c4752f9686
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 81339ce87dea49348a9cf957cedb10ee
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: 
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EngineerBoxIcon: 21300000
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
