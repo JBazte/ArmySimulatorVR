@@ -31,7 +31,10 @@ namespace Valve.VR
 
         static SteamVR_Update()
         {
+#if !UNITY_2020_1_OR_NEWER
+            // Unity 2020+ rejects plain http requests by default, so this check would throw every frame.
             EditorApplication.update += Update;
+#endif
         }
 
         static void Update()

@@ -49,6 +49,9 @@ public class PersistantStorage : MonoBehaviour
 
     public void LoadHighScore(ScoreController o)
     {
+        // No high scores have been saved yet on first launch.
+        if (!File.Exists(highScorePath))
+            return;
         try
         {
             byte[] data = File.ReadAllBytes(highScorePath);

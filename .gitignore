@@ -38,3 +38,8 @@ sysinfo.txt
 *.unitypackage
 unityProject.vrmanifest
 unityProject.vrmanifest
+
+# Unity 2019+ generated folders
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+*.slnx

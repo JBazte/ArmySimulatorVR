@@ -45,6 +45,11 @@ namespace Valve.VR
 
         public static void Update()
         {
+#if UNITY_2020_1_OR_NEWER
+            // Built-in VR and the com.unity.xr.openvr.standalone package were removed in Unity 2020.
+            // VR must be configured through XR Plug-in Management instead.
+            UnityEditor.EditorApplication.update -= Update;
+#else
             if (SteamVR_Settings.instance.autoEnableVR)
             {
                 bool enabledVR = false;
@@ -226,6 +231,7 @@ namespace Valve.VR
                 UnityEditor.EditorApplication.update -= Update;
 #endif
             }
+#endif
         }
     }
 }
