@@ -236,6 +236,78 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "path" : "/user/hand/left/input/trigger",
+               "mode" : "button",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/shoot"
+                  },
+                  "held" : {
+                     "output" : "/actions/default/in/shoot"
+                  }
+               }
+            },
+            {
+               "path" : "/user/hand/left/input/joystick",
+               "mode" : "joystick",
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/default/in/menuselectionposition"
+                  },
+                  "touch" : {
+                     "output" : "/actions/default/in/activatemenu"
+                  },
+                  "click" : {
+                     "output" : "/actions/default/in/select"
+                  }
+               }
+            },
+            {
+               "path" : "/user/hand/left/input/x",
+               "mode" : "button",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/select"
+                  }
+               }
+            },
+            {
+               "path" : "/user/hand/right/input/trigger",
+               "mode" : "button",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/shoot"
+                  },
+                  "held" : {
+                     "output" : "/actions/default/in/shoot"
+                  }
+               }
+            },
+            {
+               "path" : "/user/hand/right/input/joystick",
+               "mode" : "joystick",
+               "inputs" : {
+                  "position" : {
+                     "output" : "/actions/default/in/menuselectionposition"
+                  },
+                  "touch" : {
+                     "output" : "/actions/default/in/activatemenu"
+                  },
+                  "click" : {
+                     "output" : "/actions/default/in/select"
+                  }
+               }
+            },
+            {
+               "path" : "/user/hand/right/input/a",
+               "mode" : "button",
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/select"
+                  }
+               }
             }
          ]
       },
